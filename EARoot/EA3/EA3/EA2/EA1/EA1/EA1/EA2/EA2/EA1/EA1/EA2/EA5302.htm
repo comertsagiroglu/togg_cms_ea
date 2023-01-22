@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>driver::DRV_IO_INTENT</title>
+<title>driver::DRV_IO_BUFFER_TYPES</title>
 <link href="../../../../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,7 +34,7 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("DRV_IO_INTENT", " : "))</script>  : Public   Enumeration</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("DRV_IO_BUFFER_TYPES", " : "))</script>  : Public   Enumeration</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
@@ -42,7 +42,7 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">30.07.2022 12:30:50</td>
+			<td class="ObjectDetailsValue">30.07.2022 12:30:49</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,19 +87,18 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{9032FA90-519C-48cd-949F-38ADFB207665}</td>
+			<td class="ObjectDetailsValue">{27941540-2260-498f-A5EA-4E528A4A8DDA}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA5293.htm">driver</a></td>
+			<td class="ObjectDetailsValue"><a href="EA5294.htm">driver</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Device Driver I/O Intent&#160;&#160;Summary: Identifies the intended usage of the device when it is opened.&#160;&#160;Description: This enumeration identifies the intended usage of the device when the caller opens the device. It identifies the desired behavior of the device driver for the following:&#160;&#160;Blocking or non-blocking I/O behavior (do I/O calls such as read and write block until the operation is finished or do they return immediately and require the caller to call another routine to check the status of the operation)&#160;&#160;Support reading and/or writing of data from/to the device&#160;&#160;Identify the buffering behavior (sometimes called &quot;double buffering&quot; of the driver.&#160;&#160;Indicates if the driver should maintain its own read/write buffers and copy data to/from these buffers to/from the caller&#39;s buffers.&#160;&#160;Identify the DMA behavior of the peripheral&#160;&#160;Remarks: The buffer allocation method is not identified by this enumeration.&#160;&#160;Buffers can be allocated statically at build time, dynamically at run-time, or even allocated by the caller and passed to the driver for its own usage if a driver-specific routine is provided for such.&#160;&#160;This choice is left to the design of the individual driver and is considered part of its interface.&#160;&#160;These values can be considered &quot;flags&quot;.&#160;&#160;One selection from each of the groups below can be ORed together to create the complete value passed to the driver&#39;s open routine.&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Device Driver IO Buffer Identifier&#160;&#160;Summary: Identifies to which buffer a device operation will apply.&#160;&#160;Description: This enumeration identifies to which buffer (read, write, both, or neither) a device operation will apply.&#160;&#160;This is used for &quot;flush&quot; (or similar) operations.&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
-			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 		</ul>
@@ -110,43 +109,43 @@ function nameClassifier(name, separator)
 		</tr>
 						<tr>
 				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;DRV_IO_INTENT_READ</strong>
+					<i>Public </i><br /><strong>&nbsp;&nbsp;DRV_IO_BUFFER_TYPE_NONE</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes24902')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes24902" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes24896')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes24896" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes24902_00" style="display: none;">
+						<tr id="DetailsImageAttributes24896_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24902_01" style="display: none;">
+						<tr id="DetailsImageAttributes24896_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
-							<td>1 << 0</td>
+							<td>0x00</td>
 						</tr>
-						<tr id="DetailsImageAttributes24902_02" style="display: none;">
+						<tr id="DetailsImageAttributes24896_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24902_03" style="display: none;">
+						<tr id="DetailsImageAttributes24896_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24902_04" style="display: none;">
+						<tr id="DetailsImageAttributes24896_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24902_05" style="display: none;">
+						<tr id="DetailsImageAttributes24896_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes24902_06" style="display: none;">
+						<tr id="DetailsImageAttributes24896_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes24902_07" style="display: none;">
+							<tr id="DetailsImageAttributes24896_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
@@ -159,7 +158,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			DOM-IGNORE-END&lt;br/&gt;
+			Operation does not apply to any buffer&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -168,43 +167,43 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;DRV_IO_INTENT_WRITE</strong>
+					<i>Public </i><br /><strong>&nbsp;&nbsp;DRV_IO_BUFFER_TYPE_READ</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes24903')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes24903" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes24897')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes24897" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes24903_00" style="display: none;">
+						<tr id="DetailsImageAttributes24897_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24903_01" style="display: none;">
+						<tr id="DetailsImageAttributes24897_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
-							<td>1 << 1</td>
+							<td>0x01</td>
 						</tr>
-						<tr id="DetailsImageAttributes24903_02" style="display: none;">
+						<tr id="DetailsImageAttributes24897_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24903_03" style="display: none;">
+						<tr id="DetailsImageAttributes24897_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24903_04" style="display: none;">
+						<tr id="DetailsImageAttributes24897_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24903_05" style="display: none;">
+						<tr id="DetailsImageAttributes24897_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes24903_06" style="display: none;">
+						<tr id="DetailsImageAttributes24897_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes24903_07" style="display: none;">
+							<tr id="DetailsImageAttributes24897_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
@@ -217,7 +216,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			DOM-IGNORE-END&lt;br/&gt;
+			Operation applies to read buffer&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -226,43 +225,43 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;DRV_IO_INTENT_READWRITE</strong>
+					<i>Public </i><br /><strong>&nbsp;&nbsp;DRV_IO_BUFFER_TYPE_WRITE</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes24904')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes24904" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes24898')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes24898" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes24904_00" style="display: none;">
+						<tr id="DetailsImageAttributes24898_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24904_01" style="display: none;">
+						<tr id="DetailsImageAttributes24898_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
-							<td>DRV_IO_INTENT_READ|DRV_IO_INTENT_WRITE</td>
+							<td>0x02</td>
 						</tr>
-						<tr id="DetailsImageAttributes24904_02" style="display: none;">
+						<tr id="DetailsImageAttributes24898_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24904_03" style="display: none;">
+						<tr id="DetailsImageAttributes24898_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24904_04" style="display: none;">
+						<tr id="DetailsImageAttributes24898_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24904_05" style="display: none;">
+						<tr id="DetailsImageAttributes24898_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes24904_06" style="display: none;">
+						<tr id="DetailsImageAttributes24898_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes24904_07" style="display: none;">
+							<tr id="DetailsImageAttributes24898_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
@@ -275,7 +274,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			DOM-IGNORE-END&lt;br/&gt;
+			Operation applies to write buffer&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -284,43 +283,43 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;DRV_IO_INTENT_BLOCKING</strong>
+					<i>Public </i><br /><strong>&nbsp;&nbsp;DRV_IO_BUFFER_TYPE_RW</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes24905')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes24905" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes24899')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes24899" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes24905_00" style="display: none;">
+						<tr id="DetailsImageAttributes24899_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24905_01" style="display: none;">
+						<tr id="DetailsImageAttributes24899_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
-							<td>0 << 2</td>
+							<td>DRV_IO_BUFFER_TYPE_READ|DRV_IO_BUFFER_TYPE_WRITE</td>
 						</tr>
-						<tr id="DetailsImageAttributes24905_02" style="display: none;">
+						<tr id="DetailsImageAttributes24899_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24905_03" style="display: none;">
+						<tr id="DetailsImageAttributes24899_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24905_04" style="display: none;">
+						<tr id="DetailsImageAttributes24899_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes24905_05" style="display: none;">
+						<tr id="DetailsImageAttributes24899_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes24905_06" style="display: none;">
+						<tr id="DetailsImageAttributes24899_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes24905_07" style="display: none;">
+							<tr id="DetailsImageAttributes24899_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
@@ -333,181 +332,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			DOM-IGNORE-END&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;DRV_IO_INTENT_NONBLOCKING</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes24906')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes24906" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes24906_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24906_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td>1 << 2</td>
-						</tr>
-						<tr id="DetailsImageAttributes24906_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24906_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24906_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24906_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes24906_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes24906_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			DOM-IGNORE-END&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;DRV_IO_INTENT_EXCLUSIVE</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes24907')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes24907" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes24907_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24907_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td>1 << 3</td>
-						</tr>
-						<tr id="DetailsImageAttributes24907_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24907_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24907_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24907_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes24907_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes24907_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			DOM-IGNORE-END&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;DRV_IO_INTENT_SHARED</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes24908')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes24908" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes24908_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24908_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td>0 << 3</td>
-						</tr>
-						<tr id="DetailsImageAttributes24908_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24908_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24908_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes24908_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes24908_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes24908_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			DOM-IGNORE-END&lt;br/&gt;
+			Operation applies to both read and write buffers&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -517,62 +342,6 @@ function nameClassifier(name, separator)
 			</tr>
 	</table>
 </div>
-		<div class="ItemBody" id="AssociationsFromTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="40%" class="TableHeading">Element</td>
-					<td width="30%" class="TableHeading">Source Role</td>
-					<td width="30%" class="TableHeading">Target Role</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA5/EA1/EA5445.htm">«struct» SYS_CONSOLE_DEV_DESC</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> intent<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24909" onclick="parent.toggleDiv('detailsDIVLink24909','DetailsImageLink24909')" />Details:
-							<div id="detailsDIVLink24909" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="./EA1/EA1/EA5325.htm">«struct» DRV_I2C_CLIENT_OBJ</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> ioIntent<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24910" onclick="parent.toggleDiv('detailsDIVLink24910','DetailsImageLink24910')" />Details:
-							<div id="detailsDIVLink24910" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-
-			</table>
-		</div>
 <div class="ItemBody" id="TaggedValTable">
 	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
@@ -585,8 +354,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario24911" onclick="parent.toggleDiv('detailsDIVScenario24911','DetailsImageScenario24911')" />Details:
-						<div id="detailsDIVScenario24911" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario24900" onclick="parent.toggleDiv('detailsDIVScenario24900','DetailsImageScenario24900')" />Details:
+						<div id="detailsDIVScenario24900" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
@@ -597,8 +366,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario24912" onclick="parent.toggleDiv('detailsDIVScenario24912','DetailsImageScenario24912')" />Details:
-						<div id="detailsDIVScenario24912" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario24901" onclick="parent.toggleDiv('detailsDIVScenario24901','DetailsImageScenario24901')" />Details:
+						<div id="detailsDIVScenario24901" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>

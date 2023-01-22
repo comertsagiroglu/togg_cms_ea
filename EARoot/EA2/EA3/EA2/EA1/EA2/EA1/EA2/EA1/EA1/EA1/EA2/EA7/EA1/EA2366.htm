@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>src::timers::tmrTimerQueueMessage</title>
+<title>src::timers::tmrTimerParameters</title>
 <link href="../../../../../../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,7 +34,7 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("tmrTimerQueueMessage", " : "))</script>  : Private  &lt;&lt;struct&gt;&gt; Class</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("tmrTimerParameters", " : "))</script>  : Private  &lt;&lt;struct&gt;&gt; Class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
@@ -42,7 +42,7 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">1.12.2022 12:20:28</td>
+			<td class="ObjectDetailsValue">1.12.2022 12:20:29</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,14 +87,14 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{2FF27C17-1395-47d7-9A98-AD34F8EDA40B}</td>
+			<td class="ObjectDetailsValue">{ADB98C4D-4F7C-43d5-A223-DFEF329B0212}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA2335.htm">src</a></td>
+			<td class="ObjectDetailsValue"><a href="EA2336.htm">src</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">The structure that contains the two message types, along with an identifier that is used to determine which message type is valid.&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">The definition of messages that can be sent and received on the timer queue. Two types of message can be queued - messages that manipulate a software timer, and messages that request the execution of a non-timer related callback.&#160;&#160;The two message types are defined in two separate structures, xTimerParametersType and xCallbackParametersType respectively.&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -110,43 +110,43 @@ function nameClassifier(name, separator)
 		</tr>
 						<tr>
 				<td width="100%" class="TableRow">
-					<i>Public <a href="EA2389.htm">BaseType_t</a></i><br /><strong>&nbsp;&nbsp;xMessageID</strong>
+					<i>Public <a href="EA2392.htm">TickType_t</a></i><br /><strong>&nbsp;&nbsp;xMessageValue</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes9193')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes9193" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes9187')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes9187" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes9193_00" style="display: none;">
+						<tr id="DetailsImageAttributes9187_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes9193_01" style="display: none;">
+						<tr id="DetailsImageAttributes9187_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes9193_02" style="display: none;">
+						<tr id="DetailsImageAttributes9187_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes9193_03" style="display: none;">
+						<tr id="DetailsImageAttributes9187_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes9193_04" style="display: none;">
+						<tr id="DetailsImageAttributes9187_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes9193_05" style="display: none;">
+						<tr id="DetailsImageAttributes9187_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes9193_06" style="display: none;">
+						<tr id="DetailsImageAttributes9187_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes9193_07" style="display: none;">
+							<tr id="DetailsImageAttributes9187_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
@@ -159,7 +159,65 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			#lt;#lt; The command being sent to the timer service task.&lt;br/&gt;
+			#lt;#lt; An optional value used by a subset of commands, for example, when changing the period of a timer.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public Timer_t*</i><br /><strong>&nbsp;&nbsp;pxTimer</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes9188')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes9188" border="0" />Details:</a>
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes9188_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes9188_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes9188_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes9188_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes9188_04" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes9188_05" style="display: none;">
+							<td width="75"><i>Transient: </i></td>
+							<td>False</td>
+						</tr>
+						<tr id="DetailsImageAttributes9188_06" style="display: none;">
+							<td width="75"><i>Derived: </i></td>
+							<td>False</td>
+						</tr>
+							<tr id="DetailsImageAttributes9188_07" style="display: none;">
+							<td width="75"><i>IsID: </i></td>
+						<td>False</td>
+						</tr>
+					</table>
+					
+					
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			#lt;#lt; The timer to which the command will be applied.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -178,7 +236,7 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA2389.htm">«typedef» BaseType_t</a><br />
+						<a href="EA2362.htm">«typedef» Timer_t</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -186,14 +244,37 @@ function nameClassifier(name, separator)
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> xMessageID<br />
+						<strong>Name:</strong> pxTimer<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink9194" onclick="parent.toggleDiv('detailsDIVLink9194','DetailsImageLink9194')" />Details:
-							<div id="detailsDIVLink9194" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink9189" onclick="parent.toggleDiv('detailsDIVLink9189','DetailsImageLink9189')" />Details:
+							<div id="detailsDIVLink9189" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA2392.htm">«typedef» TickType_t</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> xMessageValue<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink9190" onclick="parent.toggleDiv('detailsDIVLink9190','DetailsImageLink9190')" />Details:
+							<div id="detailsDIVLink9190" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -214,20 +295,20 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario9195" onclick="parent.toggleDiv('detailsDIVScenario9195','DetailsImageScenario9195')" />Details:
-						<div id="detailsDIVScenario9195" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario9191" onclick="parent.toggleDiv('detailsDIVScenario9191','DetailsImageScenario9191')" />Details:
+						<div id="detailsDIVScenario9191" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">typeSynonyms</td>
-				<td width="50%" class="TableRow" valign="top">DaemonTaskMessage_t</td>
+				<td width="50%" class="TableRow" valign="top">TimerParameter_t</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario9196" onclick="parent.toggleDiv('detailsDIVScenario9196','DetailsImageScenario9196')" />Details:
-						<div id="detailsDIVScenario9196" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario9192" onclick="parent.toggleDiv('detailsDIVScenario9192','DetailsImageScenario9192')" />Details:
+						<div id="detailsDIVScenario9192" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
