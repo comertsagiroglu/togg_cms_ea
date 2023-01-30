@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>[YTB16] LCD SPI Interface</title>
+<title>SWREQ 9</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[YTB16] LCD SPI Interface", " : "))</script> REQ10536 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("SWREQ 9", " : "))</script> REQ10558 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">22.12.2022 12:12:05</td>
+			<td width="85%" class="ObjectDetailsValue">29.01.2023 17:32:40</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">22.12.2022 12:19:37</td>
+			<td class="ObjectDetailsValue">29.01.2023 17:33:40</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,55 +87,21 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{399C4AA2-75CA-4947-9E68-F1497D47C112}</td>
+			<td class="ObjectDetailsValue">{8764FB3C-0D2B-4969-8C72-1A78B1F47A51}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA59.htm">YTB</a>, <a href="../EA24.htm">FUSA Requirements</a></td>
+			<td class="ObjectDetailsValue"><a href="EA64.htm">Software Requirements Specification</a>, <a href="../EA5/EA227.htm">TSD - SRS Traceability</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Display shall control the LCD via the SPI interface.&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">SW Purpose: The purpose of sw module &#8216;Backlight_status&#8217; is to check the following registers of backlight controller: (AND) (ASIL B)&lt;br/&gt;&lt;ul&gt;<br />&lt;li&gt;Check backlight I2C connection -#gt; Read device id (0x24) from &lt;b&gt;Dev_ID (0x00) register&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Check LCD LED output enable status. Error if not enabled -#gt; &lt;b&gt;ISET (0x02) register ENA bit.5&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Check if LCD is connected -#gt; &lt;b&gt;OPEN (0x1B) register bit.1-0&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Check short to ground error -#gt; &lt;b&gt;SHORTGND register (0x1C) bit.1-0&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Check short between LED outputs -#gt; &lt;b&gt;SHORTED_LED register (0x1D) bit.1-0&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Check backlight driver external pin -#gt; &lt;b&gt;GPIO_0::GPIO_CHAN_1&lt;/b&gt; clear&lt;/li&gt;&lt;/ul&gt;<br />&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
-			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
-		<div class="ItemBody" id="AssociationsToTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="40%" class="TableHeading">Element</td>
-					<td width="30%" class="TableHeading">Source Role</td>
-					<td width="30%" class="TableHeading">Target Role</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA1/EA52.htm">«Gereksinim» [TSD_CMS_030] Display Fail Detection</a><br />
-						Gereksinim &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink443" onclick="parent.toggleDiv('detailsDIVLink443','DetailsImageLink443')" />Details:
-							<div id="detailsDIVLink443" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-
-			</table>
-		</div>
 <div class="ItemBody" id="TaggedValTable">
 	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
@@ -144,12 +110,12 @@ function nameClassifier(name, separator)
 		</tr>
 					<tr>
 				<td width="50%" class="TableRow" valign="top">DogrulamaYontemi</td>
-				<td width="50%" class="TableRow" valign="top">Analiz</td>
+				<td width="50%" class="TableRow" valign="top">Gösterim</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario444" onclick="parent.toggleDiv('detailsDIVScenario444','DetailsImageScenario444')" />Details:
-						<div id="detailsDIVScenario444" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario376" onclick="parent.toggleDiv('detailsDIVScenario376','DetailsImageScenario376')" />Details:
+						<div id="detailsDIVScenario376" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Test,Analiz,Muayene,Gösterim,CoC<br /></div>
 
 						</div>
@@ -161,8 +127,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario445" onclick="parent.toggleDiv('detailsDIVScenario445','DetailsImageScenario445')" />Details:
-						<div id="detailsDIVScenario445" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario377" onclick="parent.toggleDiv('detailsDIVScenario377','DetailsImageScenario377')" />Details:
+						<div id="detailsDIVScenario377" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Default: Öneri<br /></div>
 
 						</div>
@@ -174,8 +140,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario446" onclick="parent.toggleDiv('detailsDIVScenario446','DetailsImageScenario446')" />Details:
-						<div id="detailsDIVScenario446" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario378" onclick="parent.toggleDiv('detailsDIVScenario378','DetailsImageScenario378')" />Details:
+						<div id="detailsDIVScenario378" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: 1,2,3,4,5,6,7,8,9,10<br /></div>
 
 						</div>
@@ -183,12 +149,12 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">ID</td>
-				<td width="50%" class="TableRow" valign="top">REQ10536</td>
+				<td width="50%" class="TableRow" valign="top">REQ10558</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario447" onclick="parent.toggleDiv('detailsDIVScenario447','DetailsImageScenario447')" />Details:
-						<div id="detailsDIVScenario447" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario379" onclick="parent.toggleDiv('detailsDIVScenario379','DetailsImageScenario379')" />Details:
+						<div id="detailsDIVScenario379" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
@@ -199,8 +165,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario448" onclick="parent.toggleDiv('detailsDIVScenario448','DetailsImageScenario448')" />Details:
-						<div id="detailsDIVScenario448" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario380" onclick="parent.toggleDiv('detailsDIVScenario380','DetailsImageScenario380')" />Details:
+						<div id="detailsDIVScenario380" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: 1,2,3,4,5,6,7,8,9,10<br /></div>
 
 						</div>
@@ -208,12 +174,12 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">Kategori</td>
-				<td width="50%" class="TableRow" valign="top">Arayüz</td>
+				<td width="50%" class="TableRow" valign="top">İşlevsel</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario449" onclick="parent.toggleDiv('detailsDIVScenario449','DetailsImageScenario449')" />Details:
-						<div id="detailsDIVScenario449" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario381" onclick="parent.toggleDiv('detailsDIVScenario381','DetailsImageScenario381')" />Details:
+						<div id="detailsDIVScenario381" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Arayüz,Çevre Koşulları,Fiziksel Kısıtlar,Gerçekleme Kısıtları,İşlevsel,Kalite,Desteklenebilirlik,Güvenlik,Güvenilirlik,Kullanılabilirlik,Kurumsal,Lojistik Destek,Performans,Proje Kabul Kriterleri,Proje Kapsamı Dışı,Standartlara Uyum,Tasarım Kısıtları,Test<br /></div>
 
 						</div>
@@ -221,36 +187,36 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">Oncelik</td>
-				<td width="50%" class="TableRow" valign="top">Yüksek</td>
+				<td width="50%" class="TableRow" valign="top">Orta</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario450" onclick="parent.toggleDiv('detailsDIVScenario450','DetailsImageScenario450')" />Details:
-						<div id="detailsDIVScenario450" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario382" onclick="parent.toggleDiv('detailsDIVScenario382','DetailsImageScenario382')" />Details:
+						<div id="detailsDIVScenario382" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">Orijin</td>
-				<td width="50%" class="TableRow" valign="top">cms_REQ10536</td>
+				<td width="50%" class="TableRow" valign="top">cms_REQ10558</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario451" onclick="parent.toggleDiv('detailsDIVScenario451','DetailsImageScenario451')" />Details:
-						<div id="detailsDIVScenario451" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario383" onclick="parent.toggleDiv('detailsDIVScenario383','DetailsImageScenario383')" />Details:
+						<div id="detailsDIVScenario383" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">PiyasaAcisindanOnem</td>
-				<td width="50%" class="TableRow" valign="top">Çok Yüksek</td>
+				<td width="50%" class="TableRow" valign="top">Yüksek</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario452" onclick="parent.toggleDiv('detailsDIVScenario452','DetailsImageScenario452')" />Details:
-						<div id="detailsDIVScenario452" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario384" onclick="parent.toggleDiv('detailsDIVScenario384','DetailsImageScenario384')" />Details:
+						<div id="detailsDIVScenario384" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Çok Az,Az,Orta,Yüksek,Çok Yüksek<br /></div>
 
 						</div>
@@ -262,8 +228,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario453" onclick="parent.toggleDiv('detailsDIVScenario453','DetailsImageScenario453')" />Details:
-						<div id="detailsDIVScenario453" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario385" onclick="parent.toggleDiv('detailsDIVScenario385','DetailsImageScenario385')" />Details:
+						<div id="detailsDIVScenario385" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Çok Az,Az,Orta,Yüksek,Çok Yüksek<br /></div>
 
 						</div>
@@ -275,8 +241,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario454" onclick="parent.toggleDiv('detailsDIVScenario454','DetailsImageScenario454')" />Details:
-						<div id="detailsDIVScenario454" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario386" onclick="parent.toggleDiv('detailsDIVScenario386','DetailsImageScenario386')" />Details:
+						<div id="detailsDIVScenario386" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Müşteri İsteri,Sistem,Tasarım Belirtimi<br /></div>
 
 						</div>
@@ -288,8 +254,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario455" onclick="parent.toggleDiv('detailsDIVScenario455','DetailsImageScenario455')" />Details:
-						<div id="detailsDIVScenario455" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario387" onclick="parent.toggleDiv('detailsDIVScenario387','DetailsImageScenario387')" />Details:
+						<div id="detailsDIVScenario387" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Çok Az,Az,Orta,Yüksek,Çok Yüksek<br /></div>
 
 						</div>
@@ -320,16 +286,9 @@ function nameClassifier(name, separator)
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA117.htm">Handle LCD Failure</a></td>
-					<td width="10%" class="TableRow" valign="top">UseCase</td>
-					<td width="10%" class="TableRow" valign="top">Dependency</td>
-					<td width="10%" class="TableRow" valign="top">From</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA1/EA52.htm">«Gereksinim» [TSD_CMS_030] Display Fail Detection</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA1/EA48.htm">«Gereksinim» [TSD_CMS_023] Display Switch-Off</a></td>
 					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
-					<td width="10%" class="TableRow" valign="top">Strong</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
 					<td width="10%" class="TableRow" valign="top">To</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
