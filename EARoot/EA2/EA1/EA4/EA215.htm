@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Handle Maintenance Mode Entry</title>
+<title>Handle Failure Recovery</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Handle Maintenance Mode Entry", " : "))</script> 10088 : Public   UseCase</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Handle Failure Recovery", " : "))</script> 10086 : Public   UseCase</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">25.12.2022 14:56:31</td>
+			<td width="85%" class="ObjectDetailsValue">23.12.2022 22:57:10</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">27.12.2022 09:32:59</td>
+			<td class="ObjectDetailsValue">25.12.2022 16:25:53</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,22 +87,56 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{C5F2C497-027D-41fe-92AD-0B54B91152E8}</td>
+			<td class="ObjectDetailsValue">{B6C6DF8C-38EB-40c2-BC2A-A13DC23389DF}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA191.htm">Handle Maintenance Mode Entry</a>, <a href="EA195.htm">Use Cases</a>, <a href="../EA25.htm">FUSA Requirements</a></td>
+			<td class="ObjectDetailsValue"><a href="../EA26.htm">FUSA Requirements</a>, <a href="EA193.htm">Handle Failure Recovery</a>, <a href="EA205.htm">Use Cases</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Pre-conditions:&lt;br/&gt;- Power state = POWER_ON&lt;br/&gt;- Operational state = PRIMARY_OPERATION - PARKING&lt;br/&gt;&lt;br/&gt;Scenario:&lt;br/&gt;- The display must be in the parking operational state i.e. the vehicle must be stationary in order for the display to make the maintenance mode state transition.&lt;br/&gt;- IDCC sends set_maintenance_mode message with one of the mode attributes:&lt;br/&gt;&#160;&#160;&#160;&#160;Fw Update - Camera MCU FW&lt;br/&gt;&#160;&#160;&#160;&#160;Fw Update - Camera Sensor FW&lt;br/&gt;&#160;&#160;&#160;&#160;Fw Update - Display FPGA HW&lt;br/&gt;&#160;&#160;&#160;&#160;Fw Update - Display FPGA FW&lt;br/&gt;&#160;&#160;&#160;&#160;Fw Update - Camera MCU BL&lt;br/&gt;&#160;&#160;&#160;&#160;Zoom Change &lt;br/&gt;- Display maintenance mode handler disables the LCD backlight.&lt;br/&gt;- Display maintenance mode handler sets the operational state to maintenance mode.&lt;br/&gt;&lt;br/&gt;Post-conditions:&lt;br/&gt;Operational state = MAINTENANCE&lt;br/&gt;LCD backlight off&lt;br/&gt;&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Pre-conditions:&lt;br/&gt;- Power state = POWER_ON&lt;br/&gt;- Operational state = CMS_FAILURE&lt;br/&gt;&lt;br/&gt;Scenario:&lt;br/&gt;- When the error condition is resolved the corresponding error flag is cleared.&lt;br/&gt;- Safety Observer function checks the error flags periodically and when all error flags are clear exits the system from CMS_FAILURE state and enables the LCD backlight.&lt;br/&gt;-&#160;&#160;Error conditions:&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_FROZEN_FRAME&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_DELAYED_FRAME&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_FLIPPED_FRAME&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_SYS_CHECK&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_ERRB&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_CSI&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_MAINTENANCE_MODE&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_CAM_QUEUE&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_BACKLIGHT_I2C&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_BACKLIGHT_LED_OUT&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_BACKLIGHT_DRIVER&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_BACKLIGHT_SHORT_GND&lt;/i&gt;&lt;/font&gt;,&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_BACKLIGHT_SHORT_LED&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&#160;&#160;&#160;&#160;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;SAFE_STATE_BACKLIGHT_EXT_PIN&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;&lt;font color=&quot;#0000c0&quot;&gt;&lt;i&gt;&#160;&#160;&#160;&#160;SAFE_STATE_LCD&lt;/i&gt;&lt;/font&gt;&lt;br/&gt;- Frame error handler sets the operational state to PRIMARY_OPERATION and returns it to IDCC when it is queried.&lt;br/&gt;- IDCC&#160;&#160;operational mode query period is&#160;&#160;100msec.&lt;br/&gt;- Safety Observer period is&#160;&#160;300msec.&lt;br/&gt;&lt;br/&gt;Post-conditions:&lt;br/&gt;Operational state = PRIMARY_OPERATION (FREEWAY /PARKING / LANE_CHANGE)&lt;br/&gt;LCD backlight on&lt;br/&gt;&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 			<li onClick="parent.toggleItem('MessagesTo');" id="MessagesToTitle">Messages To</li>
 			<li onClick="parent.toggleItem('MessagesFrom');" id="MessagesFromTitle">Messages From</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
+		<div class="ItemBody" id="AssociationsToTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="./EA1/EA235.htm">IDCC</a><br />
+						Actor &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1745" onclick="parent.toggleDiv('detailsDIVLink1745','DetailsImageLink1745')" />Details:
+							<div id="detailsDIVLink1745" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
 		<div class="ItemBody" id="MessagesToTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
@@ -110,13 +144,13 @@ function nameClassifier(name, separator)
 					<td width="50%" class="TableHeading">Message</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Maintenance Mode Entry</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_Disable_LCD_Backlight</td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Failure Recovery</a></td>
+					<td width="50%" class="TableRow" valign="top">Display_State_Transition</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1711" onclick="parent.toggleDiv('detailsDIVMessage1711', 'DetailsImageMessage1711')" />Details:
-							<div id="detailsDIVMessage1711" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1746" onclick="parent.toggleDiv('detailsDIVMessage1746', 'DetailsImageMessage1746')" />Details:
+							<div id="detailsDIVMessage1746" class="DetailsDiv" >
 							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -124,13 +158,41 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Maintenance Mode Entry</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_State_Transition</td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Failure Recovery</a></td>
+					<td width="50%" class="TableRow" valign="top">Display_Safery_Observer_LCD_Backlight_Enable</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1712" onclick="parent.toggleDiv('detailsDIVMessage1712', 'DetailsImageMessage1712')" />Details:
-							<div id="detailsDIVMessage1712" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1747" onclick="parent.toggleDiv('detailsDIVMessage1747', 'DetailsImageMessage1747')" />Details:
+							<div id="detailsDIVMessage1747" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Failure Recovery</a></td>
+					<td width="50%" class="TableRow" valign="top">Display_Device_Status_Observer_Clear_Error_Flag</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1748" onclick="parent.toggleDiv('detailsDIVMessage1748', 'DetailsImageMessage1748')" />Details:
+							<div id="detailsDIVMessage1748" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Failure Recovery</a></td>
+					<td width="50%" class="TableRow" valign="top">Error_Condition_Resolved</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1749" onclick="parent.toggleDiv('detailsDIVMessage1749', 'DetailsImageMessage1749')" />Details:
+							<div id="detailsDIVMessage1749" class="DetailsDiv" >
 							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -147,69 +209,13 @@ function nameClassifier(name, separator)
 					<td width="50%" class="TableHeading">Message</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Maintenance Mode Entry</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_Disable_LCD_Backlight</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1713" onclick="parent.toggleDiv('detailsDIVMessage1713', 'DetailsImageMessage1713')" />Details:
-							<div id="detailsDIVMessage1713" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA225.htm">IDCC</a></td>
-					<td width="50%" class="TableRow" valign="top">gear_position</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1714" onclick="parent.toggleDiv('detailsDIVMessage1714', 'DetailsImageMessage1714')" />Details:
-							<div id="detailsDIVMessage1714" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA225.htm">IDCC</a></td>
-					<td width="50%" class="TableRow" valign="top">set_maintenance_mode</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1715" onclick="parent.toggleDiv('detailsDIVMessage1715', 'DetailsImageMessage1715')" />Details:
-							<div id="detailsDIVMessage1715" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA225.htm">IDCC</a></td>
-					<td width="50%" class="TableRow" valign="top">vehicle_speed</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1716" onclick="parent.toggleDiv('detailsDIVMessage1716', 'DetailsImageMessage1716')" />Details:
-							<div id="detailsDIVMessage1716" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Maintenance Mode Entry</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Failure Recovery</a></td>
 					<td width="50%" class="TableRow" valign="top">Display_State_Transition</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1717" onclick="parent.toggleDiv('detailsDIVMessage1717', 'DetailsImageMessage1717')" />Details:
-							<div id="detailsDIVMessage1717" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1750" onclick="parent.toggleDiv('detailsDIVMessage1750', 'DetailsImageMessage1750')" />Details:
+							<div id="detailsDIVMessage1750" class="DetailsDiv" >
 							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -217,13 +223,55 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA225.htm">IDCC</a></td>
-					<td width="50%" class="TableRow" valign="top">set_operational_mode</td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Failure Recovery</a></td>
+					<td width="50%" class="TableRow" valign="top">Display_Safery_Observer_LCD_Backlight_Enable</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1718" onclick="parent.toggleDiv('detailsDIVMessage1718', 'DetailsImageMessage1718')" />Details:
-							<div id="detailsDIVMessage1718" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1751" onclick="parent.toggleDiv('detailsDIVMessage1751', 'DetailsImageMessage1751')" />Details:
+							<div id="detailsDIVMessage1751" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Failure Recovery</a></td>
+					<td width="50%" class="TableRow" valign="top">Display_Device_Status_Observer_Clear_Error_Flag</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1752" onclick="parent.toggleDiv('detailsDIVMessage1752', 'DetailsImageMessage1752')" />Details:
+							<div id="detailsDIVMessage1752" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA235.htm">IDCC</a></td>
+					<td width="50%" class="TableRow" valign="top">GetOperationalState</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1753" onclick="parent.toggleDiv('detailsDIVMessage1753', 'DetailsImageMessage1753')" />Details:
+							<div id="detailsDIVMessage1753" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA215.htm">Handle Failure Recovery</a></td>
+					<td width="50%" class="TableRow" valign="top">Error_Condition_Resolved</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1754" onclick="parent.toggleDiv('detailsDIVMessage1754', 'DetailsImageMessage1754')" />Details:
+							<div id="detailsDIVMessage1754" class="DetailsDiv" >
 							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -256,21 +304,70 @@ function nameClassifier(name, separator)
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA211.htm">Handle Maintenance Mode</a></td>
-					<td width="10%" class="TableRow" valign="top">UseCase</td>
-					<td width="10%" class="TableRow" valign="top">Extends</td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA167.htm">«Gereksinim» [YTB12] Backlight Controller I2C Interface</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
 					<td width="10%" class="TableRow" valign="top">To</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA33.htm">«NavigationCell» </a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA176.htm">«Gereksinim» [YTB132] Display Image Streaming</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA192.htm">«Gereksinim» [YTB127] CMS Failure Recovery</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA35.htm">«NavigationCell» </a></td>
 					<td width="10%" class="TableRow" valign="top">Text</td>
 					<td width="10%" class="TableRow" valign="top">Dependency</td>
 					<td width="10%" class="TableRow" valign="top">From</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA167.htm">«Gereksinim» [YTB133] Maintenance Mode</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA165.htm">«Gereksinim» [YTB118] Image Orientation Failure Recovery</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../EA3/EA3/EA2/EA1/EA4828.htm">Failure Recovery</a></td>
+					<td width="10%" class="TableRow" valign="top">Package</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA184.htm">«Gereksinim» [YTB107] Delayed Image Recovery</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA175.htm">«Gereksinim» [YTB131] Camera Image Streaming</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA174.htm">«Gereksinim» [YTB130] Primary Operational State Transition</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA186.htm">«Gereksinim» [YTB112] Frozen Image Recovery</a></td>
 					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
 					<td width="10%" class="TableRow" valign="top">Dependency</td>
 					<td width="10%" class="TableRow" valign="top">To</td>

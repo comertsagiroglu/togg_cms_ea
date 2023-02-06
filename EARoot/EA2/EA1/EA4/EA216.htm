@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Handle Maintenance Mode Exit</title>
+<title>Handle Frame Error</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Handle Maintenance Mode Exit", " : "))</script> 10090 : Public   UseCase</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Handle Frame Error", " : "))</script> 10083 : Public   UseCase</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">26.12.2022 18:30:18</td>
+			<td width="85%" class="ObjectDetailsValue">22.12.2022 22:43:43</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">27.12.2022 09:33:15</td>
+			<td class="ObjectDetailsValue">23.12.2022 11:03:41</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,14 +87,14 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{0726DC85-55C2-499c-A028-A9C615562F93}</td>
+			<td class="ObjectDetailsValue">{02D77235-39C4-4a19-A4AC-027FE575C1D5}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA193.htm">Handle Maintenance Mode Exit</a>, <a href="EA195.htm">Use Cases</a>, <a href="../EA25.htm">FUSA Requirements</a></td>
+			<td class="ObjectDetailsValue"><a href="../EA26.htm">FUSA Requirements</a>, <a href="EA195.htm">Handle FPGA Frame Error</a>, <a href="EA205.htm">Use Cases</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Pre-conditions:&lt;br/&gt;- Power state = POWER_ON&lt;br/&gt;- Operational state = MAINTENANCE&lt;br/&gt;&lt;br/&gt;Scenario:&lt;br/&gt;- IDCC sends set_maintenance_mode message with Exit attribute.&lt;br/&gt;- Display maintenance mode handler enables the LCD backlight.&lt;br/&gt;- Display maintenance mode handler exits from the maintenance mode state.&lt;br/&gt;- IDCC sends the operational mode to Parking state.&lt;br/&gt;&lt;br/&gt;Post-conditions:&lt;br/&gt;Operational state = OPERATIONAL - PARKING&#160;&#160;MODE&lt;br/&gt;LCD backlight on&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Pre-conditions:&lt;br/&gt;- Camera serializer and Display deserializer are locked.&lt;br/&gt;- Image Sensor is in streaming state&lt;br/&gt;- Power state = POWER_ON&lt;br/&gt;- Operational state = PRIMARY_OPERATION&lt;br/&gt;&lt;br/&gt;Scenario:&lt;br/&gt;- When one of the frame error conditions (frozen image, delayed image, orientation failure) is detected by the FPGA hardware, frame error event is sent to the display firmware.&lt;br/&gt;- Frame error handler sets the operational state to CMS_FAILURE and returns it to IDCC when it is queried.&lt;br/&gt;- Frame error handler disables the LCD backlight&lt;br/&gt;- Display fw sets the related diagnostic code and returns it to IDCC when it is queried.&lt;br/&gt;- IDCC&#160;&#160;diagnostic data query period is&#160;&#160;100msec.&lt;br/&gt;- IDCC&#160;&#160;operational mode query period is&#160;&#160;100msec.&lt;br/&gt;&lt;br/&gt;Post-conditions:&lt;br/&gt;Operational state = CMS_FAILURE&lt;br/&gt;LCD backlight off&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -110,13 +110,13 @@ function nameClassifier(name, separator)
 					<td width="50%" class="TableHeading">Message</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Maintenance Mode Exit</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_LCD_Backlight_Enable</td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Frame Error</a></td>
+					<td width="50%" class="TableRow" valign="top">Display_State_Transition</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1719" onclick="parent.toggleDiv('detailsDIVMessage1719', 'DetailsImageMessage1719')" />Details:
-							<div id="detailsDIVMessage1719" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1755" onclick="parent.toggleDiv('detailsDIVMessage1755', 'DetailsImageMessage1755')" />Details:
+							<div id="detailsDIVMessage1755" class="DetailsDiv" >
 							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -124,13 +124,41 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Maintenance Mode Exit</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_State_Transition</td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Frame Error</a></td>
+					<td width="50%" class="TableRow" valign="top">Display_LCD_Backlight_Disable</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1720" onclick="parent.toggleDiv('detailsDIVMessage1720', 'DetailsImageMessage1720')" />Details:
-							<div id="detailsDIVMessage1720" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1756" onclick="parent.toggleDiv('detailsDIVMessage1756', 'DetailsImageMessage1756')" />Details:
+							<div id="detailsDIVMessage1756" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Frame Error</a></td>
+					<td width="50%" class="TableRow" valign="top">FPGA_Frame_Error_Detected</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1757" onclick="parent.toggleDiv('detailsDIVMessage1757', 'DetailsImageMessage1757')" />Details:
+							<div id="detailsDIVMessage1757" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Frame Error</a></td>
+					<td width="50%" class="TableRow" valign="top">FPGA_Frame_Error_Event</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1758" onclick="parent.toggleDiv('detailsDIVMessage1758', 'DetailsImageMessage1758')" />Details:
+							<div id="detailsDIVMessage1758" class="DetailsDiv" >
 							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -147,13 +175,13 @@ function nameClassifier(name, separator)
 					<td width="50%" class="TableHeading">Message</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA225.htm">IDCC</a></td>
-					<td width="50%" class="TableRow" valign="top">set_maintenance_mode</td>
+					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA235.htm">IDCC</a></td>
+					<td width="50%" class="TableRow" valign="top">GetErrorCode</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1721" onclick="parent.toggleDiv('detailsDIVMessage1721', 'DetailsImageMessage1721')" />Details:
-							<div id="detailsDIVMessage1721" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1759" onclick="parent.toggleDiv('detailsDIVMessage1759', 'DetailsImageMessage1759')" />Details:
+							<div id="detailsDIVMessage1759" class="DetailsDiv" >
 							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -161,27 +189,69 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Maintenance Mode Exit</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_LCD_Backlight_Enable</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1722" onclick="parent.toggleDiv('detailsDIVMessage1722', 'DetailsImageMessage1722')" />Details:
-							<div id="detailsDIVMessage1722" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Maintenance Mode Exit</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Frame Error</a></td>
 					<td width="50%" class="TableRow" valign="top">Display_State_Transition</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1723" onclick="parent.toggleDiv('detailsDIVMessage1723', 'DetailsImageMessage1723')" />Details:
-							<div id="detailsDIVMessage1723" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1760" onclick="parent.toggleDiv('detailsDIVMessage1760', 'DetailsImageMessage1760')" />Details:
+							<div id="detailsDIVMessage1760" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Frame Error</a></td>
+					<td width="50%" class="TableRow" valign="top">Display_LCD_Backlight_Disable</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1761" onclick="parent.toggleDiv('detailsDIVMessage1761', 'DetailsImageMessage1761')" />Details:
+							<div id="detailsDIVMessage1761" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Frame Error</a></td>
+					<td width="50%" class="TableRow" valign="top">FPGA_Frame_Error_Detected</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1762" onclick="parent.toggleDiv('detailsDIVMessage1762', 'DetailsImageMessage1762')" />Details:
+							<div id="detailsDIVMessage1762" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA235.htm">IDCC</a></td>
+					<td width="50%" class="TableRow" valign="top">GetOperationalState</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1763" onclick="parent.toggleDiv('detailsDIVMessage1763', 'DetailsImageMessage1763')" />Details:
+							<div id="detailsDIVMessage1763" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA216.htm">Handle Frame Error</a></td>
+					<td width="50%" class="TableRow" valign="top">FPGA_Frame_Error_Event</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage1764" onclick="parent.toggleDiv('detailsDIVMessage1764', 'DetailsImageMessage1764')" />Details:
+							<div id="detailsDIVMessage1764" class="DetailsDiv" >
 							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -214,9 +284,72 @@ function nameClassifier(name, separator)
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA211.htm">Handle Maintenance Mode</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA185.htm">«Gereksinim» [YTB111] Frozen Image</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA191.htm">«Gereksinim» [YTB126] CMS Failure Action Time Constraint</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA183.htm">«Gereksinim» [YTB106] Delayed Image</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA187.htm">«Gereksinim» [YTB117] Image Orientation Failure</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA189.htm">«Gereksinim» [YTB122] CMS Failure</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA34.htm">«NavigationCell» </a></td>
+					<td width="10%" class="TableRow" valign="top">Text</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA36.htm">«NavigationCell» </a></td>
+					<td width="10%" class="TableRow" valign="top">Text</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA173.htm">«Gereksinim» [YTB129] CMS Failure State</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA217.htm">Handle Image Fault</a></td>
 					<td width="10%" class="TableRow" valign="top">UseCase</td>
 					<td width="10%" class="TableRow" valign="top">Extends</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA170.htm">«Gereksinim» [YTB125] CMS Failure Action</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
 					<td width="10%" class="TableRow" valign="top">To</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
@@ -228,7 +361,14 @@ function nameClassifier(name, separator)
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA167.htm">«Gereksinim» [YTB133] Maintenance Mode</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../../EA3/EA3/EA2/EA2/EA4841.htm">Frame Error</a></td>
+					<td width="10%" class="TableRow" valign="top">Package</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA3/EA172.htm">«Gereksinim» [YTB128] CMS Failure state transition</a></td>
 					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
 					<td width="10%" class="TableRow" valign="top">Dependency</td>
 					<td width="10%" class="TableRow" valign="top">To</td>

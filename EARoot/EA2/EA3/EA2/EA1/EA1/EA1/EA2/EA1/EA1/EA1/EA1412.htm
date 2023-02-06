@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>include::FreeRTOS::xSTATIC_TCB</title>
+<title>include::queue</title>
 <link href="../../../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("xSTATIC_TCB", " : "))</script>  : Public  &lt;&lt;struct&gt;&gt; Class</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("queue", " : "))</script>  : Public   Class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">30.07.2022 12:28:14</td>
+			<td width="85%" class="ObjectDetailsValue">30.07.2022 12:28:21</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">30.07.2022 12:28:16</td>
+			<td class="ObjectDetailsValue">30.07.2022 12:28:21</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,1099 +87,2588 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{1CDCFA50-8195-47ee-AC69-856809C0CF9E}</td>
+			<td class="ObjectDetailsValue">{A797730C-B74E-40dc-A1D5-954F4181D5B2}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA1361.htm">include</a></td>
+			<td class="ObjectDetailsValue"><a href="EA1399.htm">include</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">In line with software engineering best practice, especially when supplying a library that is likely to change in future versions, FreeRTOS implements a strict data hiding policy.&#160;&#160;This means the Task structure used internally by FreeRTOS is not accessible to application code.&#160;&#160;However, if the application writer wants to statically allocate the memory required to create a task then the size of the task object needs to be know.&#160;&#160;The StaticTask_t structure below is provided for this purpose.&#160;&#160;Its sizes and alignment requirements are guaranteed to match those of the genuine structure, no matter which architecture is being used, and no matter how the values in FreeRTOSConfig.h are set.&#160;&#160;Its contents are somewhat obfuscated in the hope users will recognise that it would be unwise to make direct use of the structure members.&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Type by which queues are referenced.&#160;&#160;For example, a call to xQueueCreate() returns an QueueHandle_t variable that can then be used as a parameter to xQueueSend(), xQueueReceive(), etc.&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
-			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
-			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
-			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 		</ul>
-<div class="ItemBody" id="AttributesTable">
+<div class="ItemBody" id="OperationsTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
-			<td width="100%" class="TableHeading">Attribute</td>
+			<td width="100%" class="TableHeading">Operation</td>
 		</tr>
 						<tr>
 				<td width="100%" class="TableRow">
-					<i>Public void*</i><br /><strong>&nbsp;&nbsp;pxDummy1</strong>
+					<i>Public</i><br />
+					<strong>xQueueGenericSend</strong>(					<a href="#" onclick="parent.toggleData('param{E1CB2FC2-B4D9-44a2-A6A8-DBA92E0F3DBA}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E1CB2FC2-B4D9-44a2-A6A8-DBA92E0F3DBA}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E1CB2FC2-B4D9-44a2-A6A8-DBA92E0F3DBA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E1CB2FC2-B4D9-44a2-A6A8-DBA92E0F3DBA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E1CB2FC2-B4D9-44a2-A6A8-DBA92E0F3DBA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E1CB2FC2-B4D9-44a2-A6A8-DBA92E0F3DBA}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{2B59A341-3058-4029-8519-2FCE5305DCC5}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2B59A341-3058-4029-8519-2FCE5305DCC5}" border="0" />pvItemToQueue: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2B59A341-3058-4029-8519-2FCE5305DCC5}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2B59A341-3058-4029-8519-2FCE5305DCC5}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2B59A341-3058-4029-8519-2FCE5305DCC5}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2B59A341-3058-4029-8519-2FCE5305DCC5}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{6AD74AC2-AFE3-42c6-986D-01414B7FE20B}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6AD74AC2-AFE3-42c6-986D-01414B7FE20B}" border="0" />xTicksToWait: <a href="../EA2/EA1/EA1/EA1466.htm">TickType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6AD74AC2-AFE3-42c6-986D-01414B7FE20B}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6AD74AC2-AFE3-42c6-986D-01414B7FE20B}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6AD74AC2-AFE3-42c6-986D-01414B7FE20B}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6AD74AC2-AFE3-42c6-986D-01414B7FE20B}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{4516D7B4-0313-46a7-8502-AF9D3005D340}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{4516D7B4-0313-46a7-8502-AF9D3005D340}" border="0" />xCopyPosition: <a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{4516D7B4-0313-46a7-8502-AF9D3005D340}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4516D7B4-0313-46a7-8502-AF9D3005D340}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{4516D7B4-0313-46a7-8502-AF9D3005D340}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4516D7B4-0313-46a7-8502-AF9D3005D340}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3375')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3375" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3375_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3159" onclick="parent.toggleDiv('detailsDIVOperations3159','DetailsImageOperations3159')" />Details:
+						<div id="detailsDIVOperations3159" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
 							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3375_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3375_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3375_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3375_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3375_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3375_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3375_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
 						</tr>
 					</table>
 					
 					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public xMPU_SETTINGS</i><br /><strong>&nbsp;&nbsp;xDummy2</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3376')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3376" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes3376_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3376_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3376_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3376_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3376_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3376_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3376_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3376_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public <a href="EA1402.htm">StaticListItem_t</a></i><br /><strong>&nbsp;&nbsp;xDummy3</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3377')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3377" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3377_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3377_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3377_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3377_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3377_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3377_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3377_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3377_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public <a href="../EA2/EA1/EA1/EA1429.htm">UBaseType_t</a></i><br /><strong>&nbsp;&nbsp;uxDummy5</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3378')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3378" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3378_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3378_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3378_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3378_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3378_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3378_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3378_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3378_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public void*</i><br /><strong>&nbsp;&nbsp;pxDummy6</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3379')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3379" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3379_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3379_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3379_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3379_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3379_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3379_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3379_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3379_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public uint8_t</i><br /><strong>&nbsp;&nbsp;ucDummy7</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3380')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3380" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3380_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3380_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3380_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3380_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3380_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3380_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3380_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3380_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public void*</i><br /><strong>&nbsp;&nbsp;pxDummy8</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3381')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3381" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3381_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3381_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3381_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3381_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3381_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3381_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3381_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3381_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public <a href="../EA2/EA1/EA1/EA1429.htm">UBaseType_t</a></i><br /><strong>&nbsp;&nbsp;uxDummy9</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3382')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3382" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3382_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3382_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3382_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3382_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3382_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3382_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3382_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3382_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public <a href="../EA2/EA1/EA1/EA1429.htm">UBaseType_t</a></i><br /><strong>&nbsp;&nbsp;uxDummy10</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3383')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3383" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3383_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3383_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3383_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3383_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3383_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3383_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3383_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3383_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public <a href="../EA2/EA1/EA1/EA1429.htm">UBaseType_t</a></i><br /><strong>&nbsp;&nbsp;uxDummy12</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3384')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3384" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3384_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3384_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3384_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3384_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3384_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3384_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3384_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3384_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public void*</i><br /><strong>&nbsp;&nbsp;pxDummy14</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3385')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3385" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3385_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3385_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3385_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3385_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3385_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3385_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3385_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3385_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public void*</i><br /><strong>&nbsp;&nbsp;pvDummy15</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3386')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3386" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3386_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3386_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3386_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3386_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3386_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3386_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3386_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3386_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public uint32_t</i><br /><strong>&nbsp;&nbsp;ulDummy16</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3387')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3387" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3387_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3387_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3387_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3387_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3387_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3387_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3387_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3387_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public _reent</i><br /><strong>&nbsp;&nbsp;xDummy17</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3388')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3388" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3388_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3388_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3388_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td>&lt;&lt;struct&gt;&gt;</td>
-						</tr>
-						<tr id="DetailsImageAttributes3388_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3388_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3388_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3388_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3388_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public uint32_t</i><br /><strong>&nbsp;&nbsp;ulDummy18</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3389')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3389" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3389_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3389_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3389_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3389_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3389_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3389_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3389_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3389_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public uint8_t</i><br /><strong>&nbsp;&nbsp;ucDummy19</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3390')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3390" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3390_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3390_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3390_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3390_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3390_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3390_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3390_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3390_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public uint8_t</i><br /><strong>&nbsp;&nbsp;uxDummy20</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3391')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3391" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3391_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3391_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3391_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3391_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3391_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3391_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3391_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3391_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public uint8_t</i><br /><strong>&nbsp;&nbsp;ucDummy21</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3392')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3392" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3392_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3392_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3392_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3392_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3392_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3392_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3392_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3392_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public int</i><br /><strong>&nbsp;&nbsp;iDummy22</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes3393')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes3393" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes3393_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3393_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3393_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3393_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3393_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes3393_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes3393_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes3393_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						&nbsp;
-						
-				</td>
-			</tr>
-	</table>
-</div>
-		<div class="ItemBody" id="AssociationsToTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="40%" class="TableHeading">Element</td>
-					<td width="30%" class="TableHeading">Source Role</td>
-					<td width="30%" class="TableHeading">Target Role</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA1402.htm">«typedef» StaticListItem_t</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> xDummy3<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3394" onclick="parent.toggleDiv('detailsDIVLink3394','DetailsImageLink3394')" />Details:
-							<div id="detailsDIVLink3394" class="DetailsDiv" >
-							&nbsp;
-							</div>
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA1/EA1/EA1429.htm">«typedef» UBaseType_t</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> uxDummy10<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3395" onclick="parent.toggleDiv('detailsDIVLink3395','DetailsImageLink3395')" />Details:
-							<div id="detailsDIVLink3395" class="DetailsDiv" >
-							&nbsp;
-							</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueuePeek</strong>(					<a href="#" onclick="parent.toggleData('param{E42B8D56-F2BF-4198-AAA8-6C177D97635D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E42B8D56-F2BF-4198-AAA8-6C177D97635D}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E42B8D56-F2BF-4198-AAA8-6C177D97635D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E42B8D56-F2BF-4198-AAA8-6C177D97635D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E42B8D56-F2BF-4198-AAA8-6C177D97635D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E42B8D56-F2BF-4198-AAA8-6C177D97635D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{79ADE2B6-2EDE-48a6-8A2D-9710BB6B6C9D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{79ADE2B6-2EDE-48a6-8A2D-9710BB6B6C9D}" border="0" />pvBuffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{79ADE2B6-2EDE-48a6-8A2D-9710BB6B6C9D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{79ADE2B6-2EDE-48a6-8A2D-9710BB6B6C9D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{79ADE2B6-2EDE-48a6-8A2D-9710BB6B6C9D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{79ADE2B6-2EDE-48a6-8A2D-9710BB6B6C9D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{E2A0037A-7843-4c17-AC6B-6A998195E061}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E2A0037A-7843-4c17-AC6B-6A998195E061}" border="0" />xTicksToWait: <a href="../EA2/EA1/EA1/EA1466.htm">TickType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E2A0037A-7843-4c17-AC6B-6A998195E061}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E2A0037A-7843-4c17-AC6B-6A998195E061}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E2A0037A-7843-4c17-AC6B-6A998195E061}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E2A0037A-7843-4c17-AC6B-6A998195E061}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3160" onclick="parent.toggleDiv('detailsDIVOperations3160','DetailsImageOperations3160')" />Details:
+						<div id="detailsDIVOperations3160" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA1/EA1/EA1429.htm">«typedef» UBaseType_t</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> uxDummy12<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3396" onclick="parent.toggleDiv('detailsDIVLink3396','DetailsImageLink3396')" />Details:
-							<div id="detailsDIVLink3396" class="DetailsDiv" >
-							&nbsp;
-							</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueuePeekFromISR</strong>(					<a href="#" onclick="parent.toggleData('param{2A403DB1-C371-4642-A128-D0656D8EC1AB}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2A403DB1-C371-4642-A128-D0656D8EC1AB}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2A403DB1-C371-4642-A128-D0656D8EC1AB}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2A403DB1-C371-4642-A128-D0656D8EC1AB}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2A403DB1-C371-4642-A128-D0656D8EC1AB}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2A403DB1-C371-4642-A128-D0656D8EC1AB}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{C4ABFAFF-1599-4050-9476-841111EC0B3E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{C4ABFAFF-1599-4050-9476-841111EC0B3E}" border="0" />pvBuffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C4ABFAFF-1599-4050-9476-841111EC0B3E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C4ABFAFF-1599-4050-9476-841111EC0B3E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C4ABFAFF-1599-4050-9476-841111EC0B3E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C4ABFAFF-1599-4050-9476-841111EC0B3E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3161" onclick="parent.toggleDiv('detailsDIVOperations3161','DetailsImageOperations3161')" />Details:
+						<div id="detailsDIVOperations3161" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA1/EA1/EA1429.htm">«typedef» UBaseType_t</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> uxDummy9<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3397" onclick="parent.toggleDiv('detailsDIVLink3397','DetailsImageLink3397')" />Details:
-							<div id="detailsDIVLink3397" class="DetailsDiv" >
-							&nbsp;
-							</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueReceive</strong>(					<a href="#" onclick="parent.toggleData('param{B06BAE5D-3F30-4511-A280-D2A6D99E4C51}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{B06BAE5D-3F30-4511-A280-D2A6D99E4C51}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B06BAE5D-3F30-4511-A280-D2A6D99E4C51}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B06BAE5D-3F30-4511-A280-D2A6D99E4C51}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B06BAE5D-3F30-4511-A280-D2A6D99E4C51}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B06BAE5D-3F30-4511-A280-D2A6D99E4C51}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{C2C00BAA-89AC-4297-A72E-FFAD8F26A4B0}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{C2C00BAA-89AC-4297-A72E-FFAD8F26A4B0}" border="0" />pvBuffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C2C00BAA-89AC-4297-A72E-FFAD8F26A4B0}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C2C00BAA-89AC-4297-A72E-FFAD8F26A4B0}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C2C00BAA-89AC-4297-A72E-FFAD8F26A4B0}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C2C00BAA-89AC-4297-A72E-FFAD8F26A4B0}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{A1FDF752-B743-4c88-9B08-AC8EFD026B89}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{A1FDF752-B743-4c88-9B08-AC8EFD026B89}" border="0" />xTicksToWait: <a href="../EA2/EA1/EA1/EA1466.htm">TickType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{A1FDF752-B743-4c88-9B08-AC8EFD026B89}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A1FDF752-B743-4c88-9B08-AC8EFD026B89}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{A1FDF752-B743-4c88-9B08-AC8EFD026B89}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A1FDF752-B743-4c88-9B08-AC8EFD026B89}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3162" onclick="parent.toggleDiv('detailsDIVOperations3162','DetailsImageOperations3162')" />Details:
+						<div id="detailsDIVOperations3162" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA1/EA1/EA1429.htm">«typedef» UBaseType_t</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> uxDummy5<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3398" onclick="parent.toggleDiv('detailsDIVLink3398','DetailsImageLink3398')" />Details:
-							<div id="detailsDIVLink3398" class="DetailsDiv" >
-							&nbsp;
-							</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>uxQueueMessagesWaiting</strong>(					<a href="#" onclick="parent.toggleData('param{8453BB97-570D-4c23-A5BE-A78051F84546}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{8453BB97-570D-4c23-A5BE-A78051F84546}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8453BB97-570D-4c23-A5BE-A78051F84546}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8453BB97-570D-4c23-A5BE-A78051F84546}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8453BB97-570D-4c23-A5BE-A78051F84546}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8453BB97-570D-4c23-A5BE-A78051F84546}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3163" onclick="parent.toggleDiv('detailsDIVOperations3163','DetailsImageOperations3163')" />Details:
+						<div id="detailsDIVOperations3163" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
 						</div>
-					</td>
-				</tr>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>uxQueueSpacesAvailable</strong>(					<a href="#" onclick="parent.toggleData('param{0B266B78-99AE-43e5-BADB-C2AFC01BEB54}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{0B266B78-99AE-43e5-BADB-C2AFC01BEB54}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{0B266B78-99AE-43e5-BADB-C2AFC01BEB54}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0B266B78-99AE-43e5-BADB-C2AFC01BEB54}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{0B266B78-99AE-43e5-BADB-C2AFC01BEB54}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0B266B78-99AE-43e5-BADB-C2AFC01BEB54}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3164" onclick="parent.toggleDiv('detailsDIVOperations3164','DetailsImageOperations3164')" />Details:
+						<div id="detailsDIVOperations3164" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>vQueueDelete</strong>(					<a href="#" onclick="parent.toggleData('param{03A33628-1BA7-47e7-89FC-EC98178AE34A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{03A33628-1BA7-47e7-89FC-EC98178AE34A}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{03A33628-1BA7-47e7-89FC-EC98178AE34A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{03A33628-1BA7-47e7-89FC-EC98178AE34A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{03A33628-1BA7-47e7-89FC-EC98178AE34A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{03A33628-1BA7-47e7-89FC-EC98178AE34A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3165" onclick="parent.toggleDiv('detailsDIVOperations3165','DetailsImageOperations3165')" />Details:
+						<div id="detailsDIVOperations3165" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueGenericSendFromISR</strong>(					<a href="#" onclick="parent.toggleData('param{1B16FA94-BB79-4a6e-8055-3FF063C5D4D0}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{1B16FA94-BB79-4a6e-8055-3FF063C5D4D0}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{1B16FA94-BB79-4a6e-8055-3FF063C5D4D0}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1B16FA94-BB79-4a6e-8055-3FF063C5D4D0}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{1B16FA94-BB79-4a6e-8055-3FF063C5D4D0}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1B16FA94-BB79-4a6e-8055-3FF063C5D4D0}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{971614A5-A6A2-40ff-8505-477B7132D82A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{971614A5-A6A2-40ff-8505-477B7132D82A}" border="0" />pvItemToQueue: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{971614A5-A6A2-40ff-8505-477B7132D82A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{971614A5-A6A2-40ff-8505-477B7132D82A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{971614A5-A6A2-40ff-8505-477B7132D82A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{971614A5-A6A2-40ff-8505-477B7132D82A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{E48E0E62-A3E1-41be-97F3-6246166AFFC2}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E48E0E62-A3E1-41be-97F3-6246166AFFC2}" border="0" />pxHigherPriorityTaskWoken: BaseType_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E48E0E62-A3E1-41be-97F3-6246166AFFC2}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E48E0E62-A3E1-41be-97F3-6246166AFFC2}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E48E0E62-A3E1-41be-97F3-6246166AFFC2}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E48E0E62-A3E1-41be-97F3-6246166AFFC2}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{D952DC5F-8774-4581-BDBC-A7C5A0252010}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D952DC5F-8774-4581-BDBC-A7C5A0252010}" border="0" />xCopyPosition: <a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D952DC5F-8774-4581-BDBC-A7C5A0252010}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D952DC5F-8774-4581-BDBC-A7C5A0252010}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D952DC5F-8774-4581-BDBC-A7C5A0252010}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D952DC5F-8774-4581-BDBC-A7C5A0252010}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3166" onclick="parent.toggleDiv('detailsDIVOperations3166','DetailsImageOperations3166')" />Details:
+						<div id="detailsDIVOperations3166" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueGiveFromISR</strong>(					<a href="#" onclick="parent.toggleData('param{EF4D2A6A-F8A1-4b3e-868B-2C330B3C646E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{EF4D2A6A-F8A1-4b3e-868B-2C330B3C646E}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{EF4D2A6A-F8A1-4b3e-868B-2C330B3C646E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EF4D2A6A-F8A1-4b3e-868B-2C330B3C646E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{EF4D2A6A-F8A1-4b3e-868B-2C330B3C646E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EF4D2A6A-F8A1-4b3e-868B-2C330B3C646E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{ECACE65E-8571-4432-96FA-75D3B9FE92B8}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{ECACE65E-8571-4432-96FA-75D3B9FE92B8}" border="0" />pxHigherPriorityTaskWoken: BaseType_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{ECACE65E-8571-4432-96FA-75D3B9FE92B8}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{ECACE65E-8571-4432-96FA-75D3B9FE92B8}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{ECACE65E-8571-4432-96FA-75D3B9FE92B8}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{ECACE65E-8571-4432-96FA-75D3B9FE92B8}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3167" onclick="parent.toggleDiv('detailsDIVOperations3167','DetailsImageOperations3167')" />Details:
+						<div id="detailsDIVOperations3167" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueReceiveFromISR</strong>(					<a href="#" onclick="parent.toggleData('param{0BBC6169-FFA0-49dd-8713-EF11E514254B}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{0BBC6169-FFA0-49dd-8713-EF11E514254B}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{0BBC6169-FFA0-49dd-8713-EF11E514254B}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0BBC6169-FFA0-49dd-8713-EF11E514254B}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{0BBC6169-FFA0-49dd-8713-EF11E514254B}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0BBC6169-FFA0-49dd-8713-EF11E514254B}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{60B10731-A072-4a24-B558-8CA362AFF793}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{60B10731-A072-4a24-B558-8CA362AFF793}" border="0" />pvBuffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{60B10731-A072-4a24-B558-8CA362AFF793}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{60B10731-A072-4a24-B558-8CA362AFF793}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{60B10731-A072-4a24-B558-8CA362AFF793}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{60B10731-A072-4a24-B558-8CA362AFF793}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{A7CDD1AA-67AF-4a3e-A7C3-119A94CE2CD1}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{A7CDD1AA-67AF-4a3e-A7C3-119A94CE2CD1}" border="0" />pxHigherPriorityTaskWoken: BaseType_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{A7CDD1AA-67AF-4a3e-A7C3-119A94CE2CD1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A7CDD1AA-67AF-4a3e-A7C3-119A94CE2CD1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{A7CDD1AA-67AF-4a3e-A7C3-119A94CE2CD1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A7CDD1AA-67AF-4a3e-A7C3-119A94CE2CD1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3168" onclick="parent.toggleDiv('detailsDIVOperations3168','DetailsImageOperations3168')" />Details:
+						<div id="detailsDIVOperations3168" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueIsQueueEmptyFromISR</strong>(					<a href="#" onclick="parent.toggleData('param{3DEAFB93-4A28-4313-8E90-70849BF17534}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{3DEAFB93-4A28-4313-8E90-70849BF17534}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{3DEAFB93-4A28-4313-8E90-70849BF17534}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3DEAFB93-4A28-4313-8E90-70849BF17534}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{3DEAFB93-4A28-4313-8E90-70849BF17534}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3DEAFB93-4A28-4313-8E90-70849BF17534}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3169" onclick="parent.toggleDiv('detailsDIVOperations3169','DetailsImageOperations3169')" />Details:
+						<div id="detailsDIVOperations3169" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueIsQueueFullFromISR</strong>(					<a href="#" onclick="parent.toggleData('param{7F3DDBC6-9885-4843-B4AF-07DDDB365E36}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{7F3DDBC6-9885-4843-B4AF-07DDDB365E36}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{7F3DDBC6-9885-4843-B4AF-07DDDB365E36}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7F3DDBC6-9885-4843-B4AF-07DDDB365E36}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{7F3DDBC6-9885-4843-B4AF-07DDDB365E36}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7F3DDBC6-9885-4843-B4AF-07DDDB365E36}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3170" onclick="parent.toggleDiv('detailsDIVOperations3170','DetailsImageOperations3170')" />Details:
+						<div id="detailsDIVOperations3170" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>uxQueueMessagesWaitingFromISR</strong>(					<a href="#" onclick="parent.toggleData('param{11EC321F-BAAF-48a0-AB00-CAA005B7E24F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{11EC321F-BAAF-48a0-AB00-CAA005B7E24F}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{11EC321F-BAAF-48a0-AB00-CAA005B7E24F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{11EC321F-BAAF-48a0-AB00-CAA005B7E24F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{11EC321F-BAAF-48a0-AB00-CAA005B7E24F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{11EC321F-BAAF-48a0-AB00-CAA005B7E24F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3171" onclick="parent.toggleDiv('detailsDIVOperations3171','DetailsImageOperations3171')" />Details:
+						<div id="detailsDIVOperations3171" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueCRSendFromISR</strong>(					<a href="#" onclick="parent.toggleData('param{D9C2047D-FAF2-4dd6-A78A-E7F2424714EF}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D9C2047D-FAF2-4dd6-A78A-E7F2424714EF}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D9C2047D-FAF2-4dd6-A78A-E7F2424714EF}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D9C2047D-FAF2-4dd6-A78A-E7F2424714EF}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D9C2047D-FAF2-4dd6-A78A-E7F2424714EF}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D9C2047D-FAF2-4dd6-A78A-E7F2424714EF}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{697C87D5-64A8-48e0-A5E5-46055043F154}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{697C87D5-64A8-48e0-A5E5-46055043F154}" border="0" />pvItemToQueue: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{697C87D5-64A8-48e0-A5E5-46055043F154}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{697C87D5-64A8-48e0-A5E5-46055043F154}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{697C87D5-64A8-48e0-A5E5-46055043F154}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{697C87D5-64A8-48e0-A5E5-46055043F154}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{7528C076-BC26-4f1a-9EB3-9B7608285ACC}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{7528C076-BC26-4f1a-9EB3-9B7608285ACC}" border="0" />xCoRoutinePreviouslyWoken: <a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{7528C076-BC26-4f1a-9EB3-9B7608285ACC}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7528C076-BC26-4f1a-9EB3-9B7608285ACC}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{7528C076-BC26-4f1a-9EB3-9B7608285ACC}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7528C076-BC26-4f1a-9EB3-9B7608285ACC}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3172" onclick="parent.toggleDiv('detailsDIVOperations3172','DetailsImageOperations3172')" />Details:
+						<div id="detailsDIVOperations3172" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueCRReceiveFromISR</strong>(					<a href="#" onclick="parent.toggleData('param{EBB94172-8953-43b9-A946-3E295C87353D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{EBB94172-8953-43b9-A946-3E295C87353D}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{EBB94172-8953-43b9-A946-3E295C87353D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EBB94172-8953-43b9-A946-3E295C87353D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{EBB94172-8953-43b9-A946-3E295C87353D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EBB94172-8953-43b9-A946-3E295C87353D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{161D9100-6E1E-4faf-B493-86A477B45904}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{161D9100-6E1E-4faf-B493-86A477B45904}" border="0" />pvBuffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{161D9100-6E1E-4faf-B493-86A477B45904}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{161D9100-6E1E-4faf-B493-86A477B45904}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{161D9100-6E1E-4faf-B493-86A477B45904}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{161D9100-6E1E-4faf-B493-86A477B45904}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{85914068-3F2C-43f2-947E-BC6644BE52A2}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{85914068-3F2C-43f2-947E-BC6644BE52A2}" border="0" />pxTaskWoken: BaseType_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{85914068-3F2C-43f2-947E-BC6644BE52A2}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{85914068-3F2C-43f2-947E-BC6644BE52A2}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{85914068-3F2C-43f2-947E-BC6644BE52A2}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{85914068-3F2C-43f2-947E-BC6644BE52A2}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3173" onclick="parent.toggleDiv('detailsDIVOperations3173','DetailsImageOperations3173')" />Details:
+						<div id="detailsDIVOperations3173" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueCRSend</strong>(					<a href="#" onclick="parent.toggleData('param{D69318D8-2983-402f-8144-330A744AEF01}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D69318D8-2983-402f-8144-330A744AEF01}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D69318D8-2983-402f-8144-330A744AEF01}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D69318D8-2983-402f-8144-330A744AEF01}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D69318D8-2983-402f-8144-330A744AEF01}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D69318D8-2983-402f-8144-330A744AEF01}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{4D8432DF-9578-4f69-AFFC-FB3A6513E530}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{4D8432DF-9578-4f69-AFFC-FB3A6513E530}" border="0" />pvItemToQueue: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{4D8432DF-9578-4f69-AFFC-FB3A6513E530}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4D8432DF-9578-4f69-AFFC-FB3A6513E530}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{4D8432DF-9578-4f69-AFFC-FB3A6513E530}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4D8432DF-9578-4f69-AFFC-FB3A6513E530}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{163DF968-4107-4acf-B5CA-F3F37F58A238}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{163DF968-4107-4acf-B5CA-F3F37F58A238}" border="0" />xTicksToWait: <a href="../EA2/EA1/EA1/EA1466.htm">TickType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{163DF968-4107-4acf-B5CA-F3F37F58A238}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{163DF968-4107-4acf-B5CA-F3F37F58A238}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{163DF968-4107-4acf-B5CA-F3F37F58A238}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{163DF968-4107-4acf-B5CA-F3F37F58A238}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3174" onclick="parent.toggleDiv('detailsDIVOperations3174','DetailsImageOperations3174')" />Details:
+						<div id="detailsDIVOperations3174" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueCRReceive</strong>(					<a href="#" onclick="parent.toggleData('param{27A837C8-D366-46e1-9C26-EC08D49DCB50}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{27A837C8-D366-46e1-9C26-EC08D49DCB50}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{27A837C8-D366-46e1-9C26-EC08D49DCB50}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{27A837C8-D366-46e1-9C26-EC08D49DCB50}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{27A837C8-D366-46e1-9C26-EC08D49DCB50}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{27A837C8-D366-46e1-9C26-EC08D49DCB50}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{61A6F365-2335-41b5-BB47-CCFB10752AA3}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{61A6F365-2335-41b5-BB47-CCFB10752AA3}" border="0" />pvBuffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{61A6F365-2335-41b5-BB47-CCFB10752AA3}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{61A6F365-2335-41b5-BB47-CCFB10752AA3}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{61A6F365-2335-41b5-BB47-CCFB10752AA3}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{61A6F365-2335-41b5-BB47-CCFB10752AA3}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{712B59E9-B7C0-4379-B35E-78837D836F65}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{712B59E9-B7C0-4379-B35E-78837D836F65}" border="0" />xTicksToWait: <a href="../EA2/EA1/EA1/EA1466.htm">TickType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{712B59E9-B7C0-4379-B35E-78837D836F65}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{712B59E9-B7C0-4379-B35E-78837D836F65}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{712B59E9-B7C0-4379-B35E-78837D836F65}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{712B59E9-B7C0-4379-B35E-78837D836F65}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3175" onclick="parent.toggleDiv('detailsDIVOperations3175','DetailsImageOperations3175')" />Details:
+						<div id="detailsDIVOperations3175" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueCreateMutex</strong>(					<a href="#" onclick="parent.toggleData('param{6B4A41D2-20C5-4a8a-890E-50604BCAF189}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6B4A41D2-20C5-4a8a-890E-50604BCAF189}" border="0" />ucQueueType: uint8_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6B4A41D2-20C5-4a8a-890E-50604BCAF189}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6B4A41D2-20C5-4a8a-890E-50604BCAF189}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6B4A41D2-20C5-4a8a-890E-50604BCAF189}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6B4A41D2-20C5-4a8a-890E-50604BCAF189}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1419.htm">QueueHandle_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3176" onclick="parent.toggleDiv('detailsDIVOperations3176','DetailsImageOperations3176')" />Details:
+						<div id="detailsDIVOperations3176" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueCreateMutexStatic</strong>(					<a href="#" onclick="parent.toggleData('param{0C49310B-C575-4155-9D0C-E39A93580EFA}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{0C49310B-C575-4155-9D0C-E39A93580EFA}" border="0" />ucQueueType: uint8_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{0C49310B-C575-4155-9D0C-E39A93580EFA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0C49310B-C575-4155-9D0C-E39A93580EFA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{0C49310B-C575-4155-9D0C-E39A93580EFA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{0C49310B-C575-4155-9D0C-E39A93580EFA}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{A6973967-0409-41c9-A166-42CD064B9297}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{A6973967-0409-41c9-A166-42CD064B9297}" border="0" />pxStaticQueue: StaticQueue_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{A6973967-0409-41c9-A166-42CD064B9297}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A6973967-0409-41c9-A166-42CD064B9297}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{A6973967-0409-41c9-A166-42CD064B9297}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A6973967-0409-41c9-A166-42CD064B9297}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1419.htm">QueueHandle_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3177" onclick="parent.toggleDiv('detailsDIVOperations3177','DetailsImageOperations3177')" />Details:
+						<div id="detailsDIVOperations3177" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueCreateCountingSemaphore</strong>(					<a href="#" onclick="parent.toggleData('param{99D70E33-0B79-436a-92A1-4C79DF726123}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{99D70E33-0B79-436a-92A1-4C79DF726123}" border="0" />uxMaxCount: <a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{99D70E33-0B79-436a-92A1-4C79DF726123}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{99D70E33-0B79-436a-92A1-4C79DF726123}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{99D70E33-0B79-436a-92A1-4C79DF726123}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{99D70E33-0B79-436a-92A1-4C79DF726123}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{8DEBD84C-A628-4f08-9D6E-D6C864E92F4C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{8DEBD84C-A628-4f08-9D6E-D6C864E92F4C}" border="0" />uxInitialCount: <a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8DEBD84C-A628-4f08-9D6E-D6C864E92F4C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8DEBD84C-A628-4f08-9D6E-D6C864E92F4C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8DEBD84C-A628-4f08-9D6E-D6C864E92F4C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8DEBD84C-A628-4f08-9D6E-D6C864E92F4C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1419.htm">QueueHandle_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3178" onclick="parent.toggleDiv('detailsDIVOperations3178','DetailsImageOperations3178')" />Details:
+						<div id="detailsDIVOperations3178" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueCreateCountingSemaphoreStatic</strong>(					<a href="#" onclick="parent.toggleData('param{20119DB7-8698-4c48-A7D8-ECFD17D324C3}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{20119DB7-8698-4c48-A7D8-ECFD17D324C3}" border="0" />uxMaxCount: <a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{20119DB7-8698-4c48-A7D8-ECFD17D324C3}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{20119DB7-8698-4c48-A7D8-ECFD17D324C3}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{20119DB7-8698-4c48-A7D8-ECFD17D324C3}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{20119DB7-8698-4c48-A7D8-ECFD17D324C3}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{53454CF8-91B7-48b1-9FD1-0DD0FBDA0645}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{53454CF8-91B7-48b1-9FD1-0DD0FBDA0645}" border="0" />uxInitialCount: <a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{53454CF8-91B7-48b1-9FD1-0DD0FBDA0645}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{53454CF8-91B7-48b1-9FD1-0DD0FBDA0645}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{53454CF8-91B7-48b1-9FD1-0DD0FBDA0645}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{53454CF8-91B7-48b1-9FD1-0DD0FBDA0645}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{2BA0711A-0462-4ac0-A185-E394C146DA4E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2BA0711A-0462-4ac0-A185-E394C146DA4E}" border="0" />pxStaticQueue: StaticQueue_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2BA0711A-0462-4ac0-A185-E394C146DA4E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2BA0711A-0462-4ac0-A185-E394C146DA4E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2BA0711A-0462-4ac0-A185-E394C146DA4E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2BA0711A-0462-4ac0-A185-E394C146DA4E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1419.htm">QueueHandle_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3179" onclick="parent.toggleDiv('detailsDIVOperations3179','DetailsImageOperations3179')" />Details:
+						<div id="detailsDIVOperations3179" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueSemaphoreTake</strong>(					<a href="#" onclick="parent.toggleData('param{B64190A8-E88B-466b-AF4F-12A8E269134C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{B64190A8-E88B-466b-AF4F-12A8E269134C}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B64190A8-E88B-466b-AF4F-12A8E269134C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B64190A8-E88B-466b-AF4F-12A8E269134C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B64190A8-E88B-466b-AF4F-12A8E269134C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B64190A8-E88B-466b-AF4F-12A8E269134C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{E7874C7B-3FB7-4b71-BAAB-90F823B28F41}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E7874C7B-3FB7-4b71-BAAB-90F823B28F41}" border="0" />xTicksToWait: <a href="../EA2/EA1/EA1/EA1466.htm">TickType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E7874C7B-3FB7-4b71-BAAB-90F823B28F41}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E7874C7B-3FB7-4b71-BAAB-90F823B28F41}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E7874C7B-3FB7-4b71-BAAB-90F823B28F41}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E7874C7B-3FB7-4b71-BAAB-90F823B28F41}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3180" onclick="parent.toggleDiv('detailsDIVOperations3180','DetailsImageOperations3180')" />Details:
+						<div id="detailsDIVOperations3180" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueGetMutexHolder</strong>(					<a href="#" onclick="parent.toggleData('param{C2302D8F-455E-47a3-BB49-2A3C985B68A0}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{C2302D8F-455E-47a3-BB49-2A3C985B68A0}" border="0" />xSemaphore: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C2302D8F-455E-47a3-BB49-2A3C985B68A0}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C2302D8F-455E-47a3-BB49-2A3C985B68A0}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C2302D8F-455E-47a3-BB49-2A3C985B68A0}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C2302D8F-455E-47a3-BB49-2A3C985B68A0}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1430.htm">TaskHandle_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3181" onclick="parent.toggleDiv('detailsDIVOperations3181','DetailsImageOperations3181')" />Details:
+						<div id="detailsDIVOperations3181" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueGetMutexHolderFromISR</strong>(					<a href="#" onclick="parent.toggleData('param{E99B5F09-7B60-40bf-AB98-768361421714}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E99B5F09-7B60-40bf-AB98-768361421714}" border="0" />xSemaphore: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E99B5F09-7B60-40bf-AB98-768361421714}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E99B5F09-7B60-40bf-AB98-768361421714}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E99B5F09-7B60-40bf-AB98-768361421714}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E99B5F09-7B60-40bf-AB98-768361421714}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1430.htm">TaskHandle_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3182" onclick="parent.toggleDiv('detailsDIVOperations3182','DetailsImageOperations3182')" />Details:
+						<div id="detailsDIVOperations3182" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueTakeMutexRecursive</strong>(					<a href="#" onclick="parent.toggleData('param{077AAA6B-C988-49b6-9BCE-D5714F03DDE1}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{077AAA6B-C988-49b6-9BCE-D5714F03DDE1}" border="0" />xMutex: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{077AAA6B-C988-49b6-9BCE-D5714F03DDE1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{077AAA6B-C988-49b6-9BCE-D5714F03DDE1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{077AAA6B-C988-49b6-9BCE-D5714F03DDE1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{077AAA6B-C988-49b6-9BCE-D5714F03DDE1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{D0949A0D-79C7-4717-B760-792C5295B674}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D0949A0D-79C7-4717-B760-792C5295B674}" border="0" />xTicksToWait: <a href="../EA2/EA1/EA1/EA1466.htm">TickType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D0949A0D-79C7-4717-B760-792C5295B674}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D0949A0D-79C7-4717-B760-792C5295B674}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D0949A0D-79C7-4717-B760-792C5295B674}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D0949A0D-79C7-4717-B760-792C5295B674}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3183" onclick="parent.toggleDiv('detailsDIVOperations3183','DetailsImageOperations3183')" />Details:
+						<div id="detailsDIVOperations3183" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueGiveMutexRecursive</strong>(					<a href="#" onclick="parent.toggleData('param{8D4B0DF3-E9FF-4ea4-B3D7-0CB388EE02E8}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{8D4B0DF3-E9FF-4ea4-B3D7-0CB388EE02E8}" border="0" />xMutex: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8D4B0DF3-E9FF-4ea4-B3D7-0CB388EE02E8}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8D4B0DF3-E9FF-4ea4-B3D7-0CB388EE02E8}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8D4B0DF3-E9FF-4ea4-B3D7-0CB388EE02E8}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8D4B0DF3-E9FF-4ea4-B3D7-0CB388EE02E8}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3184" onclick="parent.toggleDiv('detailsDIVOperations3184','DetailsImageOperations3184')" />Details:
+						<div id="detailsDIVOperations3184" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>vQueueAddToRegistry</strong>(					<a href="#" onclick="parent.toggleData('param{BB10D415-2497-4cdc-A7AC-CB9E99254F75}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{BB10D415-2497-4cdc-A7AC-CB9E99254F75}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{BB10D415-2497-4cdc-A7AC-CB9E99254F75}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BB10D415-2497-4cdc-A7AC-CB9E99254F75}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{BB10D415-2497-4cdc-A7AC-CB9E99254F75}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BB10D415-2497-4cdc-A7AC-CB9E99254F75}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{D9A5E7AA-F25F-4fab-A7A1-16273D6EA50E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D9A5E7AA-F25F-4fab-A7A1-16273D6EA50E}" border="0" />pcQueueName: char*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D9A5E7AA-F25F-4fab-A7A1-16273D6EA50E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D9A5E7AA-F25F-4fab-A7A1-16273D6EA50E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D9A5E7AA-F25F-4fab-A7A1-16273D6EA50E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D9A5E7AA-F25F-4fab-A7A1-16273D6EA50E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3185" onclick="parent.toggleDiv('detailsDIVOperations3185','DetailsImageOperations3185')" />Details:
+						<div id="detailsDIVOperations3185" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>vQueueUnregisterQueue</strong>(					<a href="#" onclick="parent.toggleData('param{BC1B976A-F45F-425d-924E-479263446A2A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{BC1B976A-F45F-425d-924E-479263446A2A}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{BC1B976A-F45F-425d-924E-479263446A2A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BC1B976A-F45F-425d-924E-479263446A2A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{BC1B976A-F45F-425d-924E-479263446A2A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BC1B976A-F45F-425d-924E-479263446A2A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3186" onclick="parent.toggleDiv('detailsDIVOperations3186','DetailsImageOperations3186')" />Details:
+						<div id="detailsDIVOperations3186" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public const</i><br />
+					<strong>pcQueueGetName</strong>(					<a href="#" onclick="parent.toggleData('param{E9DB0B31-C089-49f1-9301-1089A98478F2}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E9DB0B31-C089-49f1-9301-1089A98478F2}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E9DB0B31-C089-49f1-9301-1089A98478F2}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E9DB0B31-C089-49f1-9301-1089A98478F2}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E9DB0B31-C089-49f1-9301-1089A98478F2}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E9DB0B31-C089-49f1-9301-1089A98478F2}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):char *
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3187" onclick="parent.toggleDiv('detailsDIVOperations3187','DetailsImageOperations3187')" />Details:
+						<div id="detailsDIVOperations3187" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueGenericCreate</strong>(					<a href="#" onclick="parent.toggleData('param{C4A3D18C-6BC3-4d68-8BBF-7DC15DCF35D6}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{C4A3D18C-6BC3-4d68-8BBF-7DC15DCF35D6}" border="0" />uxQueueLength: <a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C4A3D18C-6BC3-4d68-8BBF-7DC15DCF35D6}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C4A3D18C-6BC3-4d68-8BBF-7DC15DCF35D6}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C4A3D18C-6BC3-4d68-8BBF-7DC15DCF35D6}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C4A3D18C-6BC3-4d68-8BBF-7DC15DCF35D6}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{946A6832-DBC6-4ce5-BF97-C56B7D82E7E9}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{946A6832-DBC6-4ce5-BF97-C56B7D82E7E9}" border="0" />uxItemSize: <a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{946A6832-DBC6-4ce5-BF97-C56B7D82E7E9}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{946A6832-DBC6-4ce5-BF97-C56B7D82E7E9}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{946A6832-DBC6-4ce5-BF97-C56B7D82E7E9}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{946A6832-DBC6-4ce5-BF97-C56B7D82E7E9}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{16F4F9EA-617E-4de9-842A-A9680F6A9812}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{16F4F9EA-617E-4de9-842A-A9680F6A9812}" border="0" />ucQueueType: uint8_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{16F4F9EA-617E-4de9-842A-A9680F6A9812}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{16F4F9EA-617E-4de9-842A-A9680F6A9812}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{16F4F9EA-617E-4de9-842A-A9680F6A9812}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{16F4F9EA-617E-4de9-842A-A9680F6A9812}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1419.htm">QueueHandle_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3188" onclick="parent.toggleDiv('detailsDIVOperations3188','DetailsImageOperations3188')" />Details:
+						<div id="detailsDIVOperations3188" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueGenericCreateStatic</strong>(					<a href="#" onclick="parent.toggleData('param{CB9776B0-B8E8-4681-9EE1-4AA1D37DDAB6}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{CB9776B0-B8E8-4681-9EE1-4AA1D37DDAB6}" border="0" />uxQueueLength: <a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{CB9776B0-B8E8-4681-9EE1-4AA1D37DDAB6}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CB9776B0-B8E8-4681-9EE1-4AA1D37DDAB6}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{CB9776B0-B8E8-4681-9EE1-4AA1D37DDAB6}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CB9776B0-B8E8-4681-9EE1-4AA1D37DDAB6}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{8EFB0600-A0E7-490e-9522-5531455F4AFD}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{8EFB0600-A0E7-490e-9522-5531455F4AFD}" border="0" />uxItemSize: <a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8EFB0600-A0E7-490e-9522-5531455F4AFD}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8EFB0600-A0E7-490e-9522-5531455F4AFD}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8EFB0600-A0E7-490e-9522-5531455F4AFD}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8EFB0600-A0E7-490e-9522-5531455F4AFD}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{ED23F6E1-058F-4a86-AE96-05813DD6F0E7}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{ED23F6E1-058F-4a86-AE96-05813DD6F0E7}" border="0" />pucQueueStorage: uint8_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{ED23F6E1-058F-4a86-AE96-05813DD6F0E7}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{ED23F6E1-058F-4a86-AE96-05813DD6F0E7}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{ED23F6E1-058F-4a86-AE96-05813DD6F0E7}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{ED23F6E1-058F-4a86-AE96-05813DD6F0E7}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{CAF0E5D6-DB11-4429-B897-90556C1226D2}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{CAF0E5D6-DB11-4429-B897-90556C1226D2}" border="0" />pxStaticQueue: StaticQueue_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{CAF0E5D6-DB11-4429-B897-90556C1226D2}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CAF0E5D6-DB11-4429-B897-90556C1226D2}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{CAF0E5D6-DB11-4429-B897-90556C1226D2}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CAF0E5D6-DB11-4429-B897-90556C1226D2}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{DB1358CE-8BC1-459b-A362-47A35DD03D49}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{DB1358CE-8BC1-459b-A362-47A35DD03D49}" border="0" />ucQueueType: uint8_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{DB1358CE-8BC1-459b-A362-47A35DD03D49}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DB1358CE-8BC1-459b-A362-47A35DD03D49}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{DB1358CE-8BC1-459b-A362-47A35DD03D49}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DB1358CE-8BC1-459b-A362-47A35DD03D49}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1419.htm">QueueHandle_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3189" onclick="parent.toggleDiv('detailsDIVOperations3189','DetailsImageOperations3189')" />Details:
+						<div id="detailsDIVOperations3189" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueCreateSet</strong>(					<a href="#" onclick="parent.toggleData('param{BFC6BB45-4010-4c25-847C-41875A529798}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{BFC6BB45-4010-4c25-847C-41875A529798}" border="0" />uxEventQueueLength: <a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{BFC6BB45-4010-4c25-847C-41875A529798}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BFC6BB45-4010-4c25-847C-41875A529798}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{BFC6BB45-4010-4c25-847C-41875A529798}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BFC6BB45-4010-4c25-847C-41875A529798}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1420.htm">QueueSetHandle_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3190" onclick="parent.toggleDiv('detailsDIVOperations3190','DetailsImageOperations3190')" />Details:
+						<div id="detailsDIVOperations3190" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueAddToSet</strong>(					<a href="#" onclick="parent.toggleData('param{99EA4D58-44B7-4ce0-9CBB-C18F32307B35}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{99EA4D58-44B7-4ce0-9CBB-C18F32307B35}" border="0" />xQueueOrSemaphore: <a href="EA1421.htm">QueueSetMemberHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{99EA4D58-44B7-4ce0-9CBB-C18F32307B35}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{99EA4D58-44B7-4ce0-9CBB-C18F32307B35}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{99EA4D58-44B7-4ce0-9CBB-C18F32307B35}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{99EA4D58-44B7-4ce0-9CBB-C18F32307B35}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{2847128F-A67A-4cf0-B82E-6A912A6E35A9}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2847128F-A67A-4cf0-B82E-6A912A6E35A9}" border="0" />xQueueSet: <a href="EA1420.htm">QueueSetHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2847128F-A67A-4cf0-B82E-6A912A6E35A9}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2847128F-A67A-4cf0-B82E-6A912A6E35A9}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2847128F-A67A-4cf0-B82E-6A912A6E35A9}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2847128F-A67A-4cf0-B82E-6A912A6E35A9}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3191" onclick="parent.toggleDiv('detailsDIVOperations3191','DetailsImageOperations3191')" />Details:
+						<div id="detailsDIVOperations3191" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueRemoveFromSet</strong>(					<a href="#" onclick="parent.toggleData('param{762DB0E9-DE7B-4ac6-90C1-1328BC9367AA}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{762DB0E9-DE7B-4ac6-90C1-1328BC9367AA}" border="0" />xQueueOrSemaphore: <a href="EA1421.htm">QueueSetMemberHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{762DB0E9-DE7B-4ac6-90C1-1328BC9367AA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{762DB0E9-DE7B-4ac6-90C1-1328BC9367AA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{762DB0E9-DE7B-4ac6-90C1-1328BC9367AA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{762DB0E9-DE7B-4ac6-90C1-1328BC9367AA}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{2594AF46-854F-452c-B6A9-E00BD377993F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2594AF46-854F-452c-B6A9-E00BD377993F}" border="0" />xQueueSet: <a href="EA1420.htm">QueueSetHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2594AF46-854F-452c-B6A9-E00BD377993F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2594AF46-854F-452c-B6A9-E00BD377993F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2594AF46-854F-452c-B6A9-E00BD377993F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2594AF46-854F-452c-B6A9-E00BD377993F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3192" onclick="parent.toggleDiv('detailsDIVOperations3192','DetailsImageOperations3192')" />Details:
+						<div id="detailsDIVOperations3192" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueSelectFromSet</strong>(					<a href="#" onclick="parent.toggleData('param{EA647D7C-9EA4-4c38-9EC2-8850AEA970EE}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{EA647D7C-9EA4-4c38-9EC2-8850AEA970EE}" border="0" />xQueueSet: <a href="EA1420.htm">QueueSetHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{EA647D7C-9EA4-4c38-9EC2-8850AEA970EE}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EA647D7C-9EA4-4c38-9EC2-8850AEA970EE}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{EA647D7C-9EA4-4c38-9EC2-8850AEA970EE}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EA647D7C-9EA4-4c38-9EC2-8850AEA970EE}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{6641E7BB-5AB3-4160-AE43-1D6B17D3B727}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6641E7BB-5AB3-4160-AE43-1D6B17D3B727}" border="0" />xTicksToWait: <a href="../EA2/EA1/EA1/EA1466.htm">TickType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6641E7BB-5AB3-4160-AE43-1D6B17D3B727}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6641E7BB-5AB3-4160-AE43-1D6B17D3B727}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6641E7BB-5AB3-4160-AE43-1D6B17D3B727}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6641E7BB-5AB3-4160-AE43-1D6B17D3B727}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1421.htm">QueueSetMemberHandle_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3193" onclick="parent.toggleDiv('detailsDIVOperations3193','DetailsImageOperations3193')" />Details:
+						<div id="detailsDIVOperations3193" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueSelectFromSetFromISR</strong>(					<a href="#" onclick="parent.toggleData('param{07F2B9C6-F08B-478f-89C2-9F327FA7DC66}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{07F2B9C6-F08B-478f-89C2-9F327FA7DC66}" border="0" />xQueueSet: <a href="EA1420.htm">QueueSetHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{07F2B9C6-F08B-478f-89C2-9F327FA7DC66}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{07F2B9C6-F08B-478f-89C2-9F327FA7DC66}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{07F2B9C6-F08B-478f-89C2-9F327FA7DC66}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{07F2B9C6-F08B-478f-89C2-9F327FA7DC66}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1421.htm">QueueSetMemberHandle_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3194" onclick="parent.toggleDiv('detailsDIVOperations3194','DetailsImageOperations3194')" />Details:
+						<div id="detailsDIVOperations3194" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>vQueueWaitForMessageRestricted</strong>(					<a href="#" onclick="parent.toggleData('param{30298591-4AD0-4089-9FF5-26B192B10646}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{30298591-4AD0-4089-9FF5-26B192B10646}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{30298591-4AD0-4089-9FF5-26B192B10646}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{30298591-4AD0-4089-9FF5-26B192B10646}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{30298591-4AD0-4089-9FF5-26B192B10646}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{30298591-4AD0-4089-9FF5-26B192B10646}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{6538C533-01AE-46bf-8A5B-B056E8591DED}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6538C533-01AE-46bf-8A5B-B056E8591DED}" border="0" />xTicksToWait: <a href="../EA2/EA1/EA1/EA1466.htm">TickType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6538C533-01AE-46bf-8A5B-B056E8591DED}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6538C533-01AE-46bf-8A5B-B056E8591DED}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6538C533-01AE-46bf-8A5B-B056E8591DED}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6538C533-01AE-46bf-8A5B-B056E8591DED}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{CAE8BFD3-E1BF-49c5-8F87-31F92B174AF9}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{CAE8BFD3-E1BF-49c5-8F87-31F92B174AF9}" border="0" />xWaitIndefinitely: <a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{CAE8BFD3-E1BF-49c5-8F87-31F92B174AF9}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CAE8BFD3-E1BF-49c5-8F87-31F92B174AF9}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{CAE8BFD3-E1BF-49c5-8F87-31F92B174AF9}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CAE8BFD3-E1BF-49c5-8F87-31F92B174AF9}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3195" onclick="parent.toggleDiv('detailsDIVOperations3195','DetailsImageOperations3195')" />Details:
+						<div id="detailsDIVOperations3195" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>xQueueGenericReset</strong>(					<a href="#" onclick="parent.toggleData('param{317E7F45-4266-44ea-BBF2-A43DF11369D4}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{317E7F45-4266-44ea-BBF2-A43DF11369D4}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{317E7F45-4266-44ea-BBF2-A43DF11369D4}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{317E7F45-4266-44ea-BBF2-A43DF11369D4}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{317E7F45-4266-44ea-BBF2-A43DF11369D4}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{317E7F45-4266-44ea-BBF2-A43DF11369D4}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{3C45AEFC-5DDB-4a85-9968-7E01366E20BC}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{3C45AEFC-5DDB-4a85-9968-7E01366E20BC}" border="0" />xNewQueue: <a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{3C45AEFC-5DDB-4a85-9968-7E01366E20BC}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3C45AEFC-5DDB-4a85-9968-7E01366E20BC}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{3C45AEFC-5DDB-4a85-9968-7E01366E20BC}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3C45AEFC-5DDB-4a85-9968-7E01366E20BC}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1464.htm">BaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3196" onclick="parent.toggleDiv('detailsDIVOperations3196','DetailsImageOperations3196')" />Details:
+						<div id="detailsDIVOperations3196" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>vQueueSetQueueNumber</strong>(					<a href="#" onclick="parent.toggleData('param{8407A4ED-1C1A-4b42-B347-34A1C05D56E9}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{8407A4ED-1C1A-4b42-B347-34A1C05D56E9}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8407A4ED-1C1A-4b42-B347-34A1C05D56E9}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8407A4ED-1C1A-4b42-B347-34A1C05D56E9}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8407A4ED-1C1A-4b42-B347-34A1C05D56E9}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8407A4ED-1C1A-4b42-B347-34A1C05D56E9}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{D4A33C14-9A40-4eca-9733-D742A83018C0}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D4A33C14-9A40-4eca-9733-D742A83018C0}" border="0" />uxQueueNumber: <a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D4A33C14-9A40-4eca-9733-D742A83018C0}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D4A33C14-9A40-4eca-9733-D742A83018C0}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D4A33C14-9A40-4eca-9733-D742A83018C0}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D4A33C14-9A40-4eca-9733-D742A83018C0}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3197" onclick="parent.toggleDiv('detailsDIVOperations3197','DetailsImageOperations3197')" />Details:
+						<div id="detailsDIVOperations3197" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>uxQueueGetQueueNumber</strong>(					<a href="#" onclick="parent.toggleData('param{C9AD28AB-CEA5-4def-B324-D3164AAAA831}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{C9AD28AB-CEA5-4def-B324-D3164AAAA831}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C9AD28AB-CEA5-4def-B324-D3164AAAA831}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C9AD28AB-CEA5-4def-B324-D3164AAAA831}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C9AD28AB-CEA5-4def-B324-D3164AAAA831}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C9AD28AB-CEA5-4def-B324-D3164AAAA831}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA2/EA1/EA1/EA1467.htm">UBaseType_t</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3198" onclick="parent.toggleDiv('detailsDIVOperations3198','DetailsImageOperations3198')" />Details:
+						<div id="detailsDIVOperations3198" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>ucQueueGetQueueType</strong>(					<a href="#" onclick="parent.toggleData('param{69DADDC4-C735-41ba-81C9-F772E477925D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{69DADDC4-C735-41ba-81C9-F772E477925D}" border="0" />xQueue: <a href="EA1419.htm">QueueHandle_t</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{69DADDC4-C735-41ba-81C9-F772E477925D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{69DADDC4-C735-41ba-81C9-F772E477925D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{69DADDC4-C735-41ba-81C9-F772E477925D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{69DADDC4-C735-41ba-81C9-F772E477925D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):uint8_t
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3199" onclick="parent.toggleDiv('detailsDIVOperations3199','DetailsImageOperations3199')" />Details:
+						<div id="detailsDIVOperations3199" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
 
-			</table>
-		</div>
-<div class="ItemBody" id="TaggedValTable">
-	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-		<tr>
-			<td width="50%" class="TableHeading">Tag</td>
-			<td width="50%" class="TableHeading">Value</td>
-		</tr>
-					<tr>
-				<td width="50%" class="TableRow" valign="top">typedef</td>
-				<td width="50%" class="TableRow" valign="top">true</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario3399" onclick="parent.toggleDiv('detailsDIVScenario3399','DetailsImageScenario3399')" />Details:
-						<div id="detailsDIVScenario3399" class="DetailsDiv" >
-						&nbsp;
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">typeSynonyms</td>
-				<td width="50%" class="TableRow" valign="top">StaticTask_t</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario3400" onclick="parent.toggleDiv('detailsDIVScenario3400','DetailsImageScenario3400')" />Details:
-						<div id="detailsDIVScenario3400" class="DetailsDiv" >
-						&nbsp;
-						</div>
-					</div>
-				</td>
-			</tr>
-	</table>
+		</table>
 </div>		<div class="ItemBody" id="CustomPropertiesTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>

@@ -1,0 +1,1562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>i2c::drv_i2c</title>
+<link href="../../../../../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("drv_i2c", " : "))</script>  : Public   Class</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">30.07.2022 12:30:46</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">30.07.2022 12:30:46</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">comert sagiroglu</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{28AFEE51-E627-4af6-B916-3AF9E1F3CB5E}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA1511.htm">i2c</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">I2C Driver Transfer Handle&#160;&#160;Summary: Handle identifying a read, write or write followed by read transfer passed to the driver.&#160;&#160;Description: A transfer handle value is returned by a call to the DRV_I2C_ReadTransferAdd/ DRV_I2C_WriteTransferAdd or DRV_I2C_WriteReadTransferAdd functions. This handle is associated with the transfer passed into the function and it allows the application to track the completion of the data from (or into) that transfer. The transfer handle value returned from the &quot;transfer add&quot; function is returned back to the client by the &quot;event handler callback&quot; function registered with the driver.&#160;&#160;The transfer handle assigned to a client request expires when the client has been notified of the completion of the buffer transfer (after event handler function that notifies the client returns) or after the transfer has been retired by the driver if no event handler callback was set.&#160;&#160;Remarks: None&lt;br/&gt;</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+		</ul>
+<div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="100%" class="TableHeading">Operation</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_Initialize</strong>(					<a href="#" onclick="parent.toggleData('param{DFB61787-67B5-4603-8A06-7E54E050DE34}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{DFB61787-67B5-4603-8A06-7E54E050DE34}" border="0" />drvIndex: <a href="../../EA5/EA1656.htm">SYS_MODULE_INDEX</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{DFB61787-67B5-4603-8A06-7E54E050DE34}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DFB61787-67B5-4603-8A06-7E54E050DE34}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{DFB61787-67B5-4603-8A06-7E54E050DE34}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DFB61787-67B5-4603-8A06-7E54E050DE34}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{2870A3F9-25FD-4971-AA1F-D0ED47EFE6AE}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2870A3F9-25FD-4971-AA1F-D0ED47EFE6AE}" border="0" />init: SYS_MODULE_INIT*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2870A3F9-25FD-4971-AA1F-D0ED47EFE6AE}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2870A3F9-25FD-4971-AA1F-D0ED47EFE6AE}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2870A3F9-25FD-4971-AA1F-D0ED47EFE6AE}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2870A3F9-25FD-4971-AA1F-D0ED47EFE6AE}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA5/EA1658.htm">SYS_MODULE_OBJ</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3641" onclick="parent.toggleDiv('detailsDIVOperations3641','DetailsImageOperations3641')" />Details:
+						<div id="detailsDIVOperations3641" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_Status</strong>(					<a href="#" onclick="parent.toggleData('param{29B1B505-596B-44db-A4C3-85ECBC43C09E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{29B1B505-596B-44db-A4C3-85ECBC43C09E}" border="0" />object: <a href="../../EA5/EA1658.htm">SYS_MODULE_OBJ</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{29B1B505-596B-44db-A4C3-85ECBC43C09E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{29B1B505-596B-44db-A4C3-85ECBC43C09E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{29B1B505-596B-44db-A4C3-85ECBC43C09E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{29B1B505-596B-44db-A4C3-85ECBC43C09E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA5/EA1659.htm">SYS_STATUS</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3642" onclick="parent.toggleDiv('detailsDIVOperations3642','DetailsImageOperations3642')" />Details:
+						<div id="detailsDIVOperations3642" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_Open</strong>(					<a href="#" onclick="parent.toggleData('param{F2946EA2-F35B-478b-AC43-A0D3CC126273}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{F2946EA2-F35B-478b-AC43-A0D3CC126273}" border="0" />drvIndex: <a href="../../EA5/EA1656.htm">SYS_MODULE_INDEX</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F2946EA2-F35B-478b-AC43-A0D3CC126273}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F2946EA2-F35B-478b-AC43-A0D3CC126273}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F2946EA2-F35B-478b-AC43-A0D3CC126273}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F2946EA2-F35B-478b-AC43-A0D3CC126273}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{10D25D8A-98B2-4fa2-990C-82384C859817}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{10D25D8A-98B2-4fa2-990C-82384C859817}" border="0" />ioIntent: <a href="../EA1510.htm">DRV_IO_INTENT</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{10D25D8A-98B2-4fa2-990C-82384C859817}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{10D25D8A-98B2-4fa2-990C-82384C859817}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{10D25D8A-98B2-4fa2-990C-82384C859817}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{10D25D8A-98B2-4fa2-990C-82384C859817}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../EA1508.htm">DRV_HANDLE</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3643" onclick="parent.toggleDiv('detailsDIVOperations3643','DetailsImageOperations3643')" />Details:
+						<div id="detailsDIVOperations3643" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_Close</strong>(					<a href="#" onclick="parent.toggleData('param{CC65552E-7237-45cb-97A0-B70C841429AE}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{CC65552E-7237-45cb-97A0-B70C841429AE}" border="0" />handle: <a href="../EA1508.htm">DRV_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{CC65552E-7237-45cb-97A0-B70C841429AE}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CC65552E-7237-45cb-97A0-B70C841429AE}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{CC65552E-7237-45cb-97A0-B70C841429AE}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CC65552E-7237-45cb-97A0-B70C841429AE}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3644" onclick="parent.toggleDiv('detailsDIVOperations3644','DetailsImageOperations3644')" />Details:
+						<div id="detailsDIVOperations3644" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_TransferSetup</strong>(					<a href="#" onclick="parent.toggleData('param{F7888917-572A-49e2-86C1-0C3A2B688936}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{F7888917-572A-49e2-86C1-0C3A2B688936}" border="0" />handle: <a href="../EA1508.htm">DRV_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F7888917-572A-49e2-86C1-0C3A2B688936}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F7888917-572A-49e2-86C1-0C3A2B688936}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F7888917-572A-49e2-86C1-0C3A2B688936}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F7888917-572A-49e2-86C1-0C3A2B688936}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{EAD24057-7CDC-4fe7-8ACE-231EF46BA296}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{EAD24057-7CDC-4fe7-8ACE-231EF46BA296}" border="0" />setup: DRV_I2C_TRANSFER_SETUP*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{EAD24057-7CDC-4fe7-8ACE-231EF46BA296}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EAD24057-7CDC-4fe7-8ACE-231EF46BA296}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{EAD24057-7CDC-4fe7-8ACE-231EF46BA296}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EAD24057-7CDC-4fe7-8ACE-231EF46BA296}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):bool
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3645" onclick="parent.toggleDiv('detailsDIVOperations3645','DetailsImageOperations3645')" />Details:
+						<div id="detailsDIVOperations3645" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_ErrorGet</strong>(					<a href="#" onclick="parent.toggleData('param{B30F6EDB-7FB7-4da8-8F24-6F1D60DF8946}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{B30F6EDB-7FB7-4da8-8F24-6F1D60DF8946}" border="0" />transferHandle: <a href="EA1518.htm">DRV_I2C_TRANSFER_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B30F6EDB-7FB7-4da8-8F24-6F1D60DF8946}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B30F6EDB-7FB7-4da8-8F24-6F1D60DF8946}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B30F6EDB-7FB7-4da8-8F24-6F1D60DF8946}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B30F6EDB-7FB7-4da8-8F24-6F1D60DF8946}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1522.htm">DRV_I2C_ERROR</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3646" onclick="parent.toggleDiv('detailsDIVOperations3646','DetailsImageOperations3646')" />Details:
+						<div id="detailsDIVOperations3646" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_WriteTransferAdd</strong>(					<a href="#" onclick="parent.toggleData('param{8819406F-465F-490b-8863-0D629118333B}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{8819406F-465F-490b-8863-0D629118333B}" border="0" />handle: <a href="../EA1508.htm">DRV_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8819406F-465F-490b-8863-0D629118333B}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8819406F-465F-490b-8863-0D629118333B}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8819406F-465F-490b-8863-0D629118333B}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8819406F-465F-490b-8863-0D629118333B}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{198DA281-A02B-4919-85EE-596E0A3137FD}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{198DA281-A02B-4919-85EE-596E0A3137FD}" border="0" />address: uint16_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{198DA281-A02B-4919-85EE-596E0A3137FD}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{198DA281-A02B-4919-85EE-596E0A3137FD}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{198DA281-A02B-4919-85EE-596E0A3137FD}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{198DA281-A02B-4919-85EE-596E0A3137FD}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{71E5F63E-8244-473f-86B8-AE9068F927BD}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{71E5F63E-8244-473f-86B8-AE9068F927BD}" border="0" />buffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{71E5F63E-8244-473f-86B8-AE9068F927BD}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{71E5F63E-8244-473f-86B8-AE9068F927BD}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{71E5F63E-8244-473f-86B8-AE9068F927BD}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{71E5F63E-8244-473f-86B8-AE9068F927BD}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{079A2132-3230-4939-BD46-0F8B57EFBD9A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{079A2132-3230-4939-BD46-0F8B57EFBD9A}" border="0" />size: size_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{079A2132-3230-4939-BD46-0F8B57EFBD9A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{079A2132-3230-4939-BD46-0F8B57EFBD9A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{079A2132-3230-4939-BD46-0F8B57EFBD9A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{079A2132-3230-4939-BD46-0F8B57EFBD9A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{20F098FD-2EA2-47bf-801B-141991909D31}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{20F098FD-2EA2-47bf-801B-141991909D31}" border="0" />transferHandle: DRV_I2C_TRANSFER_HANDLE*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{20F098FD-2EA2-47bf-801B-141991909D31}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{20F098FD-2EA2-47bf-801B-141991909D31}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{20F098FD-2EA2-47bf-801B-141991909D31}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{20F098FD-2EA2-47bf-801B-141991909D31}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3647" onclick="parent.toggleDiv('detailsDIVOperations3647','DetailsImageOperations3647')" />Details:
+						<div id="detailsDIVOperations3647" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_ForcedWriteTransferAdd</strong>(					<a href="#" onclick="parent.toggleData('param{62747BD7-E3B4-4448-A2E9-56D889895FD7}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{62747BD7-E3B4-4448-A2E9-56D889895FD7}" border="0" />handle: <a href="../EA1508.htm">DRV_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{62747BD7-E3B4-4448-A2E9-56D889895FD7}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{62747BD7-E3B4-4448-A2E9-56D889895FD7}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{62747BD7-E3B4-4448-A2E9-56D889895FD7}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{62747BD7-E3B4-4448-A2E9-56D889895FD7}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{AF0525F0-2D32-43ae-9DD7-B5354945E8FA}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{AF0525F0-2D32-43ae-9DD7-B5354945E8FA}" border="0" />address: uint16_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{AF0525F0-2D32-43ae-9DD7-B5354945E8FA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AF0525F0-2D32-43ae-9DD7-B5354945E8FA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{AF0525F0-2D32-43ae-9DD7-B5354945E8FA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AF0525F0-2D32-43ae-9DD7-B5354945E8FA}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{A8C31725-F01D-43b1-ABFF-E5F07360315D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{A8C31725-F01D-43b1-ABFF-E5F07360315D}" border="0" />buffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{A8C31725-F01D-43b1-ABFF-E5F07360315D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A8C31725-F01D-43b1-ABFF-E5F07360315D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{A8C31725-F01D-43b1-ABFF-E5F07360315D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A8C31725-F01D-43b1-ABFF-E5F07360315D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{A832FCC6-AFD9-4795-855E-B5B5B7721FC9}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{A832FCC6-AFD9-4795-855E-B5B5B7721FC9}" border="0" />size: size_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{A832FCC6-AFD9-4795-855E-B5B5B7721FC9}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A832FCC6-AFD9-4795-855E-B5B5B7721FC9}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{A832FCC6-AFD9-4795-855E-B5B5B7721FC9}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A832FCC6-AFD9-4795-855E-B5B5B7721FC9}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{B1647713-2038-48f2-8434-B6C45AF35815}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{B1647713-2038-48f2-8434-B6C45AF35815}" border="0" />transferHandle: DRV_I2C_TRANSFER_HANDLE*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B1647713-2038-48f2-8434-B6C45AF35815}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B1647713-2038-48f2-8434-B6C45AF35815}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B1647713-2038-48f2-8434-B6C45AF35815}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B1647713-2038-48f2-8434-B6C45AF35815}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3648" onclick="parent.toggleDiv('detailsDIVOperations3648','DetailsImageOperations3648')" />Details:
+						<div id="detailsDIVOperations3648" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_ReadTransferAdd</strong>(					<a href="#" onclick="parent.toggleData('param{C80A616D-36BA-436e-807A-CB9A849FD69A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{C80A616D-36BA-436e-807A-CB9A849FD69A}" border="0" />handle: <a href="../EA1508.htm">DRV_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C80A616D-36BA-436e-807A-CB9A849FD69A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C80A616D-36BA-436e-807A-CB9A849FD69A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C80A616D-36BA-436e-807A-CB9A849FD69A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C80A616D-36BA-436e-807A-CB9A849FD69A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{C57A9FDF-5968-4d12-BC25-4AE298D637ED}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{C57A9FDF-5968-4d12-BC25-4AE298D637ED}" border="0" />address: uint16_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C57A9FDF-5968-4d12-BC25-4AE298D637ED}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C57A9FDF-5968-4d12-BC25-4AE298D637ED}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C57A9FDF-5968-4d12-BC25-4AE298D637ED}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C57A9FDF-5968-4d12-BC25-4AE298D637ED}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{DB3ECCE4-4EC7-460a-B2C6-2E8E85A00646}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{DB3ECCE4-4EC7-460a-B2C6-2E8E85A00646}" border="0" />buffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{DB3ECCE4-4EC7-460a-B2C6-2E8E85A00646}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DB3ECCE4-4EC7-460a-B2C6-2E8E85A00646}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{DB3ECCE4-4EC7-460a-B2C6-2E8E85A00646}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DB3ECCE4-4EC7-460a-B2C6-2E8E85A00646}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{6B984241-58CF-4dca-8C3F-5895CF0B7FDF}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6B984241-58CF-4dca-8C3F-5895CF0B7FDF}" border="0" />size: size_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6B984241-58CF-4dca-8C3F-5895CF0B7FDF}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6B984241-58CF-4dca-8C3F-5895CF0B7FDF}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6B984241-58CF-4dca-8C3F-5895CF0B7FDF}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6B984241-58CF-4dca-8C3F-5895CF0B7FDF}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{DA4B5762-0336-4ec1-BC17-6B7AC29EC8F7}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{DA4B5762-0336-4ec1-BC17-6B7AC29EC8F7}" border="0" />transferHandle: DRV_I2C_TRANSFER_HANDLE*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{DA4B5762-0336-4ec1-BC17-6B7AC29EC8F7}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DA4B5762-0336-4ec1-BC17-6B7AC29EC8F7}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{DA4B5762-0336-4ec1-BC17-6B7AC29EC8F7}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DA4B5762-0336-4ec1-BC17-6B7AC29EC8F7}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3649" onclick="parent.toggleDiv('detailsDIVOperations3649','DetailsImageOperations3649')" />Details:
+						<div id="detailsDIVOperations3649" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_WriteReadTransferAdd</strong>(					<a href="#" onclick="parent.toggleData('param{D190CAF0-2B31-4598-B72B-0298FCF3323C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D190CAF0-2B31-4598-B72B-0298FCF3323C}" border="0" />handle: <a href="../EA1508.htm">DRV_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D190CAF0-2B31-4598-B72B-0298FCF3323C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D190CAF0-2B31-4598-B72B-0298FCF3323C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D190CAF0-2B31-4598-B72B-0298FCF3323C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D190CAF0-2B31-4598-B72B-0298FCF3323C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{5E0B0057-93C4-4525-B01C-09B5D3AD5B75}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{5E0B0057-93C4-4525-B01C-09B5D3AD5B75}" border="0" />address: uint16_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{5E0B0057-93C4-4525-B01C-09B5D3AD5B75}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{5E0B0057-93C4-4525-B01C-09B5D3AD5B75}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{5E0B0057-93C4-4525-B01C-09B5D3AD5B75}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{5E0B0057-93C4-4525-B01C-09B5D3AD5B75}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{63BED66D-B53B-451c-A0E1-B2A7A281E431}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{63BED66D-B53B-451c-A0E1-B2A7A281E431}" border="0" />writeBuffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{63BED66D-B53B-451c-A0E1-B2A7A281E431}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{63BED66D-B53B-451c-A0E1-B2A7A281E431}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{63BED66D-B53B-451c-A0E1-B2A7A281E431}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{63BED66D-B53B-451c-A0E1-B2A7A281E431}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{85524CF8-19D9-494d-B8C3-BC01F4282FE4}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{85524CF8-19D9-494d-B8C3-BC01F4282FE4}" border="0" />writeSize: size_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{85524CF8-19D9-494d-B8C3-BC01F4282FE4}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{85524CF8-19D9-494d-B8C3-BC01F4282FE4}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{85524CF8-19D9-494d-B8C3-BC01F4282FE4}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{85524CF8-19D9-494d-B8C3-BC01F4282FE4}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{59332E2E-ECE0-441b-A867-A9C67654D7FE}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{59332E2E-ECE0-441b-A867-A9C67654D7FE}" border="0" />readBuffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{59332E2E-ECE0-441b-A867-A9C67654D7FE}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{59332E2E-ECE0-441b-A867-A9C67654D7FE}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{59332E2E-ECE0-441b-A867-A9C67654D7FE}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{59332E2E-ECE0-441b-A867-A9C67654D7FE}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{E0F52F18-93BB-4f88-BD6B-F225E4B4B200}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E0F52F18-93BB-4f88-BD6B-F225E4B4B200}" border="0" />readSize: size_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E0F52F18-93BB-4f88-BD6B-F225E4B4B200}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E0F52F18-93BB-4f88-BD6B-F225E4B4B200}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E0F52F18-93BB-4f88-BD6B-F225E4B4B200}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E0F52F18-93BB-4f88-BD6B-F225E4B4B200}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{E805B5ED-C1E5-4ac3-B289-23B5983F2263}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E805B5ED-C1E5-4ac3-B289-23B5983F2263}" border="0" />transferHandle: DRV_I2C_TRANSFER_HANDLE*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E805B5ED-C1E5-4ac3-B289-23B5983F2263}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E805B5ED-C1E5-4ac3-B289-23B5983F2263}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E805B5ED-C1E5-4ac3-B289-23B5983F2263}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E805B5ED-C1E5-4ac3-B289-23B5983F2263}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3650" onclick="parent.toggleDiv('detailsDIVOperations3650','DetailsImageOperations3650')" />Details:
+						<div id="detailsDIVOperations3650" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_TransferEventHandlerSet</strong>(					<a href="#" onclick="parent.toggleData('param{2AB5AAC7-DF73-4854-835C-61EACE91A99A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2AB5AAC7-DF73-4854-835C-61EACE91A99A}" border="0" />handle: <a href="../EA1508.htm">DRV_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2AB5AAC7-DF73-4854-835C-61EACE91A99A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2AB5AAC7-DF73-4854-835C-61EACE91A99A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2AB5AAC7-DF73-4854-835C-61EACE91A99A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2AB5AAC7-DF73-4854-835C-61EACE91A99A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{95828B8C-5668-4a42-9E84-7D562A6D48C7}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{95828B8C-5668-4a42-9E84-7D562A6D48C7}" border="0" />eventHandler: DRV_I2C_TRANSFER_EVENT_HANDLER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{95828B8C-5668-4a42-9E84-7D562A6D48C7}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{95828B8C-5668-4a42-9E84-7D562A6D48C7}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{95828B8C-5668-4a42-9E84-7D562A6D48C7}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{95828B8C-5668-4a42-9E84-7D562A6D48C7}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{B2F09FC7-45AD-42e1-A0DA-CCDAF3522526}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{B2F09FC7-45AD-42e1-A0DA-CCDAF3522526}" border="0" />context: uintptr_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B2F09FC7-45AD-42e1-A0DA-CCDAF3522526}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B2F09FC7-45AD-42e1-A0DA-CCDAF3522526}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B2F09FC7-45AD-42e1-A0DA-CCDAF3522526}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B2F09FC7-45AD-42e1-A0DA-CCDAF3522526}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3651" onclick="parent.toggleDiv('detailsDIVOperations3651','DetailsImageOperations3651')" />Details:
+						<div id="detailsDIVOperations3651" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_TransferStatusGet</strong>(					<a href="#" onclick="parent.toggleData('param{C8AF1B75-1F9C-4df7-A96D-7B82A7222ECA}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{C8AF1B75-1F9C-4df7-A96D-7B82A7222ECA}" border="0" />transferHandle: <a href="EA1518.htm">DRV_I2C_TRANSFER_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C8AF1B75-1F9C-4df7-A96D-7B82A7222ECA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C8AF1B75-1F9C-4df7-A96D-7B82A7222ECA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C8AF1B75-1F9C-4df7-A96D-7B82A7222ECA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C8AF1B75-1F9C-4df7-A96D-7B82A7222ECA}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="EA1517.htm">DRV_I2C_TRANSFER_EVENT</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3652" onclick="parent.toggleDiv('detailsDIVOperations3652','DetailsImageOperations3652')" />Details:
+						<div id="detailsDIVOperations3652" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_WriteTransfer</strong>(					<a href="#" onclick="parent.toggleData('param{F5B4F691-B1E3-4fa7-8429-28C85D4123D1}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{F5B4F691-B1E3-4fa7-8429-28C85D4123D1}" border="0" />handle: <a href="../EA1508.htm">DRV_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F5B4F691-B1E3-4fa7-8429-28C85D4123D1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F5B4F691-B1E3-4fa7-8429-28C85D4123D1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F5B4F691-B1E3-4fa7-8429-28C85D4123D1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F5B4F691-B1E3-4fa7-8429-28C85D4123D1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{9892AC96-022F-40b5-8B0C-227451A5B516}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{9892AC96-022F-40b5-8B0C-227451A5B516}" border="0" />address: uint16_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{9892AC96-022F-40b5-8B0C-227451A5B516}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9892AC96-022F-40b5-8B0C-227451A5B516}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{9892AC96-022F-40b5-8B0C-227451A5B516}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9892AC96-022F-40b5-8B0C-227451A5B516}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{172CCE27-7A65-42bb-BF80-09DAD17AC2E2}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{172CCE27-7A65-42bb-BF80-09DAD17AC2E2}" border="0" />buffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{172CCE27-7A65-42bb-BF80-09DAD17AC2E2}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{172CCE27-7A65-42bb-BF80-09DAD17AC2E2}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{172CCE27-7A65-42bb-BF80-09DAD17AC2E2}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{172CCE27-7A65-42bb-BF80-09DAD17AC2E2}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{08D504AB-F5F4-4a3e-96A1-1C13970A920A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{08D504AB-F5F4-4a3e-96A1-1C13970A920A}" border="0" />size: size_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{08D504AB-F5F4-4a3e-96A1-1C13970A920A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{08D504AB-F5F4-4a3e-96A1-1C13970A920A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{08D504AB-F5F4-4a3e-96A1-1C13970A920A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{08D504AB-F5F4-4a3e-96A1-1C13970A920A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):bool
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3653" onclick="parent.toggleDiv('detailsDIVOperations3653','DetailsImageOperations3653')" />Details:
+						<div id="detailsDIVOperations3653" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_ForcedWriteTransfer</strong>(					<a href="#" onclick="parent.toggleData('param{26ECE60C-8034-4873-9011-3A891395B8BA}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{26ECE60C-8034-4873-9011-3A891395B8BA}" border="0" />handle: <a href="../EA1508.htm">DRV_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{26ECE60C-8034-4873-9011-3A891395B8BA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{26ECE60C-8034-4873-9011-3A891395B8BA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{26ECE60C-8034-4873-9011-3A891395B8BA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{26ECE60C-8034-4873-9011-3A891395B8BA}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{68497573-1BD4-496d-8541-53AA8DD63F69}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{68497573-1BD4-496d-8541-53AA8DD63F69}" border="0" />address: uint16_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{68497573-1BD4-496d-8541-53AA8DD63F69}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{68497573-1BD4-496d-8541-53AA8DD63F69}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{68497573-1BD4-496d-8541-53AA8DD63F69}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{68497573-1BD4-496d-8541-53AA8DD63F69}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{89CDDCA4-E9C1-4c01-B507-4CEB07B06678}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{89CDDCA4-E9C1-4c01-B507-4CEB07B06678}" border="0" />buffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{89CDDCA4-E9C1-4c01-B507-4CEB07B06678}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{89CDDCA4-E9C1-4c01-B507-4CEB07B06678}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{89CDDCA4-E9C1-4c01-B507-4CEB07B06678}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{89CDDCA4-E9C1-4c01-B507-4CEB07B06678}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{8D288ED6-80DB-4d70-A18C-23A99AC7CD68}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{8D288ED6-80DB-4d70-A18C-23A99AC7CD68}" border="0" />size: size_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8D288ED6-80DB-4d70-A18C-23A99AC7CD68}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8D288ED6-80DB-4d70-A18C-23A99AC7CD68}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8D288ED6-80DB-4d70-A18C-23A99AC7CD68}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8D288ED6-80DB-4d70-A18C-23A99AC7CD68}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):bool
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3654" onclick="parent.toggleDiv('detailsDIVOperations3654','DetailsImageOperations3654')" />Details:
+						<div id="detailsDIVOperations3654" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_ReadTransfer</strong>(					<a href="#" onclick="parent.toggleData('param{6D958DE8-6343-4435-818E-A09F54DA3715}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6D958DE8-6343-4435-818E-A09F54DA3715}" border="0" />handle: <a href="../EA1508.htm">DRV_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6D958DE8-6343-4435-818E-A09F54DA3715}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6D958DE8-6343-4435-818E-A09F54DA3715}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6D958DE8-6343-4435-818E-A09F54DA3715}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6D958DE8-6343-4435-818E-A09F54DA3715}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{B04AEEC1-DE97-47d5-804B-B98E18040C4B}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{B04AEEC1-DE97-47d5-804B-B98E18040C4B}" border="0" />address: uint16_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B04AEEC1-DE97-47d5-804B-B98E18040C4B}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B04AEEC1-DE97-47d5-804B-B98E18040C4B}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B04AEEC1-DE97-47d5-804B-B98E18040C4B}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B04AEEC1-DE97-47d5-804B-B98E18040C4B}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{9451F3E8-3431-4623-A25B-335666E9220F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{9451F3E8-3431-4623-A25B-335666E9220F}" border="0" />buffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{9451F3E8-3431-4623-A25B-335666E9220F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9451F3E8-3431-4623-A25B-335666E9220F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{9451F3E8-3431-4623-A25B-335666E9220F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9451F3E8-3431-4623-A25B-335666E9220F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{76867F7B-FEE0-4f5f-B91D-5EB13496770A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{76867F7B-FEE0-4f5f-B91D-5EB13496770A}" border="0" />size: size_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{76867F7B-FEE0-4f5f-B91D-5EB13496770A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{76867F7B-FEE0-4f5f-B91D-5EB13496770A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{76867F7B-FEE0-4f5f-B91D-5EB13496770A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{76867F7B-FEE0-4f5f-B91D-5EB13496770A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):bool
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3655" onclick="parent.toggleDiv('detailsDIVOperations3655','DetailsImageOperations3655')" />Details:
+						<div id="detailsDIVOperations3655" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_WriteReadTransfer</strong>(					<a href="#" onclick="parent.toggleData('param{2888CCCE-4A45-4424-A0C1-C18933137D44}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2888CCCE-4A45-4424-A0C1-C18933137D44}" border="0" />handle: <a href="../EA1508.htm">DRV_HANDLE</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2888CCCE-4A45-4424-A0C1-C18933137D44}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2888CCCE-4A45-4424-A0C1-C18933137D44}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2888CCCE-4A45-4424-A0C1-C18933137D44}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2888CCCE-4A45-4424-A0C1-C18933137D44}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{FB312E1A-BFC8-4096-B4CD-BABA84C4DC8F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{FB312E1A-BFC8-4096-B4CD-BABA84C4DC8F}" border="0" />address: uint16_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{FB312E1A-BFC8-4096-B4CD-BABA84C4DC8F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FB312E1A-BFC8-4096-B4CD-BABA84C4DC8F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{FB312E1A-BFC8-4096-B4CD-BABA84C4DC8F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FB312E1A-BFC8-4096-B4CD-BABA84C4DC8F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{D1FDA195-DD67-44ad-95D9-2E21F7AB717C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D1FDA195-DD67-44ad-95D9-2E21F7AB717C}" border="0" />writeBuffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D1FDA195-DD67-44ad-95D9-2E21F7AB717C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D1FDA195-DD67-44ad-95D9-2E21F7AB717C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D1FDA195-DD67-44ad-95D9-2E21F7AB717C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D1FDA195-DD67-44ad-95D9-2E21F7AB717C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{80B58607-387B-4adc-8E27-34494B23A903}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{80B58607-387B-4adc-8E27-34494B23A903}" border="0" />writeSize: size_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{80B58607-387B-4adc-8E27-34494B23A903}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{80B58607-387B-4adc-8E27-34494B23A903}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{80B58607-387B-4adc-8E27-34494B23A903}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{80B58607-387B-4adc-8E27-34494B23A903}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{882B41BE-A7BF-4a64-970E-5C43B80DB5A7}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{882B41BE-A7BF-4a64-970E-5C43B80DB5A7}" border="0" />readBuffer: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{882B41BE-A7BF-4a64-970E-5C43B80DB5A7}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{882B41BE-A7BF-4a64-970E-5C43B80DB5A7}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{882B41BE-A7BF-4a64-970E-5C43B80DB5A7}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{882B41BE-A7BF-4a64-970E-5C43B80DB5A7}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{AF2C93EE-4872-401c-ABFD-DAE51162ABA5}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{AF2C93EE-4872-401c-ABFD-DAE51162ABA5}" border="0" />readSize: size_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{AF2C93EE-4872-401c-ABFD-DAE51162ABA5}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AF2C93EE-4872-401c-ABFD-DAE51162ABA5}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{AF2C93EE-4872-401c-ABFD-DAE51162ABA5}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AF2C93EE-4872-401c-ABFD-DAE51162ABA5}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):bool
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3656" onclick="parent.toggleDiv('detailsDIVOperations3656','DetailsImageOperations3656')" />Details:
+						<div id="detailsDIVOperations3656" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>DRV_I2C_HandleTransferData</strong>(					<a href="#" onclick="parent.toggleData('param{F3D159F1-F738-4ce4-9A03-8E9CEBD8B7BD}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{F3D159F1-F738-4ce4-9A03-8E9CEBD8B7BD}" border="0" />sercomI2cObject: <a href="../../EA4/EA7/EA1/EA1619.htm">SERCOM_I2C_OBJ</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F3D159F1-F738-4ce4-9A03-8E9CEBD8B7BD}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F3D159F1-F738-4ce4-9A03-8E9CEBD8B7BD}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F3D159F1-F738-4ce4-9A03-8E9CEBD8B7BD}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F3D159F1-F738-4ce4-9A03-8E9CEBD8B7BD}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations3657" onclick="parent.toggleDiv('detailsDIVOperations3657','DetailsImageOperations3657')" />Details:
+						<div id="detailsDIVOperations3657" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+</div>		<div class="ItemBody" id="CustomPropertiesTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Property</td>
+					<td width="70%" class="TableHeading">Value</td>
+				</tr>
+			<tr>
+				<td width="30%" class="TableRow">isFinalSpecialization:</td>
+				<td width="70%" class="TableRow">0</td>
+			</tr>
+
+
+			</table>
+		</div>	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>
