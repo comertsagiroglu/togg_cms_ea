@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Handle Image Sensor Orientation Error</title>
+<title>Image Fault (Frozen / Delayed / Reverse)</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Handle Image Sensor Orientation Error", " : "))</script> 10085 : Public   UseCase</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Image Fault (Frozen / Delayed / Reverse)", " : "))</script>  : Public   InteractionState</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">23.12.2022 11:16:41</td>
+			<td width="85%" class="ObjectDetailsValue">22.12.2022 22:58:55</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">25.12.2022 23:26:48</td>
+			<td class="ObjectDetailsValue">22.12.2022 23:40:09</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,60 +87,14 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{6F899031-EE51-4384-8560-B94BE73D43D2}</td>
+			<td class="ObjectDetailsValue">{BBFC9D40-CBCB-4e11-A4F4-B85B9765F41F}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA205.htm">Use Cases</a></td>
+			<td class="ObjectDetailsValue"><a href="EA191.htm">Handle FPGA Frame Error</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Pre-conditions:&lt;br/&gt;- Camera serializer and Display deserializer are locked.&lt;br/&gt;- Image Sensor is in streaming state&lt;br/&gt;- Power state = POWER_ON&lt;br/&gt;- Operational state = PRIMARY_OPERATION&lt;br/&gt;&lt;br/&gt;Scenario:&lt;br/&gt;- SYS_CHECK output of the Image Sensor is connected to an external interrupt input of the camera MCU&lt;br/&gt;- When image orientation failure is detected on the Image Sensor, SYS_CHECK signal is triggered and this generates interrupt event on the camera MCU.&lt;br/&gt;- Image sensor sets the TBD register (TBD:image orientation fault related as149 register)&lt;br/&gt;- In the SYS_CHECK interrupt routine camera status SYS_CHECK bit is set&lt;br/&gt;- Display queries the camera status byte every 100 msec.&lt;br/&gt;- When the display receives the SYS_CHECK bit of the camera status byte set, it transitions to the safe state at which the LCD backlight is disabled.&lt;br/&gt;- Display Operational state is set to CMS_FAILURE and returned to IDCC when it is queried.&lt;br/&gt;- Display reads the safety related Image Sensor registers and determines the fault which triggered the SYS_CHECK event and sets the related diagnostic code.&lt;br/&gt;- IDCC&#160;&#160;diagnostic data query period is&#160;&#160;100msec.&lt;br/&gt;- IDCC&#160;&#160;operational mode query period is&#160;&#160;100msec.&lt;br/&gt;&lt;br/&gt;Post-conditions:&lt;br/&gt;Operational state = CMS_FAILURE&lt;br/&gt;LCD backlight off&lt;br/&gt;&lt;br/&gt;</div>
-
-	<div class="TableGroup" id="TableGroup">
-		<ul class="ItemTitle">
-			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
-			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
-		</ul>
-		<div class="ItemBody" id="CustomPropertiesTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="30%" class="TableHeading">Property</td>
-					<td width="70%" class="TableHeading">Value</td>
-				</tr>
-			<tr>
-				<td width="30%" class="TableRow">isFinalSpecialization:</td>
-				<td width="70%" class="TableRow">0</td>
-			</tr>
-
-
-			</table>
-		</div>		<div class="ItemBody" id="LinksTable">
-			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="30%" class="TableHeading">Object</td>
-					<td width="10%" class="TableHeading">Type</td>
-					<td width="10%" class="TableHeading">Connection</td>
-					<td width="10%" class="TableHeading">Direction</td>
-					<td width="40%" class="TableHeading">Notes</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA219.htm">Handle Image Sensor SYS_CHECK Signal</a></td>
-					<td width="10%" class="TableRow" valign="top">UseCase</td>
-					<td width="10%" class="TableRow" valign="top">Generalization</td>
-					<td width="10%" class="TableRow" valign="top">To</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA217.htm">Handle Image Fault</a></td>
-					<td width="10%" class="TableRow" valign="top">UseCase</td>
-					<td width="10%" class="TableRow" valign="top">Extends</td>
-					<td width="10%" class="TableRow" valign="top">To</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-
-			</table>
-		</div>
-	</div>
+	
 <div class="pageFooter"></div>
  
 </body>
