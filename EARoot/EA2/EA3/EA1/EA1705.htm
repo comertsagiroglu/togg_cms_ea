@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>System Design Model::CMS System::Display::Backlight Driver</title>
+<title>System Design Model::CMS System::Display::CSI Serializer</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Backlight Driver", " : "))</script>  : Public  &lt;&lt;block&gt;&gt; Block</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("CSI Serializer", " : "))</script>  : Public  &lt;&lt;block&gt;&gt; Block</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">7.12.2022 16:03:37</td>
+			<td width="85%" class="ObjectDetailsValue">31.07.2022 18:12:42</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">22.01.2023 11:15:41</td>
+			<td class="ObjectDetailsValue">27.03.2023 15:17:58</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,19 +87,19 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{948B2D8F-038D-4db6-ABAD-25EECF89FE15}</td>
+			<td class="ObjectDetailsValue">{818E5D86-91A5-4072-976D-6CD269FD2E14}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../../EA2/EA2/EA6/EA1/EA1508.htm">CMS_SW_FUSA HW-SW IDD</a>, <a href="../../EA2/EA2/EA6/EA1/EA1504.htm">CMS_SW_FastInit HW-SW IDD</a>, <a href="../../EA2/EA2/EA6/EA1/EA1506.htm">CMS_SW HW-SW IDD</a>, <a href="EA1633.htm">Display</a>, <a href="../EA3/EA2/EA7/EA6123.htm">CMS_SW_FUSA::LCD_ON</a>, <a href="../EA3/EA2/EA6/EA6116.htm">CMS_SW_FUSA::LCD_OFF</a>, <a href="../../EA2/EA2/EA7/EA2/EA1614.htm">Normal Operation: HW-SW Interaction CPA</a>, <a href="../../EA2/EA2/EA7/EA1/EA1583.htm">CMS_SW_FUSA: Delayed Frame Detection CPA</a>, <a href="../../EA2/EA2/EA7/EA1/EA1587.htm">CMS_SW_FUSA: Reversed Frame Detection CPA</a>, <a href="../../EA2/EA2/EA7/EA1/EA1585.htm">CMS_SW_FUSA: Frozen SOD Frame Detection CPA</a>, <a href="../../EA2/EA2/EA7/EA3/EA1618.htm">Normal Operation CPA</a></td>
+			<td class="ObjectDetailsValue"><a href="../../EA2/EA2/EA6/EA1/EA1503.htm">CMS_SW_FastInit HW-SW IDD</a>, <a href="../../EA2/EA2/EA6/EA1/EA1505.htm">CMS_SW HW-SW IDD</a>, <a href="EA1632.htm">Display</a></td>
 		</tr>
 	</table>
-	
+	<div class="ObjectDetailsNotes">Maxim MAX9295A&lt;br/&gt;HOYRL200&lt;br/&gt;</div>
+
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 			<li onClick="parent.toggleItem('Constraints');" id="ConstraintsTitle">Constraints</li>
-			<li onClick="parent.toggleItem('MessagesFrom');" id="MessagesFromTitle">Messages From</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
@@ -112,7 +112,7 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA1734.htm">«block» Display</a><br />
+						<a href="EA1733.htm">«block» Display</a><br />
 						Block &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -126,8 +126,8 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink7515" onclick="parent.toggleDiv('detailsDIVLink7515','DetailsImageLink7515')" />Details:
-							<div id="detailsDIVLink7515" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink7519" onclick="parent.toggleDiv('detailsDIVLink7519','DetailsImageLink7519')" />Details:
+							<div id="detailsDIVLink7519" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -144,51 +144,14 @@ function nameClassifier(name, separator)
 					<td width="10%" class="TableHeading">Status</td>
 				</tr>
 				<tr>
-					<td width="80%" class="TableRow">I2C Slave Addr: 0x59 (7bits)</td>
+					<td width="80%" class="TableRow">I2C Slave Addr: 0x48 (7 bits)</td>
 					<td width="10%" class="TableRow">Invariant</td>
 					<td width="10%" class="TableRow">Approved</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints7516" onclick="parent.toggleDiv('detailsDIVConstraints7516','DetailsImageConstraints7516')" />Details:
-							<div id="detailsDIVConstraints7516" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-
-			</table>
-		</div>
-		<div class="ItemBody" id="MessagesFromTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="50%" class="TableHeading">Element</td>
-					<td width="50%" class="TableHeading">Message</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA1668.htm">«block» GPIO</a></td>
-					<td width="50%" class="TableRow" valign="top">SET</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage7517" onclick="parent.toggleDiv('detailsDIVMessage7517', 'DetailsImageMessage7517')" />Details:
-							<div id="detailsDIVMessage7517" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA1668.htm">«block» GPIO</a></td>
-					<td width="50%" class="TableRow" valign="top">CLR</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage7518" onclick="parent.toggleDiv('detailsDIVMessage7518', 'DetailsImageMessage7518')" />Details:
-							<div id="detailsDIVMessage7518" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints7520" onclick="parent.toggleDiv('detailsDIVConstraints7520','DetailsImageConstraints7520')" />Details:
+							<div id="detailsDIVConstraints7520" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -225,14 +188,14 @@ function nameClassifier(name, separator)
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA1672.htm">«block» I2C</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="EA1671.htm">«block» I2C</a></td>
 					<td width="10%" class="TableRow" valign="top">Block</td>
 					<td width="10%" class="TableRow" valign="top">Information Flow</td>
 					<td width="10%" class="TableRow" valign="top">From</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA1734.htm">«block» Display</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="EA1733.htm">«block» Display</a></td>
 					<td width="10%" class="TableRow" valign="top">Block</td>
 					<td width="10%" class="TableRow" valign="top">Strong</td>
 					<td width="10%" class="TableRow" valign="top">To</td>
