@@ -1,0 +1,1553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>src::xcsiss</title>
+<link href="../../../../../../../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("xcsiss", " : "))</script>  : Public   Class</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">1.12.2022 12:28:28</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">23.09.2023 00:12:55</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">comert sagiroglu</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{9816FB28-E03F-4b0e-AB7C-0267B1A493FC}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="../../../../../../../../../../../../../EA2/EA2/EA6/EA1/EA1504.htm">CMS_SW_FastInit HW-SW IDD</a>, <a href="EA3810.htm">src</a>, <a href="../../../../../../../../../../../../../EA2/EA2/EA7/EA2/EA1614.htm">Normal Operation: HW-SW Interaction CPA</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">Callback type which acts as a wrapper on top of CSI Callback. &lt;br/&gt;@param	CallbackRef is a callback reference passed in by the upper layer when setting the callback functions, and passed back to the upper layer when the callback is invoked.&lt;br/&gt;@param	Mask is a bit mask indicating the cause of the event. For current core version, this parameter is &quot;OR&quot; of 0 or more XCSISS_ISR_*_MASK constants defined in xcsiss_hw.h. &lt;br/&gt;@return	None. &lt;br/&gt;@note		None.&lt;br/&gt;</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
+		</ul>
+<div class="ItemBody" id="AttributesTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="100%" class="TableHeading">Attribute</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="EA3818.htm">XCsiSs_SubCores</a></i><br /><strong>&nbsp;&nbsp;CsiSsSubCores</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes22242')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes22242" border="0" />Details:</a>
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes22242_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes22242_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes22242_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes22242_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes22242_04" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes22242_05" style="display: none;">
+							<td width="75"><i>Transient: </i></td>
+							<td>False</td>
+						</tr>
+						<tr id="DetailsImageAttributes22242_06" style="display: none;">
+							<td width="75"><i>Derived: </i></td>
+							<td>False</td>
+						</tr>
+							<tr id="DetailsImageAttributes22242_07" style="display: none;">
+							<td width="75"><i>IsID: </i></td>
+						<td>False</td>
+						</tr>
+					</table>
+					
+					
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Define Driver instance of all sub-core included in the design&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>
+	</table>
+</div>
+<div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="100%" class="TableHeading">Operation</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_LookupConfig</strong>(					<a href="#" onclick="parent.toggleData('param{D78820DE-93D1-4dae-BBC3-A6E9F5CB5034}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D78820DE-93D1-4dae-BBC3-A6E9F5CB5034}" border="0" />DeviceId: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D78820DE-93D1-4dae-BBC3-A6E9F5CB5034}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D78820DE-93D1-4dae-BBC3-A6E9F5CB5034}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D78820DE-93D1-4dae-BBC3-A6E9F5CB5034}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D78820DE-93D1-4dae-BBC3-A6E9F5CB5034}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):XCsiSs_Config*
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22243" onclick="parent.toggleDiv('detailsDIVOperations22243','DetailsImageOperations22243')" />Details:
+						<div id="detailsDIVOperations22243" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_CfgInitialize</strong>(					<a href="#" onclick="parent.toggleData('param{E893F8EA-132C-4aff-B5AD-1B32523EEC1C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E893F8EA-132C-4aff-B5AD-1B32523EEC1C}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E893F8EA-132C-4aff-B5AD-1B32523EEC1C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E893F8EA-132C-4aff-B5AD-1B32523EEC1C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E893F8EA-132C-4aff-B5AD-1B32523EEC1C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E893F8EA-132C-4aff-B5AD-1B32523EEC1C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{46365FD2-2841-40d1-82E8-2755E0E4AA76}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{46365FD2-2841-40d1-82E8-2755E0E4AA76}" border="0" />CfgPtr: XCsiSs_Config*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{46365FD2-2841-40d1-82E8-2755E0E4AA76}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{46365FD2-2841-40d1-82E8-2755E0E4AA76}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{46365FD2-2841-40d1-82E8-2755E0E4AA76}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{46365FD2-2841-40d1-82E8-2755E0E4AA76}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{257C8BBF-CDEC-4883-8A97-A393CDAE0DD0}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{257C8BBF-CDEC-4883-8A97-A393CDAE0DD0}" border="0" />EffectiveAddr: <a href="../../EA13/EA1/EA3915.htm">UINTPTR</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{257C8BBF-CDEC-4883-8A97-A393CDAE0DD0}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{257C8BBF-CDEC-4883-8A97-A393CDAE0DD0}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{257C8BBF-CDEC-4883-8A97-A393CDAE0DD0}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{257C8BBF-CDEC-4883-8A97-A393CDAE0DD0}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22244" onclick="parent.toggleDiv('detailsDIVOperations22244','DetailsImageOperations22244')" />Details:
+						<div id="detailsDIVOperations22244" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function initializes the MIPI CSI subsystem and included sub-cores. This function must be called prior to using the subsystem. Initialization includes setting up the instance data for top level as well as all included sub-core therein, and ensuring the hardware is in a known stable state. &lt;br/&gt;@param	InstancePtr is a pointer to the Subsystem instance to be worked on.&lt;br/&gt;@param	CfgPtr points to the configuration structure associated with the subsystem instance.&lt;br/&gt;@param	EffectiveAddr is the base address of the device. If address translation is being used, then this parameter must reflect the virtual base address. Otherwise, the physical address should be used. &lt;br/&gt;@return - XST_SUCCESS if initialization is successful - XST_FAILURE, otherwise &lt;br/&gt;@note		None.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_GetIicInstance</strong>(					<a href="#" onclick="parent.toggleData('param{2EEAA0AE-446D-412e-A883-31ACFA0958FD}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2EEAA0AE-446D-412e-A883-31ACFA0958FD}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2EEAA0AE-446D-412e-A883-31ACFA0958FD}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2EEAA0AE-446D-412e-A883-31ACFA0958FD}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2EEAA0AE-446D-412e-A883-31ACFA0958FD}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2EEAA0AE-446D-412e-A883-31ACFA0958FD}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):XIic*
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22245" onclick="parent.toggleDiv('detailsDIVOperations22245','DetailsImageOperations22245')" />Details:
+						<div id="detailsDIVOperations22245" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function returns the Iic Instance Ptr if Iic is present in the subsystem The application now will need to use Iic functions to access and configure the CSI Transmitter (Camera) via Camera Control Interface(subset protocol of IIC). Please refer to Camera specs for details on how to access and configure.&#160;&#160;&lt;br/&gt;@param	InstancePtr is a pointer to the Subsystem instance to be worked on. &lt;br/&gt;@return	Pointer to IIC instance or NULL &lt;br/&gt;@note		This function is called after XCsiSs_CfgInitialize() This function must be called prior to using the IIC functions.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_Configure</strong>(					<a href="#" onclick="parent.toggleData('param{844D7031-2A1B-4b21-94CA-1290B1B3AF47}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{844D7031-2A1B-4b21-94CA-1290B1B3AF47}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{844D7031-2A1B-4b21-94CA-1290B1B3AF47}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{844D7031-2A1B-4b21-94CA-1290B1B3AF47}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{844D7031-2A1B-4b21-94CA-1290B1B3AF47}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{844D7031-2A1B-4b21-94CA-1290B1B3AF47}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{4C21682B-71CC-42f5-9358-49DAF90775B5}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{4C21682B-71CC-42f5-9358-49DAF90775B5}" border="0" />ActiveLanes: <a href="../../EA13/EA1/EA3914.htm">u8</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{4C21682B-71CC-42f5-9358-49DAF90775B5}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4C21682B-71CC-42f5-9358-49DAF90775B5}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{4C21682B-71CC-42f5-9358-49DAF90775B5}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4C21682B-71CC-42f5-9358-49DAF90775B5}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{6E20C19B-5E29-4f86-ACA9-98947AD84C7D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6E20C19B-5E29-4f86-ACA9-98947AD84C7D}" border="0" />IntrMask: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6E20C19B-5E29-4f86-ACA9-98947AD84C7D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6E20C19B-5E29-4f86-ACA9-98947AD84C7D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6E20C19B-5E29-4f86-ACA9-98947AD84C7D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6E20C19B-5E29-4f86-ACA9-98947AD84C7D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22246" onclick="parent.toggleDiv('detailsDIVOperations22246','DetailsImageOperations22246')" />Details:
+						<div id="detailsDIVOperations22246" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function is used to configure the CSI lanes and interrupts that are to be handled by the application. Refer to XCsi.h for interrupt masks. &lt;br/&gt;@param	InstancePtr is a pointer to the Subsystem instance to be worked on.&lt;br/&gt;@param	ActiveLanes is no of active lanes to be configure. This value ranges between 1 and 4. In case Dynamic Active Lane config is enabled, this value can&#39;t exceed maximum lanes present. When Dynamic Active Lane config is disabled, it should be equal to maximum lanes.&lt;br/&gt;@param	IntrMask Indicates Mask for enable interrupts. &lt;br/&gt;@return - XST_SUCCESS on successful configuration of parameters - XST_FAILURE otherwise &lt;br/&gt;@note		When EnableActiveLanes is 0, then the ActiveLanes parameter passed should be equal to Max Lanes of design.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Xil_In32</strong>(					<a href="#" onclick="parent.toggleData('param{39538126-2BE8-42da-B7B5-2E79B1170A69}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{39538126-2BE8-42da-B7B5-2E79B1170A69}" border="0" />Addr: <a href="../../EA13/EA1/EA3915.htm">UINTPTR</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{39538126-2BE8-42da-B7B5-2E79B1170A69}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{39538126-2BE8-42da-B7B5-2E79B1170A69}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{39538126-2BE8-42da-B7B5-2E79B1170A69}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{39538126-2BE8-42da-B7B5-2E79B1170A69}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22247" onclick="parent.toggleDiv('detailsDIVOperations22247','DetailsImageOperations22247')" />Details:
+						<div id="detailsDIVOperations22247" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_Activate</strong>(					<a href="#" onclick="parent.toggleData('param{A82DE6C5-E80C-40d2-AFBE-1B761BFDDD7A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{A82DE6C5-E80C-40d2-AFBE-1B761BFDDD7A}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{A82DE6C5-E80C-40d2-AFBE-1B761BFDDD7A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A82DE6C5-E80C-40d2-AFBE-1B761BFDDD7A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{A82DE6C5-E80C-40d2-AFBE-1B761BFDDD7A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A82DE6C5-E80C-40d2-AFBE-1B761BFDDD7A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{3E54FA21-3EE9-4cee-BD37-A05740DECAA6}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{3E54FA21-3EE9-4cee-BD37-A05740DECAA6}" border="0" />Flag: <a href="../../EA13/EA1/EA3914.htm">u8</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{3E54FA21-3EE9-4cee-BD37-A05740DECAA6}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3E54FA21-3EE9-4cee-BD37-A05740DECAA6}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{3E54FA21-3EE9-4cee-BD37-A05740DECAA6}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3E54FA21-3EE9-4cee-BD37-A05740DECAA6}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22248" onclick="parent.toggleDiv('detailsDIVOperations22248','DetailsImageOperations22248')" />Details:
+						<div id="detailsDIVOperations22248" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function is used to activate the CSI Subsystem. Internally it activates the DPHY and CSI. &lt;br/&gt;@param	InstancePtr is a pointer to the Subsystem instance to be worked on.&lt;br/&gt;@param	Flag is used to denote whether to enable or disable the subsystem &lt;br/&gt;@return - XST_SUCCESS on successful operation - XST_FAILURE on failed operation &lt;br/&gt;@note		None&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_Reset</strong>(					<a href="#" onclick="parent.toggleData('param{DE348836-473C-459d-A49B-0564F5181FC2}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{DE348836-473C-459d-A49B-0564F5181FC2}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{DE348836-473C-459d-A49B-0564F5181FC2}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DE348836-473C-459d-A49B-0564F5181FC2}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{DE348836-473C-459d-A49B-0564F5181FC2}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DE348836-473C-459d-A49B-0564F5181FC2}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22249" onclick="parent.toggleDiv('detailsDIVOperations22249','DetailsImageOperations22249')" />Details:
+						<div id="detailsDIVOperations22249" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function is used to reset the CSI Subsystem. Internally it resets the DPHY and CSI only as the IIC instance is separately handled by the application. &lt;br/&gt;@param	InstancePtr is a pointer to the Subsystem instance to be worked on. &lt;br/&gt;@return - XST_SUCCESS if all the sub core IP resets occur correctly - XST_FAILURE if reset fails for any sub core IP fails &lt;br/&gt;@note		None&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_ReportCoreInfo</strong>(					<a href="#" onclick="parent.toggleData('param{6B071014-242E-4465-8434-E7E5F539333F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6B071014-242E-4465-8434-E7E5F539333F}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6B071014-242E-4465-8434-E7E5F539333F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6B071014-242E-4465-8434-E7E5F539333F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6B071014-242E-4465-8434-E7E5F539333F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6B071014-242E-4465-8434-E7E5F539333F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22250" onclick="parent.toggleDiv('detailsDIVOperations22250','DetailsImageOperations22250')" />Details:
+						<div id="detailsDIVOperations22250" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function reports list of cores included. &lt;br/&gt;@param	InstancePtr is a pointer to the Subsystem instance to be worked on. &lt;br/&gt;@return	None &lt;br/&gt;@note		None&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_GetLaneInfo</strong>(					<a href="#" onclick="parent.toggleData('param{67E6D116-93E6-4300-8C7F-6EC7C8BEA960}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{67E6D116-93E6-4300-8C7F-6EC7C8BEA960}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{67E6D116-93E6-4300-8C7F-6EC7C8BEA960}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{67E6D116-93E6-4300-8C7F-6EC7C8BEA960}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{67E6D116-93E6-4300-8C7F-6EC7C8BEA960}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{67E6D116-93E6-4300-8C7F-6EC7C8BEA960}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22251" onclick="parent.toggleDiv('detailsDIVOperations22251','DetailsImageOperations22251')" />Details:
+						<div id="detailsDIVOperations22251" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function gets the clk and data lane info &lt;br/&gt;@param	InstancePtr is a pointer to the Subsystem instance to be worked on. &lt;br/&gt;@return	None &lt;br/&gt;@note		None&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Xil_Out32</strong>(					<a href="#" onclick="parent.toggleData('param{A67D9301-F52C-4ea9-B04C-6AC6D6904683}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{A67D9301-F52C-4ea9-B04C-6AC6D6904683}" border="0" />Addr: <a href="../../EA13/EA1/EA3915.htm">UINTPTR</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{A67D9301-F52C-4ea9-B04C-6AC6D6904683}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A67D9301-F52C-4ea9-B04C-6AC6D6904683}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{A67D9301-F52C-4ea9-B04C-6AC6D6904683}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A67D9301-F52C-4ea9-B04C-6AC6D6904683}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{AEBF6F64-C62E-469e-AEDD-6EC594CE623D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{AEBF6F64-C62E-469e-AEDD-6EC594CE623D}" border="0" />Value: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{AEBF6F64-C62E-469e-AEDD-6EC594CE623D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AEBF6F64-C62E-469e-AEDD-6EC594CE623D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{AEBF6F64-C62E-469e-AEDD-6EC594CE623D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AEBF6F64-C62E-469e-AEDD-6EC594CE623D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22252" onclick="parent.toggleDiv('detailsDIVOperations22252','DetailsImageOperations22252')" />Details:
+						<div id="detailsDIVOperations22252" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_GetShortPacket</strong>(					<a href="#" onclick="parent.toggleData('param{2F5073A8-78DC-4937-A79D-228B795C76C5}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2F5073A8-78DC-4937-A79D-228B795C76C5}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2F5073A8-78DC-4937-A79D-228B795C76C5}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2F5073A8-78DC-4937-A79D-228B795C76C5}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2F5073A8-78DC-4937-A79D-228B795C76C5}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2F5073A8-78DC-4937-A79D-228B795C76C5}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22253" onclick="parent.toggleDiv('detailsDIVOperations22253','DetailsImageOperations22253')" />Details:
+						<div id="detailsDIVOperations22253" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function gets the short packets &lt;br/&gt;@param	InstancePtr is a pointer to the Subsystem instance to be worked on. &lt;br/&gt;@return	None &lt;br/&gt;@note		None&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_GetVCInfo</strong>(					<a href="#" onclick="parent.toggleData('param{5AC3FE76-7B58-4394-B8D8-EACDC25F632D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{5AC3FE76-7B58-4394-B8D8-EACDC25F632D}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{5AC3FE76-7B58-4394-B8D8-EACDC25F632D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{5AC3FE76-7B58-4394-B8D8-EACDC25F632D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{5AC3FE76-7B58-4394-B8D8-EACDC25F632D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{5AC3FE76-7B58-4394-B8D8-EACDC25F632D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22254" onclick="parent.toggleDiv('detailsDIVOperations22254','DetailsImageOperations22254')" />Details:
+						<div id="detailsDIVOperations22254" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function gets the virtual channel information &lt;br/&gt;@param	InstancePtr is a pointer to the Subsystem instance to be worked on. &lt;br/&gt;@return	None &lt;br/&gt;@note		None&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_SelfTest</strong>(					<a href="#" onclick="parent.toggleData('param{CBD3713E-C332-4d89-AE86-F26B9DCA4A40}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{CBD3713E-C332-4d89-AE86-F26B9DCA4A40}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{CBD3713E-C332-4d89-AE86-F26B9DCA4A40}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CBD3713E-C332-4d89-AE86-F26B9DCA4A40}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{CBD3713E-C332-4d89-AE86-F26B9DCA4A40}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CBD3713E-C332-4d89-AE86-F26B9DCA4A40}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22255" onclick="parent.toggleDiv('detailsDIVOperations22255','DetailsImageOperations22255')" />Details:
+						<div id="detailsDIVOperations22255" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_IntrHandler</strong>(					<a href="#" onclick="parent.toggleData('param{1EFF169E-D357-40ae-B59C-DE4AF183C27A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{1EFF169E-D357-40ae-B59C-DE4AF183C27A}" border="0" />InstancePtr: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{1EFF169E-D357-40ae-B59C-DE4AF183C27A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1EFF169E-D357-40ae-B59C-DE4AF183C27A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{1EFF169E-D357-40ae-B59C-DE4AF183C27A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1EFF169E-D357-40ae-B59C-DE4AF183C27A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22256" onclick="parent.toggleDiv('detailsDIVOperations22256','DetailsImageOperations22256')" />Details:
+						<div id="detailsDIVOperations22256" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_IntrDisable</strong>(					<a href="#" onclick="parent.toggleData('param{1D767FFD-BDF5-4c7f-8BBB-1A9F0F58587E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{1D767FFD-BDF5-4c7f-8BBB-1A9F0F58587E}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{1D767FFD-BDF5-4c7f-8BBB-1A9F0F58587E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1D767FFD-BDF5-4c7f-8BBB-1A9F0F58587E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{1D767FFD-BDF5-4c7f-8BBB-1A9F0F58587E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1D767FFD-BDF5-4c7f-8BBB-1A9F0F58587E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{2FA8F01B-A312-4353-A8B2-F0C60B23BCB8}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2FA8F01B-A312-4353-A8B2-F0C60B23BCB8}" border="0" />IntrMask: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2FA8F01B-A312-4353-A8B2-F0C60B23BCB8}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2FA8F01B-A312-4353-A8B2-F0C60B23BCB8}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2FA8F01B-A312-4353-A8B2-F0C60B23BCB8}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2FA8F01B-A312-4353-A8B2-F0C60B23BCB8}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22257" onclick="parent.toggleDiv('detailsDIVOperations22257','DetailsImageOperations22257')" />Details:
+						<div id="detailsDIVOperations22257" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XCsiSs_SetCallBack</strong>(					<a href="#" onclick="parent.toggleData('param{492C501E-DF10-46dc-9239-F81F4EB06479}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{492C501E-DF10-46dc-9239-F81F4EB06479}" border="0" />InstancePtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{492C501E-DF10-46dc-9239-F81F4EB06479}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{492C501E-DF10-46dc-9239-F81F4EB06479}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{492C501E-DF10-46dc-9239-F81F4EB06479}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{492C501E-DF10-46dc-9239-F81F4EB06479}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{DEA63BA7-0986-4b4a-A2B0-735D7540EE43}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{DEA63BA7-0986-4b4a-A2B0-735D7540EE43}" border="0" />HandlerType: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{DEA63BA7-0986-4b4a-A2B0-735D7540EE43}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DEA63BA7-0986-4b4a-A2B0-735D7540EE43}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{DEA63BA7-0986-4b4a-A2B0-735D7540EE43}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DEA63BA7-0986-4b4a-A2B0-735D7540EE43}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{D6993777-8CD0-43aa-B18B-947C82A5E4D1}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D6993777-8CD0-43aa-B18B-947C82A5E4D1}" border="0" />CallbackFunc: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D6993777-8CD0-43aa-B18B-947C82A5E4D1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D6993777-8CD0-43aa-B18B-947C82A5E4D1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D6993777-8CD0-43aa-B18B-947C82A5E4D1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D6993777-8CD0-43aa-B18B-947C82A5E4D1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{1C0E2F25-4C1F-490f-A06C-AE0FDB8B91C1}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{1C0E2F25-4C1F-490f-A06C-AE0FDB8B91C1}" border="0" />CallbackRef: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{1C0E2F25-4C1F-490f-A06C-AE0FDB8B91C1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1C0E2F25-4C1F-490f-A06C-AE0FDB8B91C1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{1C0E2F25-4C1F-490f-A06C-AE0FDB8B91C1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1C0E2F25-4C1F-490f-A06C-AE0FDB8B91C1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22258" onclick="parent.toggleDiv('detailsDIVOperations22258','DetailsImageOperations22258')" />Details:
+						<div id="detailsDIVOperations22258" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private static</i><br />
+					<strong>CsiSs_GetIncludedSubCores</strong>(					<a href="#" onclick="parent.toggleData('param{2F9FA941-C5BF-4a63-933F-7D4E21784BB7}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2F9FA941-C5BF-4a63-933F-7D4E21784BB7}" border="0" />CsiSsPtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2F9FA941-C5BF-4a63-933F-7D4E21784BB7}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2F9FA941-C5BF-4a63-933F-7D4E21784BB7}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2F9FA941-C5BF-4a63-933F-7D4E21784BB7}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2F9FA941-C5BF-4a63-933F-7D4E21784BB7}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22259" onclick="parent.toggleDiv('detailsDIVOperations22259','DetailsImageOperations22259')" />Details:
+						<div id="detailsDIVOperations22259" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function queries the subsystem instance configuration to determine the included sub-cores. For each sub-core that is present in the design the sub-core driver instance is binded with the subsystem sub-core driver handle &lt;br/&gt;@param	CsiSsPtr is a pointer to the Subsystem instance to be worked. &lt;br/&gt;@return	None &lt;br/&gt;@note		None&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private static</i><br />
+					<strong>CsiSs_SubCoreInitCsi</strong>(					<a href="#" onclick="parent.toggleData('param{B1E2A96A-7873-4f6f-8769-7E397007CD01}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{B1E2A96A-7873-4f6f-8769-7E397007CD01}" border="0" />CsiSsPtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B1E2A96A-7873-4f6f-8769-7E397007CD01}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B1E2A96A-7873-4f6f-8769-7E397007CD01}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B1E2A96A-7873-4f6f-8769-7E397007CD01}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B1E2A96A-7873-4f6f-8769-7E397007CD01}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22260" onclick="parent.toggleDiv('detailsDIVOperations22260','DetailsImageOperations22260')" />Details:
+						<div id="detailsDIVOperations22260" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function initializes the included sub-core to it&#39;s static configuration &lt;br/&gt;@param	CsiSsPtr is a pointer to the Subsystem instance to be worked. &lt;br/&gt;@return - XST_SUCCESS If CSI sub core is initialised sucessfully - XST_FAILURE If CSI sub core inititlization fails &lt;br/&gt;@note		None&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private static</i><br />
+					<strong>CsiSs_SubCoreInitIic</strong>(					<a href="#" onclick="parent.toggleData('param{1B50C624-D6B8-48df-98CB-48B27942F268}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{1B50C624-D6B8-48df-98CB-48B27942F268}" border="0" />CsiSsPtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{1B50C624-D6B8-48df-98CB-48B27942F268}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1B50C624-D6B8-48df-98CB-48B27942F268}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{1B50C624-D6B8-48df-98CB-48B27942F268}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{1B50C624-D6B8-48df-98CB-48B27942F268}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22261" onclick="parent.toggleDiv('detailsDIVOperations22261','DetailsImageOperations22261')" />Details:
+						<div id="detailsDIVOperations22261" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function initializes the included sub-core to it&#39;s static configuration &lt;br/&gt;@param	CsiSsPtr is a pointer to the Subsystem instance to be worked. &lt;br/&gt;@return - XST_SUCCESS If IIC sub core is initialised sucessfully - XST_FAILURE Otherwise &lt;br/&gt;@note		None&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private static</i><br />
+					<strong>CsiSs_SubCoreInitDphy</strong>(					<a href="#" onclick="parent.toggleData('param{6BC6453D-B6BF-49a6-82C6-5A017B468EEF}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6BC6453D-B6BF-49a6-82C6-5A017B468EEF}" border="0" />CsiSsPtr: XCsiSs*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6BC6453D-B6BF-49a6-82C6-5A017B468EEF}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6BC6453D-B6BF-49a6-82C6-5A017B468EEF}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6BC6453D-B6BF-49a6-82C6-5A017B468EEF}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6BC6453D-B6BF-49a6-82C6-5A017B468EEF}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22262" onclick="parent.toggleDiv('detailsDIVOperations22262','DetailsImageOperations22262')" />Details:
+						<div id="detailsDIVOperations22262" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function initializes the included sub-core to it&#39;s static configuration &lt;br/&gt;@param	CsiSsPtr is a pointer to the Subsystem instance to be worked. &lt;br/&gt;@return - XST_SUCCESS If DPHY sub core is initialised sucessfully - XST_FAILURE If DPHY sub core initialization failed &lt;br/&gt;@note		None&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private static</i><br />
+					<strong>CsiSs_ComputeSubCoreAbsAddr</strong>(					<a href="#" onclick="parent.toggleData('param{AF60D1D7-54AC-48c1-BAE2-31433FF0A66B}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{AF60D1D7-54AC-48c1-BAE2-31433FF0A66B}" border="0" />SsBaseAddr: <a href="../../EA13/EA1/EA3915.htm">UINTPTR</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{AF60D1D7-54AC-48c1-BAE2-31433FF0A66B}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AF60D1D7-54AC-48c1-BAE2-31433FF0A66B}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{AF60D1D7-54AC-48c1-BAE2-31433FF0A66B}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AF60D1D7-54AC-48c1-BAE2-31433FF0A66B}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{05366F0E-C325-4d04-B695-007918E22C84}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{05366F0E-C325-4d04-B695-007918E22C84}" border="0" />SsHighAddr: <a href="../../EA13/EA1/EA3915.htm">UINTPTR</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{05366F0E-C325-4d04-B695-007918E22C84}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{05366F0E-C325-4d04-B695-007918E22C84}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{05366F0E-C325-4d04-B695-007918E22C84}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{05366F0E-C325-4d04-B695-007918E22C84}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{14C84815-4F7D-447d-BF58-8FE4A601D7C8}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{14C84815-4F7D-447d-BF58-8FE4A601D7C8}" border="0" />Offset: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{14C84815-4F7D-447d-BF58-8FE4A601D7C8}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{14C84815-4F7D-447d-BF58-8FE4A601D7C8}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{14C84815-4F7D-447d-BF58-8FE4A601D7C8}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{14C84815-4F7D-447d-BF58-8FE4A601D7C8}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{927F6AEC-3271-4568-9410-7EBD32CBA3E1}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{927F6AEC-3271-4568-9410-7EBD32CBA3E1}" border="0" />BaseAddr: UINTPTR*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{927F6AEC-3271-4568-9410-7EBD32CBA3E1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{927F6AEC-3271-4568-9410-7EBD32CBA3E1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{927F6AEC-3271-4568-9410-7EBD32CBA3E1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{927F6AEC-3271-4568-9410-7EBD32CBA3E1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22263" onclick="parent.toggleDiv('detailsDIVOperations22263','DetailsImageOperations22263')" />Details:
+						<div id="detailsDIVOperations22263" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This function computes the subcore absolute address on axi-lite interface Subsystem is mapped at an absolute address and all included sub-cores are at pre-defined offset from the subsystem base address. To access the subcore register map from host CPU an absolute address is required. The subsystem is aligned to 64K address and has address range of max 192K (0x00000-0x2FFFF) in case IIC is present and DPHY register interface is selected. By default, CSI is at offset 0x0_0000, IIC is at offset 0x1_0000 and DPHY is at offset 0x2_0000. In case of IIC being absent and DPHY has register interface, the address range shrinks to 128K (0x00000 - 0x1FFFF) with DPHY moving to offset 0x1_0000. In case DPHY register interface is also absent then the address range shrinks to 64K with only the CSI subcore at offset 0x0_0000. &lt;br/&gt;@param	SsBaseAddr is the base address of the the Subsystem instance&lt;br/&gt;@param	SsHighAddr is the max address of the Subsystem instance&lt;br/&gt;@param	Offset is the offset of the specified core&lt;br/&gt;@param	BaseAddr is the computed absolute base address of the subcore &lt;br/&gt;@return - XST_SUCCESS if base address computation is successful and within subsystem address range - XST_FAILURE Otherwise &lt;br/&gt;@note		None&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+</div>		<div class="ItemBody" id="AssociationsToTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA3818.htm">«struct» XCsiSs_SubCores</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> CsiSsSubCores<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink22264" onclick="parent.toggleDiv('detailsDIVLink22264','DetailsImageLink22264')" />Details:
+							<div id="detailsDIVLink22264" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="CustomPropertiesTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Property</td>
+					<td width="70%" class="TableHeading">Value</td>
+				</tr>
+			<tr>
+				<td width="30%" class="TableRow">isFinalSpecialization:</td>
+				<td width="70%" class="TableRow">0</td>
+			</tr>
+
+
+			</table>
+		</div>		<div class="ItemBody" id="LinksTable">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="10%" class="TableHeading">Type</td>
+					<td width="10%" class="TableHeading">Connection</td>
+					<td width="10%" class="TableHeading">Direction</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../../../EA4/EA1/EA1/EA5209.htm">CMS_SW_FastInit</a></td>
+					<td width="10%" class="TableRow" valign="top">Package</td>
+					<td width="10%" class="TableRow" valign="top">Realization</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="10%" class="TableRow" valign="top">Class</td>
+					<td width="10%" class="TableRow" valign="top">Realization</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="10%" class="TableRow" valign="top">Class</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

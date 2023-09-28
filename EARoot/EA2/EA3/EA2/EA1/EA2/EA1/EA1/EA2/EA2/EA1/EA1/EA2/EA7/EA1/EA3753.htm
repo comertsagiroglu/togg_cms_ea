@@ -1,0 +1,1547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>src::xgpio</title>
+<link href="../../../../../../../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("xgpio", " : "))</script>  : Public   Class</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">1.12.2022 12:28:11</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">22.09.2023 17:58:19</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">comert sagiroglu</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{6F9AA8F7-3EBD-4c8a-B4BF-75C560E36F4A}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="../../../../../../../../../../../../../EA2/EA2/EA6/EA1/EA1502.htm">CMS_Bootloader HW-SW IDD</a>, <a href="../../../../../../../../../../../../../EA2/EA2/EA6/EA1/EA1504.htm">CMS_SW_FastInit HW-SW IDD</a>, <a href="../../../../../../../../../../../../../EA2/EA2/EA6/EA2/EA1539.htm">CMS_SW_FastInit SW-SW IDD</a>, <a href="../../../../../../../../../../../../../EA2/EA2/EA6/EA2/EA1537.htm">CMS_Bootloader SW-SW IDD</a>, <a href="EA3750.htm">src</a>, <a href="../../../../../../../../../../../../EA3/EA2/EA9/EA1/EA1/EA6149.htm">CMS_SW_FUSA::DelayReverse_Frame_Detector_ClearFlag</a>, <a href="../../../../../../../../../../../../EA3/EA2/EA9/EA1/EA2/EA6153.htm">CMS_SW_FUSA::FrozenDetector_ClearFlag</a>, <a href="../../../../../../../../../../../../../EA2/EA2/EA7/EA2/EA1614.htm">Normal Operation: HW-SW Interaction CPA</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">This typedef contains configuration information for the device.&lt;br/&gt;</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent.toggleItem('MessagesTo');" id="MessagesToTitle">Messages To</li>
+			<li onClick="parent.toggleItem('MessagesFrom');" id="MessagesFromTitle">Messages From</li>
+			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
+		</ul>
+<div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="100%" class="TableHeading">Operation</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_Initialize</strong>(					<a href="#" onclick="parent.toggleData('param{32D65567-6316-42d2-B353-3F9FB66D3DBF}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{32D65567-6316-42d2-B353-3F9FB66D3DBF}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{32D65567-6316-42d2-B353-3F9FB66D3DBF}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{32D65567-6316-42d2-B353-3F9FB66D3DBF}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{32D65567-6316-42d2-B353-3F9FB66D3DBF}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{32D65567-6316-42d2-B353-3F9FB66D3DBF}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{81BF982D-8FDF-4aea-95BB-96C92126E497}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{81BF982D-8FDF-4aea-95BB-96C92126E497}" border="0" />DeviceId: <a href="../../EA13/EA1/EA3911.htm">u16</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{81BF982D-8FDF-4aea-95BB-96C92126E497}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{81BF982D-8FDF-4aea-95BB-96C92126E497}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{81BF982D-8FDF-4aea-95BB-96C92126E497}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{81BF982D-8FDF-4aea-95BB-96C92126E497}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):int
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations21998" onclick="parent.toggleDiv('detailsDIVOperations21998','DetailsImageOperations21998')" />Details:
+						<div id="detailsDIVOperations21998" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_LookupConfig</strong>(					<a href="#" onclick="parent.toggleData('param{000FE0A3-29CF-4762-8098-F5B8E577E439}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{000FE0A3-29CF-4762-8098-F5B8E577E439}" border="0" />DeviceId: <a href="../../EA13/EA1/EA3911.htm">u16</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{000FE0A3-29CF-4762-8098-F5B8E577E439}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{000FE0A3-29CF-4762-8098-F5B8E577E439}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{000FE0A3-29CF-4762-8098-F5B8E577E439}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{000FE0A3-29CF-4762-8098-F5B8E577E439}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):XGpio_Config *
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations21999" onclick="parent.toggleDiv('detailsDIVOperations21999','DetailsImageOperations21999')" />Details:
+						<div id="detailsDIVOperations21999" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_CfgInitialize</strong>(					<a href="#" onclick="parent.toggleData('param{4340F691-49FE-4b24-887F-3CBFF3EAC7F4}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{4340F691-49FE-4b24-887F-3CBFF3EAC7F4}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{4340F691-49FE-4b24-887F-3CBFF3EAC7F4}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4340F691-49FE-4b24-887F-3CBFF3EAC7F4}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{4340F691-49FE-4b24-887F-3CBFF3EAC7F4}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4340F691-49FE-4b24-887F-3CBFF3EAC7F4}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{4BF9B39E-2C0C-4333-9217-32783D7D0C46}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{4BF9B39E-2C0C-4333-9217-32783D7D0C46}" border="0" />Config: XGpio_Config*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{4BF9B39E-2C0C-4333-9217-32783D7D0C46}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4BF9B39E-2C0C-4333-9217-32783D7D0C46}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{4BF9B39E-2C0C-4333-9217-32783D7D0C46}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4BF9B39E-2C0C-4333-9217-32783D7D0C46}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{FA27CD50-D59C-45db-8D6F-2CF709298CEC}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{FA27CD50-D59C-45db-8D6F-2CF709298CEC}" border="0" />EffectiveAddr: <a href="../../EA13/EA1/EA3915.htm">UINTPTR</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{FA27CD50-D59C-45db-8D6F-2CF709298CEC}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FA27CD50-D59C-45db-8D6F-2CF709298CEC}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{FA27CD50-D59C-45db-8D6F-2CF709298CEC}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FA27CD50-D59C-45db-8D6F-2CF709298CEC}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):int
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22000" onclick="parent.toggleDiv('detailsDIVOperations22000','DetailsImageOperations22000')" />Details:
+						<div id="detailsDIVOperations22000" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Initialize the XGpio instance provided by the caller based on the given configuration data.&#160;&#160;Nothing is done except to initialize the InstancePtr. &lt;br/&gt;@param	InstancePtr is a pointer to an XGpio instance. The memory the pointer references must be pre-allocated by the caller. Further calls to manipulate the driver through the XGpio API must be made with this pointer.&lt;br/&gt;@param	Config is a reference to a structure containing information about a specific GPIO device. This function initializes an InstancePtr object for a specific device specified by the contents of Config. This function can initialize multiple instance objects with the use of multiple calls giving different Config information on each call.&lt;br/&gt;@param 	EffectiveAddr is the device base address in the virtual memory address space. The caller is responsible for keeping the address mapping from EffectiveAddr to the device physical base address unchanged once this function is invoked. Unexpected errors may occur if the address mapping changes after this function is called. If address translation is not used, use Config-#gt;BaseAddress for this parameters, passing the physical address instead. &lt;br/&gt;@return - XST_SUCCESS if the initialization is successful. &lt;br/&gt;@note		None.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_SetDataDirection</strong>(					<a href="#" onclick="parent.toggleData('param{539C6839-A630-4cba-8391-CFF3D8D0F67E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{539C6839-A630-4cba-8391-CFF3D8D0F67E}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{539C6839-A630-4cba-8391-CFF3D8D0F67E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{539C6839-A630-4cba-8391-CFF3D8D0F67E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{539C6839-A630-4cba-8391-CFF3D8D0F67E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{539C6839-A630-4cba-8391-CFF3D8D0F67E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{98000178-1501-42c8-A5C9-328143E77A88}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{98000178-1501-42c8-A5C9-328143E77A88}" border="0" />Channel: unsigned</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{98000178-1501-42c8-A5C9-328143E77A88}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{98000178-1501-42c8-A5C9-328143E77A88}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{98000178-1501-42c8-A5C9-328143E77A88}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{98000178-1501-42c8-A5C9-328143E77A88}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{D7DAFF6D-3167-4d8f-9607-A78DC78F9154}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D7DAFF6D-3167-4d8f-9607-A78DC78F9154}" border="0" />DirectionMask: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D7DAFF6D-3167-4d8f-9607-A78DC78F9154}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D7DAFF6D-3167-4d8f-9607-A78DC78F9154}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D7DAFF6D-3167-4d8f-9607-A78DC78F9154}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D7DAFF6D-3167-4d8f-9607-A78DC78F9154}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22001" onclick="parent.toggleDiv('detailsDIVOperations22001','DetailsImageOperations22001')" />Details:
+						<div id="detailsDIVOperations22001" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Set the input/output direction of all discrete signals for the specified GPIO channel. &lt;br/&gt;@param	InstancePtr is a pointer to an XGpio instance to be worked on.&lt;br/&gt;@param	Channel contains the channel of the GPIO (1 or 2) to operate on.&lt;br/&gt;@param	DirectionMask is a bitmask specifying which discretes are input and which are output. Bits set to 0 are output and bits set to 1 are input. &lt;br/&gt;@return	None. &lt;br/&gt;@note		The hardware must be built for dual channels if this function is used with any channel other than 1.&#160;&#160;If it is not, this function will assert.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Xil_In32</strong>(					<a href="#" onclick="parent.toggleData('param{A1266EEE-A7B8-44bf-927A-85EEBE7F1EB8}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{A1266EEE-A7B8-44bf-927A-85EEBE7F1EB8}" border="0" />Addr: <a href="../../EA13/EA1/EA3915.htm">UINTPTR</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{A1266EEE-A7B8-44bf-927A-85EEBE7F1EB8}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A1266EEE-A7B8-44bf-927A-85EEBE7F1EB8}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{A1266EEE-A7B8-44bf-927A-85EEBE7F1EB8}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A1266EEE-A7B8-44bf-927A-85EEBE7F1EB8}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22002" onclick="parent.toggleDiv('detailsDIVOperations22002','DetailsImageOperations22002')" />Details:
+						<div id="detailsDIVOperations22002" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_GetDataDirection</strong>(					<a href="#" onclick="parent.toggleData('param{3C75A3ED-8A63-450d-9E29-C12102D324E1}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{3C75A3ED-8A63-450d-9E29-C12102D324E1}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{3C75A3ED-8A63-450d-9E29-C12102D324E1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3C75A3ED-8A63-450d-9E29-C12102D324E1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{3C75A3ED-8A63-450d-9E29-C12102D324E1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{3C75A3ED-8A63-450d-9E29-C12102D324E1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{71713055-1F50-41eb-87E1-9FF5AFBF600F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{71713055-1F50-41eb-87E1-9FF5AFBF600F}" border="0" />Channel: unsigned</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{71713055-1F50-41eb-87E1-9FF5AFBF600F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{71713055-1F50-41eb-87E1-9FF5AFBF600F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{71713055-1F50-41eb-87E1-9FF5AFBF600F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{71713055-1F50-41eb-87E1-9FF5AFBF600F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22003" onclick="parent.toggleDiv('detailsDIVOperations22003','DetailsImageOperations22003')" />Details:
+						<div id="detailsDIVOperations22003" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Get the input/output direction of all discrete signals for the specified GPIO channel. &lt;br/&gt;@param	InstancePtr is a pointer to an XGpio instance to be worked on.&lt;br/&gt;@param	Channel contains the channel of the GPIO (1 or 2) to operate on. &lt;br/&gt;@return	Bitmask specifying which discretes are input and which are output. Bits set to 0 are output and bits set to 1 are input. &lt;br/&gt;@note&#160;&#160;The hardware must be built for dual channels if this function is used with any channel other than 1.&#160;&#160;If it is not, this function will assert.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_DiscreteRead</strong>(					<a href="#" onclick="parent.toggleData('param{813979A2-4D7E-44e5-AA69-5F7142724D3F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{813979A2-4D7E-44e5-AA69-5F7142724D3F}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{813979A2-4D7E-44e5-AA69-5F7142724D3F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{813979A2-4D7E-44e5-AA69-5F7142724D3F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{813979A2-4D7E-44e5-AA69-5F7142724D3F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{813979A2-4D7E-44e5-AA69-5F7142724D3F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{F9B53789-B065-4cc5-9FF5-535992038D4D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{F9B53789-B065-4cc5-9FF5-535992038D4D}" border="0" />Channel: unsigned</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F9B53789-B065-4cc5-9FF5-535992038D4D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F9B53789-B065-4cc5-9FF5-535992038D4D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F9B53789-B065-4cc5-9FF5-535992038D4D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F9B53789-B065-4cc5-9FF5-535992038D4D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22004" onclick="parent.toggleDiv('detailsDIVOperations22004','DetailsImageOperations22004')" />Details:
+						<div id="detailsDIVOperations22004" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Read state of discretes for the specified GPIO channel. &lt;br/&gt;@param	InstancePtr is a pointer to an XGpio instance to be worked on.&lt;br/&gt;@param	Channel contains the channel of the GPIO (1 or 2) to operate on. &lt;br/&gt;@return	Current copy of the discretes register. &lt;br/&gt;@note		The hardware must be built for dual channels if this function is used with any channel other than 1.&#160;&#160;If it is not, this function will assert.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_DiscreteWrite</strong>(					<a href="#" onclick="parent.toggleData('param{AB925088-1C97-44b0-85CE-A5DDCA8FB61C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{AB925088-1C97-44b0-85CE-A5DDCA8FB61C}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{AB925088-1C97-44b0-85CE-A5DDCA8FB61C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AB925088-1C97-44b0-85CE-A5DDCA8FB61C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{AB925088-1C97-44b0-85CE-A5DDCA8FB61C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{AB925088-1C97-44b0-85CE-A5DDCA8FB61C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{7A6FD806-8641-4871-9F28-309270A87526}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{7A6FD806-8641-4871-9F28-309270A87526}" border="0" />Channel: unsigned</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{7A6FD806-8641-4871-9F28-309270A87526}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7A6FD806-8641-4871-9F28-309270A87526}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{7A6FD806-8641-4871-9F28-309270A87526}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7A6FD806-8641-4871-9F28-309270A87526}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{80FEA3EF-EA04-48b8-8C2D-9000423FB3D0}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{80FEA3EF-EA04-48b8-8C2D-9000423FB3D0}" border="0" />Mask: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{80FEA3EF-EA04-48b8-8C2D-9000423FB3D0}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{80FEA3EF-EA04-48b8-8C2D-9000423FB3D0}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{80FEA3EF-EA04-48b8-8C2D-9000423FB3D0}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{80FEA3EF-EA04-48b8-8C2D-9000423FB3D0}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22005" onclick="parent.toggleDiv('detailsDIVOperations22005','DetailsImageOperations22005')" />Details:
+						<div id="detailsDIVOperations22005" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Write to discretes register for the specified GPIO channel. &lt;br/&gt;@param	InstancePtr is a pointer to an XGpio instance to be worked on.&lt;br/&gt;@param	Channel contains the channel of the GPIO (1 or 2) to operate on.&lt;br/&gt;@param	Mask is the value to be written to the discretes register. &lt;br/&gt;@return	None. &lt;br/&gt;@note		The hardware must be built for dual channels if this function is&#160;&#160;used with any channel other than 1.&#160;&#160;If it is not, this function will assert. See also XGpio_DiscreteSet() and XGpio_DiscreteClear().&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_DiscreteSet</strong>(					<a href="#" onclick="parent.toggleData('param{E666C68B-54C6-45cd-A76B-B1EEFCBD750E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E666C68B-54C6-45cd-A76B-B1EEFCBD750E}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E666C68B-54C6-45cd-A76B-B1EEFCBD750E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E666C68B-54C6-45cd-A76B-B1EEFCBD750E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E666C68B-54C6-45cd-A76B-B1EEFCBD750E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E666C68B-54C6-45cd-A76B-B1EEFCBD750E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{37A31F5F-2FD3-4b84-AE4D-847ED1D870C3}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{37A31F5F-2FD3-4b84-AE4D-847ED1D870C3}" border="0" />Channel: unsigned</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{37A31F5F-2FD3-4b84-AE4D-847ED1D870C3}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{37A31F5F-2FD3-4b84-AE4D-847ED1D870C3}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{37A31F5F-2FD3-4b84-AE4D-847ED1D870C3}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{37A31F5F-2FD3-4b84-AE4D-847ED1D870C3}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{D893270A-E668-4a45-9FDC-29B6D5547A0F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D893270A-E668-4a45-9FDC-29B6D5547A0F}" border="0" />Mask: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D893270A-E668-4a45-9FDC-29B6D5547A0F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D893270A-E668-4a45-9FDC-29B6D5547A0F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D893270A-E668-4a45-9FDC-29B6D5547A0F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D893270A-E668-4a45-9FDC-29B6D5547A0F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22006" onclick="parent.toggleDiv('detailsDIVOperations22006','DetailsImageOperations22006')" />Details:
+						<div id="detailsDIVOperations22006" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Xil_Out32</strong>(					<a href="#" onclick="parent.toggleData('param{7FFE4F1D-E28C-4ae3-8ADD-F6B0EAB8EF33}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{7FFE4F1D-E28C-4ae3-8ADD-F6B0EAB8EF33}" border="0" />Addr: <a href="../../EA13/EA1/EA3915.htm">UINTPTR</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{7FFE4F1D-E28C-4ae3-8ADD-F6B0EAB8EF33}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7FFE4F1D-E28C-4ae3-8ADD-F6B0EAB8EF33}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{7FFE4F1D-E28C-4ae3-8ADD-F6B0EAB8EF33}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7FFE4F1D-E28C-4ae3-8ADD-F6B0EAB8EF33}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{9414FC27-494F-4a97-AE87-6047DEF375EB}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{9414FC27-494F-4a97-AE87-6047DEF375EB}" border="0" />Value: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{9414FC27-494F-4a97-AE87-6047DEF375EB}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9414FC27-494F-4a97-AE87-6047DEF375EB}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{9414FC27-494F-4a97-AE87-6047DEF375EB}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9414FC27-494F-4a97-AE87-6047DEF375EB}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22007" onclick="parent.toggleDiv('detailsDIVOperations22007','DetailsImageOperations22007')" />Details:
+						<div id="detailsDIVOperations22007" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_DiscreteClear</strong>(					<a href="#" onclick="parent.toggleData('param{EFE36548-3B04-48c1-AA36-E426D33E7A50}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{EFE36548-3B04-48c1-AA36-E426D33E7A50}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{EFE36548-3B04-48c1-AA36-E426D33E7A50}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EFE36548-3B04-48c1-AA36-E426D33E7A50}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{EFE36548-3B04-48c1-AA36-E426D33E7A50}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EFE36548-3B04-48c1-AA36-E426D33E7A50}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{82DFC312-EEF3-41db-ABC2-A3E7547068CE}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{82DFC312-EEF3-41db-ABC2-A3E7547068CE}" border="0" />Channel: unsigned</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{82DFC312-EEF3-41db-ABC2-A3E7547068CE}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{82DFC312-EEF3-41db-ABC2-A3E7547068CE}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{82DFC312-EEF3-41db-ABC2-A3E7547068CE}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{82DFC312-EEF3-41db-ABC2-A3E7547068CE}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{12C70E91-9871-46c9-9DBA-9131DCE98684}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{12C70E91-9871-46c9-9DBA-9131DCE98684}" border="0" />Mask: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{12C70E91-9871-46c9-9DBA-9131DCE98684}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{12C70E91-9871-46c9-9DBA-9131DCE98684}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{12C70E91-9871-46c9-9DBA-9131DCE98684}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{12C70E91-9871-46c9-9DBA-9131DCE98684}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22008" onclick="parent.toggleDiv('detailsDIVOperations22008','DetailsImageOperations22008')" />Details:
+						<div id="detailsDIVOperations22008" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_SelfTest</strong>(					<a href="#" onclick="parent.toggleData('param{E9EE389F-1CCD-427a-9083-F82BEFA9F185}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{E9EE389F-1CCD-427a-9083-F82BEFA9F185}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{E9EE389F-1CCD-427a-9083-F82BEFA9F185}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E9EE389F-1CCD-427a-9083-F82BEFA9F185}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{E9EE389F-1CCD-427a-9083-F82BEFA9F185}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{E9EE389F-1CCD-427a-9083-F82BEFA9F185}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):int
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22009" onclick="parent.toggleDiv('detailsDIVOperations22009','DetailsImageOperations22009')" />Details:
+						<div id="detailsDIVOperations22009" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_InterruptGlobalEnable</strong>(					<a href="#" onclick="parent.toggleData('param{6D51EF2F-756A-4dac-B6E8-B3057AD85AC5}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6D51EF2F-756A-4dac-B6E8-B3057AD85AC5}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6D51EF2F-756A-4dac-B6E8-B3057AD85AC5}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6D51EF2F-756A-4dac-B6E8-B3057AD85AC5}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6D51EF2F-756A-4dac-B6E8-B3057AD85AC5}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6D51EF2F-756A-4dac-B6E8-B3057AD85AC5}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22010" onclick="parent.toggleDiv('detailsDIVOperations22010','DetailsImageOperations22010')" />Details:
+						<div id="detailsDIVOperations22010" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_InterruptGlobalDisable</strong>(					<a href="#" onclick="parent.toggleData('param{F16B35EA-4316-4418-92FB-54C5C393217D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{F16B35EA-4316-4418-92FB-54C5C393217D}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F16B35EA-4316-4418-92FB-54C5C393217D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F16B35EA-4316-4418-92FB-54C5C393217D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F16B35EA-4316-4418-92FB-54C5C393217D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F16B35EA-4316-4418-92FB-54C5C393217D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22011" onclick="parent.toggleDiv('detailsDIVOperations22011','DetailsImageOperations22011')" />Details:
+						<div id="detailsDIVOperations22011" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_InterruptEnable</strong>(					<a href="#" onclick="parent.toggleData('param{2CCB692D-3171-41b1-9F23-C79590DDB8E7}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{2CCB692D-3171-41b1-9F23-C79590DDB8E7}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{2CCB692D-3171-41b1-9F23-C79590DDB8E7}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2CCB692D-3171-41b1-9F23-C79590DDB8E7}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{2CCB692D-3171-41b1-9F23-C79590DDB8E7}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{2CCB692D-3171-41b1-9F23-C79590DDB8E7}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{03807229-A44C-4a8f-A9F1-ABFAF2886415}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{03807229-A44C-4a8f-A9F1-ABFAF2886415}" border="0" />Mask: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{03807229-A44C-4a8f-A9F1-ABFAF2886415}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{03807229-A44C-4a8f-A9F1-ABFAF2886415}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{03807229-A44C-4a8f-A9F1-ABFAF2886415}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{03807229-A44C-4a8f-A9F1-ABFAF2886415}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22012" onclick="parent.toggleDiv('detailsDIVOperations22012','DetailsImageOperations22012')" />Details:
+						<div id="detailsDIVOperations22012" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_InterruptDisable</strong>(					<a href="#" onclick="parent.toggleData('param{9E7AF841-6726-4afb-8D72-524495FC5837}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{9E7AF841-6726-4afb-8D72-524495FC5837}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{9E7AF841-6726-4afb-8D72-524495FC5837}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9E7AF841-6726-4afb-8D72-524495FC5837}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{9E7AF841-6726-4afb-8D72-524495FC5837}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{9E7AF841-6726-4afb-8D72-524495FC5837}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{604838B3-071F-47bb-8609-25E85194C16A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{604838B3-071F-47bb-8609-25E85194C16A}" border="0" />Mask: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{604838B3-071F-47bb-8609-25E85194C16A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{604838B3-071F-47bb-8609-25E85194C16A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{604838B3-071F-47bb-8609-25E85194C16A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{604838B3-071F-47bb-8609-25E85194C16A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22013" onclick="parent.toggleDiv('detailsDIVOperations22013','DetailsImageOperations22013')" />Details:
+						<div id="detailsDIVOperations22013" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_InterruptClear</strong>(					<a href="#" onclick="parent.toggleData('param{F22C4626-BDEB-43a2-878C-38F0BD430E61}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{F22C4626-BDEB-43a2-878C-38F0BD430E61}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F22C4626-BDEB-43a2-878C-38F0BD430E61}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F22C4626-BDEB-43a2-878C-38F0BD430E61}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F22C4626-BDEB-43a2-878C-38F0BD430E61}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F22C4626-BDEB-43a2-878C-38F0BD430E61}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{F5F8166D-6869-45e9-9965-28F75408BB11}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{F5F8166D-6869-45e9-9965-28F75408BB11}" border="0" />Mask: <a href="../../EA13/EA1/EA3888.htm">u32</a></a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F5F8166D-6869-45e9-9965-28F75408BB11}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F5F8166D-6869-45e9-9965-28F75408BB11}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F5F8166D-6869-45e9-9965-28F75408BB11}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F5F8166D-6869-45e9-9965-28F75408BB11}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22014" onclick="parent.toggleDiv('detailsDIVOperations22014','DetailsImageOperations22014')" />Details:
+						<div id="detailsDIVOperations22014" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_InterruptGetEnabled</strong>(					<a href="#" onclick="parent.toggleData('param{5319E005-6186-4ced-BED3-68C19908A167}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{5319E005-6186-4ced-BED3-68C19908A167}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{5319E005-6186-4ced-BED3-68C19908A167}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{5319E005-6186-4ced-BED3-68C19908A167}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{5319E005-6186-4ced-BED3-68C19908A167}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{5319E005-6186-4ced-BED3-68C19908A167}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22015" onclick="parent.toggleDiv('detailsDIVOperations22015','DetailsImageOperations22015')" />Details:
+						<div id="detailsDIVOperations22015" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>XGpio_InterruptGetStatus</strong>(					<a href="#" onclick="parent.toggleData('param{BD8B963B-984B-43ae-9CFB-6D2A7A02ABD0}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{BD8B963B-984B-43ae-9CFB-6D2A7A02ABD0}" border="0" />InstancePtr: XGpio*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{BD8B963B-984B-43ae-9CFB-6D2A7A02ABD0}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BD8B963B-984B-43ae-9CFB-6D2A7A02ABD0}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{BD8B963B-984B-43ae-9CFB-6D2A7A02ABD0}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BD8B963B-984B-43ae-9CFB-6D2A7A02ABD0}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):<a href="../../EA13/EA1/EA3888.htm">u32</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations22016" onclick="parent.toggleDiv('detailsDIVOperations22016','DetailsImageOperations22016')" />Details:
+						<div id="detailsDIVOperations22016" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+</div>		<div class="ItemBody" id="MessagesToTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="50%" class="TableHeading">Element</td>
+					<td width="50%" class="TableHeading">Message</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="50%" class="TableRow" valign="top">Xil_In32(UINTPTR)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22017" onclick="parent.toggleDiv('detailsDIVMessage22017', 'DetailsImageMessage22017')" />Details:
+							<div id="detailsDIVMessage22017" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="50%" class="TableRow" valign="top">Xil_In32(UINTPTR)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22018" onclick="parent.toggleDiv('detailsDIVMessage22018', 'DetailsImageMessage22018')" />Details:
+							<div id="detailsDIVMessage22018" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="50%" class="TableRow" valign="top">Xil_Out32(UINTPTR,  u32)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22019" onclick="parent.toggleDiv('detailsDIVMessage22019', 'DetailsImageMessage22019')" />Details:
+							<div id="detailsDIVMessage22019" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="50%" class="TableRow" valign="top">Xil_Out32(UINTPTR,  u32)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22020" onclick="parent.toggleDiv('detailsDIVMessage22020', 'DetailsImageMessage22020')" />Details:
+							<div id="detailsDIVMessage22020" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="50%" class="TableRow" valign="top">Xil_In32(UINTPTR)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22021" onclick="parent.toggleDiv('detailsDIVMessage22021', 'DetailsImageMessage22021')" />Details:
+							<div id="detailsDIVMessage22021" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="50%" class="TableRow" valign="top">Xil_In32(UINTPTR)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22022" onclick="parent.toggleDiv('detailsDIVMessage22022', 'DetailsImageMessage22022')" />Details:
+							<div id="detailsDIVMessage22022" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="50%" class="TableRow" valign="top">Xil_Out32(UINTPTR,  u32)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22023" onclick="parent.toggleDiv('detailsDIVMessage22023', 'DetailsImageMessage22023')" />Details:
+							<div id="detailsDIVMessage22023" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="50%" class="TableRow" valign="top">Xil_Out32(UINTPTR,  u32)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22024" onclick="parent.toggleDiv('detailsDIVMessage22024', 'DetailsImageMessage22024')" />Details:
+							<div id="detailsDIVMessage22024" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="MessagesFromTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="50%" class="TableHeading">Element</td>
+					<td width="50%" class="TableHeading">Message</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../../../../../../../../EA3/EA1/EA1/EA1/EA5138.htm">fpga_ips</a></td>
+					<td width="50%" class="TableRow" valign="top">XGpio_DiscreteClear(XGpio*,  unsigned,  u32)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22025" onclick="parent.toggleDiv('detailsDIVMessage22025', 'DetailsImageMessage22025')" />Details:
+							<div id="detailsDIVMessage22025" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../../../../../../../../EA3/EA1/EA1/EA1/EA5138.htm">fpga_ips</a></td>
+					<td width="50%" class="TableRow" valign="top">XGpio_DiscreteSet(XGpio*,  unsigned,  u32)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22026" onclick="parent.toggleDiv('detailsDIVMessage22026', 'DetailsImageMessage22026')" />Details:
+							<div id="detailsDIVMessage22026" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../../../../../../../../EA3/EA1/EA1/EA1/EA5138.htm">fpga_ips</a></td>
+					<td width="50%" class="TableRow" valign="top">XGpio_DiscreteSet(XGpio*,  unsigned,  u32)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22027" onclick="parent.toggleDiv('detailsDIVMessage22027', 'DetailsImageMessage22027')" />Details:
+							<div id="detailsDIVMessage22027" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="../../../../../../../../../EA3/EA1/EA1/EA1/EA5138.htm">fpga_ips</a></td>
+					<td width="50%" class="TableRow" valign="top">XGpio_DiscreteClear(XGpio*,  unsigned,  u32)</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage22028" onclick="parent.toggleDiv('detailsDIVMessage22028', 'DetailsImageMessage22028')" />Details:
+							<div id="detailsDIVMessage22028" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="CustomPropertiesTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Property</td>
+					<td width="70%" class="TableHeading">Value</td>
+				</tr>
+			<tr>
+				<td width="30%" class="TableRow">isFinalSpecialization:</td>
+				<td width="70%" class="TableRow">0</td>
+			</tr>
+
+
+			</table>
+		</div>		<div class="ItemBody" id="LinksTable">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="10%" class="TableHeading">Type</td>
+					<td width="10%" class="TableHeading">Connection</td>
+					<td width="10%" class="TableHeading">Direction</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../../../EA4/EA1/EA1/EA5209.htm">CMS_SW_FastInit</a></td>
+					<td width="10%" class="TableRow" valign="top">Package</td>
+					<td width="10%" class="TableRow" valign="top">Realization</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="10%" class="TableRow" valign="top">Class</td>
+					<td width="10%" class="TableRow" valign="top">Realization</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="10%" class="TableRow" valign="top">Class</td>
+					<td width="10%" class="TableRow" valign="top">Realization</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../EA13/EA1/EA3871.htm">xil_io</a></td>
+					<td width="10%" class="TableRow" valign="top">Class</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>
