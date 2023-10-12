@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>[SWREQ22] (QM)</title>
+<title>[SWREQ14] (QM)</title>
 <link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ22] (QM)", " : "))</script> REQ10761 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ14] (QM)", " : "))</script> REQ10560 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">7.05.2023 21:48:32</td>
+			<td width="85%" class="ObjectDetailsValue">29.01.2023 17:35:33</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">23.08.2023 09:33:35</td>
+			<td class="ObjectDetailsValue">9.10.2023 20:03:12</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -55,7 +55,7 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="proj01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
-			<td class="ObjectDetailsValue">1.1</td>
+			<td class="ObjectDetailsValue">1.2</td>
 		</tr>
 		<tr id="proj02" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
@@ -87,14 +87,14 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{04612F43-F57F-478c-8DDD-6178DE44D17C}</td>
+			<td class="ObjectDetailsValue">{CF36C36F-11C3-4e49-9466-13E69C471807}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
 			<td class="ObjectDetailsValue"><a href="../EA86.htm">Software Requirements Specification</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">SW Purpose: The purpose of the SW function &#8220;&lt;b&gt;sm_LCDBacklightErrorHandler&lt;/b&gt;&#8221; of the SW module &#8220;&lt;b&gt;safety_mgr&lt;/b&gt;&#8221; of the SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; is to trigger the safety action for the corresponding LCD Backlight error status: (OR)&lt;br/&gt;&lt;ul&gt;<br />&lt;li&gt;BACKLIGHT_ERROR_I2C OR&lt;/li&gt;&lt;li&gt;BACKLIGHT_ERROR_LED_OUT OR&lt;/li&gt;&lt;li&gt;BACKLIGHT_ERROR_DRIVER OR&lt;/li&gt;&lt;li&gt;BACKLIGHT_ERROR_SHORT_GND OR&lt;/li&gt;&lt;li&gt;BACKLIGHT_ERROR_SHORT_LED OR&lt;/li&gt;&lt;li&gt;BACKLIGHT_ERROR_EXT_PIN&lt;/li&gt;&lt;/ul&gt;<br />(QM)&lt;br/&gt;&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">SW: The SW function &#8220;&lt;b&gt;Backlight_status&lt;/b&gt;&#8221; of the SW module &#8220;&lt;b&gt;devices&lt;/b&gt;&#8221; of the SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; shall call SW function &#8220;&lt;b&gt;sm_LCDBacklightErrorHandler&lt;/b&gt;&#8221; of the SW module &#8220;&lt;b&gt;safety_mgr&lt;/b&gt;&#8221; of the SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; immediately, when at least one of the following registers is equal to the following values: (OR)&lt;br/&gt;&lt;ul&gt;<br />&lt;li&gt;&lt;b&gt;Dev_ID (0x00) register&lt;/b&gt; not equal to &lt;b&gt;0x24&lt;/b&gt; OR&lt;/li&gt;&lt;li&gt;&lt;b&gt;ISET (0x02) register ENA bit.5&lt;/b&gt; not set OR&lt;/li&gt;&lt;li&gt;&lt;b&gt;OPEN (0x1B) register OUT1O bit.0&lt;/b&gt; AND &lt;b&gt;OUT2O bit.1&lt;/b&gt; set OR&lt;/li&gt;&lt;li&gt;&lt;b&gt;SHORTGND (0x1C) register OUT1SG bit.0&lt;/b&gt; AND &lt;b&gt;OUT2SG bit.1&lt;/b&gt; set OR&lt;/li&gt;&lt;li&gt;&lt;b&gt;SHORTED_LED (0x1D) register OUT1SL bit.0&lt;/b&gt; AND &lt;b&gt;OUT2SL bit.1&lt;/b&gt; set OR&lt;/li&gt;&lt;li&gt;The backlight driver external fault input pin (&lt;b&gt;GPIO_0::GPIO_CHAN_1&lt;/b&gt;) clear&lt;/li&gt;&lt;/ul&gt;<br />(QM)&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -113,8 +113,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2019" onclick="parent.toggleDiv('detailsDIVScenario2019','DetailsImageScenario2019')" />Details:
-						<div id="detailsDIVScenario2019" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1910" onclick="parent.toggleDiv('detailsDIVScenario1910','DetailsImageScenario1910')" />Details:
+						<div id="detailsDIVScenario1910" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Test,Analiz,Muayene,Gösterim,CoC<br /></div>
 
 						</div>
@@ -126,8 +126,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2020" onclick="parent.toggleDiv('detailsDIVScenario2020','DetailsImageScenario2020')" />Details:
-						<div id="detailsDIVScenario2020" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1911" onclick="parent.toggleDiv('detailsDIVScenario1911','DetailsImageScenario1911')" />Details:
+						<div id="detailsDIVScenario1911" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Default: Öneri<br /></div>
 
 						</div>
@@ -139,8 +139,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2021" onclick="parent.toggleDiv('detailsDIVScenario2021','DetailsImageScenario2021')" />Details:
-						<div id="detailsDIVScenario2021" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1912" onclick="parent.toggleDiv('detailsDIVScenario1912','DetailsImageScenario1912')" />Details:
+						<div id="detailsDIVScenario1912" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: 1,2,3,4,5,6,7,8,9,10<br /></div>
 
 						</div>
@@ -148,12 +148,12 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">ID</td>
-				<td width="50%" class="TableRow" valign="top">REQ10761</td>
+				<td width="50%" class="TableRow" valign="top">REQ10560</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2022" onclick="parent.toggleDiv('detailsDIVScenario2022','DetailsImageScenario2022')" />Details:
-						<div id="detailsDIVScenario2022" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1913" onclick="parent.toggleDiv('detailsDIVScenario1913','DetailsImageScenario1913')" />Details:
+						<div id="detailsDIVScenario1913" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
@@ -164,8 +164,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2023" onclick="parent.toggleDiv('detailsDIVScenario2023','DetailsImageScenario2023')" />Details:
-						<div id="detailsDIVScenario2023" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1914" onclick="parent.toggleDiv('detailsDIVScenario1914','DetailsImageScenario1914')" />Details:
+						<div id="detailsDIVScenario1914" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: 1,2,3,4,5,6,7,8,9,10<br /></div>
 
 						</div>
@@ -173,12 +173,12 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">Kategori</td>
-				<td width="50%" class="TableRow" valign="top">İşlevsel</td>
+				<td width="50%" class="TableRow" valign="top">Güvenilirlik</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2024" onclick="parent.toggleDiv('detailsDIVScenario2024','DetailsImageScenario2024')" />Details:
-						<div id="detailsDIVScenario2024" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1915" onclick="parent.toggleDiv('detailsDIVScenario1915','DetailsImageScenario1915')" />Details:
+						<div id="detailsDIVScenario1915" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Arayüz,Çevre Koşulları,Fiziksel Kısıtlar,Gerçekleme Kısıtları,İşlevsel,Kalite,Desteklenebilirlik,Güvenlik,Güvenilirlik,Kullanılabilirlik,Kurumsal,Lojistik Destek,Performans,Proje Kabul Kriterleri,Proje Kapsamı Dışı,Standartlara Uyum,Tasarım Kısıtları,Test<br /></div>
 
 						</div>
@@ -190,20 +190,20 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2025" onclick="parent.toggleDiv('detailsDIVScenario2025','DetailsImageScenario2025')" />Details:
-						<div id="detailsDIVScenario2025" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1916" onclick="parent.toggleDiv('detailsDIVScenario1916','DetailsImageScenario1916')" />Details:
+						<div id="detailsDIVScenario1916" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">Orijin</td>
-				<td width="50%" class="TableRow" valign="top">cms_REQ10761</td>
+				<td width="50%" class="TableRow" valign="top">cms_REQ10560</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2026" onclick="parent.toggleDiv('detailsDIVScenario2026','DetailsImageScenario2026')" />Details:
-						<div id="detailsDIVScenario2026" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1917" onclick="parent.toggleDiv('detailsDIVScenario1917','DetailsImageScenario1917')" />Details:
+						<div id="detailsDIVScenario1917" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
@@ -214,8 +214,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2027" onclick="parent.toggleDiv('detailsDIVScenario2027','DetailsImageScenario2027')" />Details:
-						<div id="detailsDIVScenario2027" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1918" onclick="parent.toggleDiv('detailsDIVScenario1918','DetailsImageScenario1918')" />Details:
+						<div id="detailsDIVScenario1918" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Çok Az,Az,Orta,Yüksek,Çok Yüksek<br /></div>
 
 						</div>
@@ -227,8 +227,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2028" onclick="parent.toggleDiv('detailsDIVScenario2028','DetailsImageScenario2028')" />Details:
-						<div id="detailsDIVScenario2028" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1919" onclick="parent.toggleDiv('detailsDIVScenario1919','DetailsImageScenario1919')" />Details:
+						<div id="detailsDIVScenario1919" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Çok Az,Az,Orta,Yüksek,Çok Yüksek<br /></div>
 
 						</div>
@@ -240,8 +240,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2029" onclick="parent.toggleDiv('detailsDIVScenario2029','DetailsImageScenario2029')" />Details:
-						<div id="detailsDIVScenario2029" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1920" onclick="parent.toggleDiv('detailsDIVScenario1920','DetailsImageScenario1920')" />Details:
+						<div id="detailsDIVScenario1920" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Müşteri İsteri,Sistem,Tasarım Belirtimi<br /></div>
 
 						</div>
@@ -253,8 +253,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2030" onclick="parent.toggleDiv('detailsDIVScenario2030','DetailsImageScenario2030')" />Details:
-						<div id="detailsDIVScenario2030" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1921" onclick="parent.toggleDiv('detailsDIVScenario1921','DetailsImageScenario1921')" />Details:
+						<div id="detailsDIVScenario1921" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Çok Az,Az,Orta,Yüksek,Çok Yüksek<br /></div>
 
 						</div>
