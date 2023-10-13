@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>System Design Model::CMS System::Display::FAKRA Connector IDCC</title>
+<title>System Design Model::CMS System::Display::Backlight Driver</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("FAKRA Connector IDCC", " : "))</script>  : Public  &lt;&lt;InterfaceBlock&gt;&gt; InterfaceBlock</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Backlight Driver", " : "))</script>  : Public  &lt;&lt;block&gt;&gt; Block</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.01.2023 21:32:40</td>
+			<td width="85%" class="ObjectDetailsValue">7.12.2022 16:03:37</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">18.01.2023 21:34:56</td>
+			<td class="ObjectDetailsValue">22.01.2023 11:15:41</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,17 +87,19 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{B0178F1E-CC88-454a-B805-54B3A5FBADB9}</td>
+			<td class="ObjectDetailsValue">{DF1A1BE8-EE40-4aa0-8FE9-C1A8E8BFE143}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA1794.htm">Display</a></td>
+			<td class="ObjectDetailsValue"><a href="../../EA2/EA2/EA6/EA1/EA1682.htm">CMS_SW_FUSA HW-SW IDD</a>, <a href="../../EA2/EA2/EA6/EA1/EA1678.htm">CMS_SW_FastInit HW-SW IDD</a>, <a href="../../EA2/EA2/EA6/EA1/EA1680.htm">CMS_SW HW-SW IDD</a>, <a href="EA1800.htm">Display</a>, <a href="../EA3/EA2/EA7/EA6297.htm">CMS_SW_FUSA::LCD_ON</a>, <a href="../EA3/EA2/EA6/EA6290.htm">CMS_SW_FUSA::LCD_OFF</a>, <a href="../../EA2/EA2/EA7/EA2/EA1781.htm">Normal Operation: HW-SW Interaction CPA</a>, <a href="../../EA2/EA2/EA7/EA1/EA1750.htm">CMS_SW_FUSA: Delayed Frame Detection CPA</a>, <a href="../../EA2/EA2/EA7/EA1/EA1754.htm">CMS_SW_FUSA: Reversed Frame Detection CPA</a>, <a href="../../EA2/EA2/EA7/EA1/EA1752.htm">CMS_SW_FUSA: Frozen SOD Frame Detection CPA</a>, <a href="../../EA2/EA2/EA7/EA3/EA1785.htm">Normal Operation CPA</a></td>
 		</tr>
 	</table>
 	
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent.toggleItem('Constraints');" id="ConstraintsTitle">Constraints</li>
+			<li onClick="parent.toggleItem('MessagesFrom');" id="MessagesFromTitle">Messages From</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
@@ -110,7 +112,7 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA1895.htm">«block» Display</a><br />
+						<a href="EA1901.htm">«block» Display</a><br />
 						Block &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -124,8 +126,69 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink9444" onclick="parent.toggleDiv('detailsDIVLink9444','DetailsImageLink9444')" />Details:
-							<div id="detailsDIVLink9444" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink9432" onclick="parent.toggleDiv('detailsDIVLink9432','DetailsImageLink9432')" />Details:
+							<div id="detailsDIVLink9432" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="ConstraintsTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+			  	<tr>
+					<td width="80%" class="TableHeading">Constraint</td>
+					<td width="10%" class="TableHeading">Type</td>
+					<td width="10%" class="TableHeading">Status</td>
+				</tr>
+				<tr>
+					<td width="80%" class="TableRow">I2C Slave Addr: 0x59 (7bits)</td>
+					<td width="10%" class="TableRow">Invariant</td>
+					<td width="10%" class="TableRow">Approved</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageConstraints9433" onclick="parent.toggleDiv('detailsDIVConstraints9433','DetailsImageConstraints9433')" />Details:
+							<div id="detailsDIVConstraints9433" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="MessagesFromTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="50%" class="TableHeading">Element</td>
+					<td width="50%" class="TableHeading">Message</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1835.htm">«block» GPIO</a></td>
+					<td width="50%" class="TableRow" valign="top">CLR</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9434" onclick="parent.toggleDiv('detailsDIVMessage9434', 'DetailsImageMessage9434')" />Details:
+							<div id="detailsDIVMessage9434" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1835.htm">«block» GPIO</a></td>
+					<td width="50%" class="TableRow" valign="top">SET</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9435" onclick="parent.toggleDiv('detailsDIVMessage9435', 'DetailsImageMessage9435')" />Details:
+							<div id="detailsDIVMessage9435" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
 						</div>
@@ -162,10 +225,17 @@ function nameClassifier(name, separator)
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA1895.htm">«block» Display</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="EA1901.htm">«block» Display</a></td>
 					<td width="10%" class="TableRow" valign="top">Block</td>
 					<td width="10%" class="TableRow" valign="top">Strong</td>
 					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA1838.htm">«block» I2C</a></td>
+					<td width="10%" class="TableRow" valign="top">Block</td>
+					<td width="10%" class="TableRow" valign="top">Information Flow</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 
