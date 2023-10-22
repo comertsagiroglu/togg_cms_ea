@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>[SWREQ69] (QM)</title>
+<title>[SWREQ67] (QM)</title>
 <link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,11 +34,11 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ69] (QM)", " : "))</script> REQ10605 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ67] (QM)", " : "))</script> REQ10776 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">29.01.2023 21:05:58</td>
+			<td width="85%" class="ObjectDetailsValue">8.05.2023 09:56:26</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
@@ -87,14 +87,14 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{0C2DE133-20F4-4b98-96D4-6AE3758F897B}</td>
+			<td class="ObjectDetailsValue">{6DCE0510-9E1B-4a4b-B8F2-76605703292C}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
 			<td class="ObjectDetailsValue"><a href="../EA86.htm">Software Requirements Specification</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">SW Purpose: The purpose of SW function &#8220;&lt;b&gt;CsiRx_status&lt;/b&gt;&#8221; of the SW module &#8220;&lt;b&gt;devices&lt;/b&gt;&#8221; of the SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; is to check the CSI Receiver Core Frame Errors via checking the following registers of the FPGA Csi-Rx Core: (AND)&lt;br/&gt;&lt;ul&gt;<br />&lt;li&gt;Check Csi-Rx core is enabled. Error if not enabled -#gt; &lt;b&gt;Csi-Rx Core Config Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_CCR_OFFSET, mask=0x3, shift=0x0). Error if not 1 AND&lt;/li&gt;&lt;li&gt;Check active number of lanes. Error if not 2 -#gt; &lt;b&gt;Csi-Rx Core Protocol Config Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_PCR_OFFSET, mask=0x1F, shift=0x0) bit.1-0. Error if not 1 AND&lt;/li&gt;&lt;li&gt;Check max number of lanes. Error if not 2 -#gt; &lt;b&gt;Csi-Rx Core Protocol Config Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_PCR_OFFSET, mask=0x1F, shift=0x0) bit.4-3. Error if not 8 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx frame reception. Error if not received -#gt; &lt;b&gt;Csi-Rx ISR Status Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_ISR_OFFSET, XCSI_ISR_ALLINTR_MASK &amp; ~(XCSI_ISR_STOP_MASK), XCSI_ISR_VC0FLVLERR_SHIFT) bit.31. Error if 0 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx interrupt status. Error if flags set -#gt; &lt;b&gt;Csi-Rx ISR Status Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_ISR_OFFSET, XCSI_ISR_ALLINTR_MASK &amp; ~(XCSI_ISR_STOP_MASK), XCSI_ISR_VC0FLVLERR_SHIFT) bit.30-0. Error if not 0 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx VCX frame error. Error if active -#gt; &lt;b&gt;Csi-Rx ISR Status Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_ISR_OFFSET, XCSI_ISR_ALLINTR_MASK &amp; ~(XCSI_ISR_STOP_MASK), XCSI_ISR_VC0FLVLERR_SHIFT) bit.30. Error if 1 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx VC0 frame level error. Error if active -#gt; &lt;b&gt;Csi-Rx ISR Status Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_ISR_OFFSET, XCSI_ISR_ALLINTR_MASK &amp; ~(XCSI_ISR_STOP_MASK), XCSI_ISR_VC0FLVLERR_SHIFT) bit.0. Error if 1 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx VC0 frame synch error. Error if active -#gt; &lt;b&gt;Csi-Rx ISR Status Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_ISR_OFFSET, XCSI_ISR_ALLINTR_MASK &amp; ~(XCSI_ISR_STOP_MASK), XCSI_ISR_VC0FLVLERR_SHIFT) bit.1. Error if 1 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx YUV420 WC error. Error if active -#gt; &lt;b&gt;Csi-Rx ISR Status Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_ISR_OFFSET, XCSI_ISR_ALLINTR_MASK &amp; ~(XCSI_ISR_STOP_MASK), XCSI_ISR_VC0FLVLERR_SHIFT) bit.28. Error if 1 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx incorrect lane config error. Error if active -#gt; &lt;b&gt;Csi-Rx ISR Status Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_ISR_OFFSET, XCSI_ISR_ALLINTR_MASK &amp; ~(XCSI_ISR_STOP_MASK), XCSI_ISR_VC0FLVLERR_SHIFT) bit.21. Error if 1 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx SoT error. Error if active -#gt; &lt;b&gt;Csi-Rx ISR Status Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_ISR_OFFSET, XCSI_ISR_ALLINTR_MASK &amp; ~(XCSI_ISR_STOP_MASK), XCSI_ISR_VC0FLVLERR_SHIFT) bit.13. Error if 1 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx VCX frame error. Error if active -#gt; &lt;b&gt;Csi-Rx VCX Frame Error Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_VCX_FE_OFFSET, XCSI_INTR_VCFE_MASK, shift=0x0). Error if not 0 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx lane-0 SOT error. Error if active -#gt; &lt;b&gt;Csi-Rx Lane-0 Info Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_L0INFR_OFFSET, XCSI_LXINFR_SOTSYNCERR_MASK | XCSI_LXINFR_SOTERR_MASK, 0x0). Error if 1 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx lane-1 SOT error. Error if active -#gt; &lt;b&gt;Csi-Rx Lane-0 Info Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_L1INFR_OFFSET, XCSI_LXINFR_SOTSYNCERR_MASK | XCSI_LXINFR_SOTERR_MASK, 0x0). Error if 1 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx VC0 info1 error. Error if active -#gt; &lt;b&gt;Csi-Rx VC0 Info1 Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_VC0INF1R_OFFSET, 0xFFFFFFFF, 0x0). Error if 0 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx VC0 info2 error. Error if active -#gt; &lt;b&gt;Csi-Rx VC0 Info2 Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, XCSI_VC0INF2R_OFFSET, 0xFFFFFFFF, 0x0). Error if 0 AND&lt;/li&gt;&lt;li&gt;Check Csi-Rx D-Phy clock lane control error. Error if active -#gt; &lt;b&gt;Csi-Rx D-Phy Clock Lane Control Register&lt;/b&gt; (CsiRxSs.Config.BaseAddr, 0x8 + XDPHY_CLSTATUS_REG_OFFSET, XDPHY_CLSTATUS_ALLMASK, 0x0) bit.5. Error if 1&lt;/li&gt;&lt;/ul&gt;<br />(QM)&lt;br/&gt;&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">SW: Display shall call the SW function &#8220;&lt;b&gt;sm_NoStreamFrameErrorHandler&lt;/b&gt;&#8221; of the SW module &#8220;&lt;b&gt;safety_mgr&lt;/b&gt;&#8221; of the SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; to trigger the safety action for the no stream frame error status. (QM)&lt;br/&gt;&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -108,25 +108,13 @@ function nameClassifier(name, separator)
 			<td width="50%" class="TableHeading">Value</td>
 		</tr>
 					<tr>
-				<td width="50%" class="TableRow" valign="top">DegisiklikYonetimiKayıtNo</td>
-				<td width="50%" class="TableRow" valign="top">TOGGCMS-291</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2544" onclick="parent.toggleDiv('detailsDIVScenario2544','DetailsImageScenario2544')" />Details:
-						<div id="detailsDIVScenario2544" class="DetailsDiv" >
-						&nbsp;
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">DogrulamaYontemi</td>
 				<td width="50%" class="TableRow" valign="top">Gösterim</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2545" onclick="parent.toggleDiv('detailsDIVScenario2545','DetailsImageScenario2545')" />Details:
-						<div id="detailsDIVScenario2545" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2544" onclick="parent.toggleDiv('detailsDIVScenario2544','DetailsImageScenario2544')" />Details:
+						<div id="detailsDIVScenario2544" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Test,Analiz,Muayene,Gösterim,CoC<br /></div>
 
 						</div>
@@ -138,8 +126,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2546" onclick="parent.toggleDiv('detailsDIVScenario2546','DetailsImageScenario2546')" />Details:
-						<div id="detailsDIVScenario2546" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2545" onclick="parent.toggleDiv('detailsDIVScenario2545','DetailsImageScenario2545')" />Details:
+						<div id="detailsDIVScenario2545" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Default: Öneri<br /></div>
 
 						</div>
@@ -151,8 +139,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2547" onclick="parent.toggleDiv('detailsDIVScenario2547','DetailsImageScenario2547')" />Details:
-						<div id="detailsDIVScenario2547" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2546" onclick="parent.toggleDiv('detailsDIVScenario2546','DetailsImageScenario2546')" />Details:
+						<div id="detailsDIVScenario2546" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: 1,2,3,4,5,6,7,8,9,10<br /></div>
 
 						</div>
@@ -160,12 +148,12 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">ID</td>
-				<td width="50%" class="TableRow" valign="top">REQ10605</td>
+				<td width="50%" class="TableRow" valign="top">REQ10776</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2548" onclick="parent.toggleDiv('detailsDIVScenario2548','DetailsImageScenario2548')" />Details:
-						<div id="detailsDIVScenario2548" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2547" onclick="parent.toggleDiv('detailsDIVScenario2547','DetailsImageScenario2547')" />Details:
+						<div id="detailsDIVScenario2547" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
@@ -176,8 +164,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2549" onclick="parent.toggleDiv('detailsDIVScenario2549','DetailsImageScenario2549')" />Details:
-						<div id="detailsDIVScenario2549" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2548" onclick="parent.toggleDiv('detailsDIVScenario2548','DetailsImageScenario2548')" />Details:
+						<div id="detailsDIVScenario2548" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: 1,2,3,4,5,6,7,8,9,10<br /></div>
 
 						</div>
@@ -189,8 +177,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2550" onclick="parent.toggleDiv('detailsDIVScenario2550','DetailsImageScenario2550')" />Details:
-						<div id="detailsDIVScenario2550" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2549" onclick="parent.toggleDiv('detailsDIVScenario2549','DetailsImageScenario2549')" />Details:
+						<div id="detailsDIVScenario2549" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Arayüz,Çevre Koşulları,Fiziksel Kısıtlar,Gerçekleme Kısıtları,İşlevsel,Kalite,Desteklenebilirlik,Güvenlik,Güvenilirlik,Kullanılabilirlik,Kurumsal,Lojistik Destek,Performans,Proje Kabul Kriterleri,Proje Kapsamı Dışı,Standartlara Uyum,Tasarım Kısıtları,Test<br /></div>
 
 						</div>
@@ -202,6 +190,18 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2550" onclick="parent.toggleDiv('detailsDIVScenario2550','DetailsImageScenario2550')" />Details:
+						<div id="detailsDIVScenario2550" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">Orijin</td>
+				<td width="50%" class="TableRow" valign="top">cms_REQ10776</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
 					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2551" onclick="parent.toggleDiv('detailsDIVScenario2551','DetailsImageScenario2551')" />Details:
 						<div id="detailsDIVScenario2551" class="DetailsDiv" >
 						&nbsp;
@@ -209,19 +209,20 @@ function nameClassifier(name, separator)
 					</div>
 				</td>
 			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">Orijin</td>
-				<td width="50%" class="TableRow" valign="top">cms_REQ10605</td>
+				<td width="50%" class="TableRow" valign="top">PiyasaAcisindanOnem</td>
+				<td width="50%" class="TableRow" valign="top">Orta</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
 					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2552" onclick="parent.toggleDiv('detailsDIVScenario2552','DetailsImageScenario2552')" />Details:
 						<div id="detailsDIVScenario2552" class="DetailsDiv" >
-						&nbsp;
+						<div class="ObjectDetailsNotes">Values: Çok Az,Az,Orta,Yüksek,Çok Yüksek<br /></div>
+
 						</div>
 					</div>
 				</td>
 			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">PiyasaAcisindanOnem</td>
+				<td width="50%" class="TableRow" valign="top">Risk</td>
 				<td width="50%" class="TableRow" valign="top">Orta</td>
 			</tr>	
 			<tr>
@@ -234,26 +235,13 @@ function nameClassifier(name, separator)
 					</div>
 				</td>
 			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">Risk</td>
-				<td width="50%" class="TableRow" valign="top">Orta</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2554" onclick="parent.toggleDiv('detailsDIVScenario2554','DetailsImageScenario2554')" />Details:
-						<div id="detailsDIVScenario2554" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Values: Çok Az,Az,Orta,Yüksek,Çok Yüksek<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">Seviye</td>
 				<td width="50%" class="TableRow" valign="top">Tasarım Belirtimi</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2555" onclick="parent.toggleDiv('detailsDIVScenario2555','DetailsImageScenario2555')" />Details:
-						<div id="detailsDIVScenario2555" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2554" onclick="parent.toggleDiv('detailsDIVScenario2554','DetailsImageScenario2554')" />Details:
+						<div id="detailsDIVScenario2554" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Müşteri İsteri,Sistem,Tasarım Belirtimi<br /></div>
 
 						</div>
@@ -265,8 +253,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2556" onclick="parent.toggleDiv('detailsDIVScenario2556','DetailsImageScenario2556')" />Details:
-						<div id="detailsDIVScenario2556" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2555" onclick="parent.toggleDiv('detailsDIVScenario2555','DetailsImageScenario2555')" />Details:
+						<div id="detailsDIVScenario2555" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Çok Az,Az,Orta,Yüksek,Çok Yüksek<br /></div>
 
 						</div>

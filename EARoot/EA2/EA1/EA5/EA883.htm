@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Handle LCD Failure</title>
+<title>Handle Image Sensor Orientation Error</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Handle LCD Failure", " : "))</script> 10087 : Public   UseCase</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Handle Image Sensor Orientation Error", " : "))</script> 10085 : Public   UseCase</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">25.12.2022 14:53:15</td>
+			<td width="85%" class="ObjectDetailsValue">23.12.2022 11:16:41</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">25.12.2022 17:39:04</td>
+			<td class="ObjectDetailsValue">25.12.2022 23:26:48</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,242 +87,20 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{0DCFD6EE-0101-439a-9968-56EF492BA477}</td>
+			<td class="ObjectDetailsValue">{A82D8C60-A50B-4818-999D-6BBBA2B9EE0D}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../EA22.htm">Requirements</a>, <a href="EA863.htm">Handle LCD Failure</a>, <a href="EA869.htm">Use Cases</a></td>
+			<td class="ObjectDetailsValue"><a href="EA870.htm">Use Cases</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Pre-conditions:&lt;br/&gt;- Camera serializer and Display deserializer are locked.&lt;br/&gt;- Image Sensor is in streaming state&lt;br/&gt;- Power state = POWER_ON&lt;br/&gt;- Operational state = PRIMARY_OPERATION&lt;br/&gt;- LCD is functional and has no active failure&lt;br/&gt;&lt;br/&gt;Scenario:&lt;br/&gt;- Display device check function reads the LCD failure flags throught the SPI interface.&lt;br/&gt;- LCD failure flags:&lt;br/&gt;&#160;&#160;&#160;&#160;LVDS lock failure&lt;br/&gt;&#160;&#160;&#160;&#160;GAS function failure&lt;br/&gt;&#160;&#160;&#160;&#160;Interal source circuit failure&lt;br/&gt;&#160;&#160;&#160;&#160;Tradition gate signal failure&lt;br/&gt;&#160;&#160;&#160;&#160;Self-protection mode failure&lt;br/&gt;&#160;&#160;&#160;&#160;EEPROM reload failure&lt;br/&gt;&#160;&#160;&#160;&#160;OTP trimming failure&lt;br/&gt;&#160;&#160;&#160;&#160;PFM abnormal failure&lt;br/&gt;&#160;&#160;&#160;&#160;Glass crack failure &lt;br/&gt;&#160;&#160;&#160;&#160;OTP reload failure&lt;br/&gt;- When an LCD device failure is detected, lcd failure event is generated.&lt;br/&gt;- LCD error handler sets the operational state to CMS_FAILURE and returns it to IDCC when queried.&lt;br/&gt;- LCD error handler disables the LCD backlight&lt;br/&gt;- Display fw sets the related diagnostic code and returns it to IDCC when queried.&lt;br/&gt;- Display device check period is 100msec&lt;br/&gt;- IDCC&#160;&#160;diagnostic data query period is&#160;&#160;100msec.&lt;br/&gt;- IDCC&#160;&#160;operational mode query period is&#160;&#160;100msec.&lt;br/&gt;&lt;br/&gt;Post-conditions:&lt;br/&gt;Operational state = CMS_FAILURE&lt;br/&gt;LCD backlight off&lt;br/&gt;&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Pre-conditions:&lt;br/&gt;- Camera serializer and Display deserializer are locked.&lt;br/&gt;- Image Sensor is in streaming state&lt;br/&gt;- Power state = POWER_ON&lt;br/&gt;- Operational state = PRIMARY_OPERATION&lt;br/&gt;&lt;br/&gt;Scenario:&lt;br/&gt;- SYS_CHECK output of the Image Sensor is connected to an external interrupt input of the camera MCU&lt;br/&gt;- When image orientation failure is detected on the Image Sensor, SYS_CHECK signal is triggered and this generates interrupt event on the camera MCU.&lt;br/&gt;- Image sensor sets the TBD register (TBD:image orientation fault related as149 register)&lt;br/&gt;- In the SYS_CHECK interrupt routine camera status SYS_CHECK bit is set&lt;br/&gt;- Display queries the camera status byte every 100 msec.&lt;br/&gt;- When the display receives the SYS_CHECK bit of the camera status byte set, it transitions to the safe state at which the LCD backlight is disabled.&lt;br/&gt;- Display Operational state is set to CMS_FAILURE and returned to IDCC when it is queried.&lt;br/&gt;- Display reads the safety related Image Sensor registers and determines the fault which triggered the SYS_CHECK event and sets the related diagnostic code.&lt;br/&gt;- IDCC&#160;&#160;diagnostic data query period is&#160;&#160;100msec.&lt;br/&gt;- IDCC&#160;&#160;operational mode query period is&#160;&#160;100msec.&lt;br/&gt;&lt;br/&gt;Post-conditions:&lt;br/&gt;Operational state = CMS_FAILURE&lt;br/&gt;LCD backlight off&lt;br/&gt;&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
-			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
-			<li onClick="parent.toggleItem('MessagesTo');" id="MessagesToTitle">Messages To</li>
-			<li onClick="parent.toggleItem('MessagesFrom');" id="MessagesFromTitle">Messages From</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
-		<div class="ItemBody" id="AssociationsToTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="40%" class="TableHeading">Element</td>
-					<td width="30%" class="TableHeading">Source Role</td>
-					<td width="30%" class="TableHeading">Target Role</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="./EA1/EA896.htm">IDCC</a><br />
-						Actor &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8805" onclick="parent.toggleDiv('detailsDIVLink8805','DetailsImageLink8805')" />Details:
-							<div id="detailsDIVLink8805" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-
-			</table>
-		</div>
-		<div class="ItemBody" id="MessagesToTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="50%" class="TableHeading">Element</td>
-					<td width="50%" class="TableHeading">Message</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA883.htm">Handle LCD Failure</a></td>
-					<td width="50%" class="TableRow" valign="top">Device_Check_LCD_Error_Event</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8806" onclick="parent.toggleDiv('detailsDIVMessage8806', 'DetailsImageMessage8806')" />Details:
-							<div id="detailsDIVMessage8806" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA883.htm">Handle LCD Failure</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_State_Transition</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8807" onclick="parent.toggleDiv('detailsDIVMessage8807', 'DetailsImageMessage8807')" />Details:
-							<div id="detailsDIVMessage8807" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA883.htm">Handle LCD Failure</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_LCD_Backlight_Disable</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8808" onclick="parent.toggleDiv('detailsDIVMessage8808', 'DetailsImageMessage8808')" />Details:
-							<div id="detailsDIVMessage8808" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA883.htm">Handle LCD Failure</a></td>
-					<td width="50%" class="TableRow" valign="top">Device_Check_Function_Detect_LCD_Failure</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8809" onclick="parent.toggleDiv('detailsDIVMessage8809', 'DetailsImageMessage8809')" />Details:
-							<div id="detailsDIVMessage8809" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA883.htm">Handle LCD Failure</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_Set_Diagnostic_Code</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8810" onclick="parent.toggleDiv('detailsDIVMessage8810', 'DetailsImageMessage8810')" />Details:
-							<div id="detailsDIVMessage8810" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-
-			</table>
-		</div>
-		<div class="ItemBody" id="MessagesFromTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="50%" class="TableHeading">Element</td>
-					<td width="50%" class="TableHeading">Message</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA896.htm">IDCC</a></td>
-					<td width="50%" class="TableRow" valign="top">Get_Error_Code</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8811" onclick="parent.toggleDiv('detailsDIVMessage8811', 'DetailsImageMessage8811')" />Details:
-							<div id="detailsDIVMessage8811" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA883.htm">Handle LCD Failure</a></td>
-					<td width="50%" class="TableRow" valign="top">Device_Check_LCD_Error_Event</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8812" onclick="parent.toggleDiv('detailsDIVMessage8812', 'DetailsImageMessage8812')" />Details:
-							<div id="detailsDIVMessage8812" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA896.htm">IDCC</a></td>
-					<td width="50%" class="TableRow" valign="top">Get_Operational_State</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8813" onclick="parent.toggleDiv('detailsDIVMessage8813', 'DetailsImageMessage8813')" />Details:
-							<div id="detailsDIVMessage8813" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA883.htm">Handle LCD Failure</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_State_Transition</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8814" onclick="parent.toggleDiv('detailsDIVMessage8814', 'DetailsImageMessage8814')" />Details:
-							<div id="detailsDIVMessage8814" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA883.htm">Handle LCD Failure</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_LCD_Backlight_Disable</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8815" onclick="parent.toggleDiv('detailsDIVMessage8815', 'DetailsImageMessage8815')" />Details:
-							<div id="detailsDIVMessage8815" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA883.htm">Handle LCD Failure</a></td>
-					<td width="50%" class="TableRow" valign="top">Device_Check_Function_Detect_LCD_Failure</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8816" onclick="parent.toggleDiv('detailsDIVMessage8816', 'DetailsImageMessage8816')" />Details:
-							<div id="detailsDIVMessage8816" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA883.htm">Handle LCD Failure</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_Set_Diagnostic_Code</td>
-				</tr>
-		   		<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8817" onclick="parent.toggleDiv('detailsDIVMessage8817', 'DetailsImageMessage8817')" />Details:
-							<div id="detailsDIVMessage8817" class="DetailsDiv" >
-							<strong>Type:</strong> Sequence Synchronous Call<br />
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-
-			</table>
-		</div>
 		<div class="ItemBody" id="CustomPropertiesTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
@@ -346,31 +124,10 @@ function nameClassifier(name, separator)
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA4/EA834.htm">«Gereksinim» [YTB120] LCD Failure</a></td>
-					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
-					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="30%" class="TableRow" valign="top"><a href="EA882.htm">Handle Image Fault</a></td>
+					<td width="10%" class="TableRow" valign="top">UseCase</td>
+					<td width="10%" class="TableRow" valign="top">Extends</td>
 					<td width="10%" class="TableRow" valign="top">To</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA4/EA832.htm">«Gereksinim» [YTB119] LCD Status Check</a></td>
-					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
-					<td width="10%" class="TableRow" valign="top">Dependency</td>
-					<td width="10%" class="TableRow" valign="top">To</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA4/EA844.htm">«Gereksinim» [YTB16] LCD SPI Interface</a></td>
-					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
-					<td width="10%" class="TableRow" valign="top">Dependency</td>
-					<td width="10%" class="TableRow" valign="top">To</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../EA3/EA3/EA2/EA11/EA6792.htm">LCD Failure</a></td>
-					<td width="10%" class="TableRow" valign="top">Package</td>
-					<td width="10%" class="TableRow" valign="top">Dependency</td>
-					<td width="10%" class="TableRow" valign="top">From</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 

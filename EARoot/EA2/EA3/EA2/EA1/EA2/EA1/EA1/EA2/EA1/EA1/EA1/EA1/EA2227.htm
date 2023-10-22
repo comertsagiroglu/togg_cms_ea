@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>include::eTaskState</title>
+<title>include::eNotifyAction</title>
 <link href="../../../../../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,7 +34,7 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("eTaskState", " : "))</script>  : Public   Enumeration</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("eNotifyAction", " : "))</script>  : Public   Enumeration</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
@@ -87,19 +87,18 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{314B1776-8A9E-4ea2-83D9-86274F4F76B2}</td>
+			<td class="ObjectDetailsValue">{3A97CEFF-2912-43d0-B5D2-ECAA9DB74754}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA2076.htm">include</a></td>
+			<td class="ObjectDetailsValue"><a href="EA2078.htm">include</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Task states returned by eTaskGetState.&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Actions that can be performed when vTaskNotify() is called.&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
-			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 		</ul>
@@ -110,7 +109,7 @@ function nameClassifier(name, separator)
 		</tr>
 						<tr>
 				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;eRunning</strong>
+					<i>Public </i><br /><strong>&nbsp;&nbsp;eNoAction</strong>
 				</td>
 			</tr>
 			<tr>
@@ -159,7 +158,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A task is querying the state of itself, so must be running.&lt;br/&gt;
+			Notify the task without updating its notify value.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -168,7 +167,7 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;eReady</strong>
+					<i>Public </i><br /><strong>&nbsp;&nbsp;eSetBits</strong>
 				</td>
 			</tr>
 			<tr>
@@ -217,7 +216,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			The task being queried is in a ready or pending ready list.&lt;br/&gt;
+			Set bits in the task&#39;s notification value.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -226,7 +225,7 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;eBlocked</strong>
+					<i>Public </i><br /><strong>&nbsp;&nbsp;eIncrement</strong>
 				</td>
 			</tr>
 			<tr>
@@ -275,7 +274,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			The task being queried is in the Blocked state.&lt;br/&gt;
+			Increment the task&#39;s notification value.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -284,7 +283,7 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;eSuspended</strong>
+					<i>Public </i><br /><strong>&nbsp;&nbsp;eSetValueWithOverwrite</strong>
 				</td>
 			</tr>
 			<tr>
@@ -333,7 +332,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			The task being queried is in the Suspended state, or is in the Blocked state with an infinite time out.&lt;br/&gt;
+			Set the task&#39;s notification value to a specific value even if the previous value has not yet been read by the task.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -342,7 +341,7 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;eDeleted</strong>
+					<i>Public </i><br /><strong>&nbsp;&nbsp;eSetValueWithoutOverwrite</strong>
 				</td>
 			</tr>
 			<tr>
@@ -391,65 +390,7 @@ function nameClassifier(name, separator)
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			The task being queried has been deleted, but its TCB has not yet been freed.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public </i><br /><strong>&nbsp;&nbsp;eInvalid</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes12127')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes12127" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes12127_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes12127_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes12127_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes12127_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes12127_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes12127_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes12127_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes12127_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			Used as an &#39;invalid state&#39; value.&lt;br/&gt;
+			Set the task&#39;s notification value if the previous value has been read by the task.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -459,39 +400,6 @@ function nameClassifier(name, separator)
 			</tr>
 	</table>
 </div>
-		<div class="ItemBody" id="AssociationsFromTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="40%" class="TableHeading">Element</td>
-					<td width="30%" class="TableHeading">Source Role</td>
-					<td width="30%" class="TableHeading">Target Role</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA2231.htm">«struct» xTASK_STATUS</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> eCurrentState<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12128" onclick="parent.toggleDiv('detailsDIVLink12128','DetailsImageLink12128')" />Details:
-							<div id="detailsDIVLink12128" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-
-			</table>
-		</div>
 <div class="ItemBody" id="TaggedValTable">
 	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
@@ -504,8 +412,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario12129" onclick="parent.toggleDiv('detailsDIVScenario12129','DetailsImageScenario12129')" />Details:
-						<div id="detailsDIVScenario12129" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario12127" onclick="parent.toggleDiv('detailsDIVScenario12127','DetailsImageScenario12127')" />Details:
+						<div id="detailsDIVScenario12127" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
@@ -516,8 +424,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario12130" onclick="parent.toggleDiv('detailsDIVScenario12130','DetailsImageScenario12130')" />Details:
-						<div id="detailsDIVScenario12130" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario12128" onclick="parent.toggleDiv('detailsDIVScenario12128','DetailsImageScenario12128')" />Details:
+						<div id="detailsDIVScenario12128" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>

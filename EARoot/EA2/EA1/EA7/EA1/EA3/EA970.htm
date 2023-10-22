@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>sm_LCDCRCErrorHandler::lcdCRCFrameCnt</title>
+<title>LCD_status</title>
 <link href="../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("sm_LCDCRCErrorHandler::lcdCRCFrameCnt", " : "))</script>  : Public   TimeLine</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("LCD_status", " : "))</script>  : Public   TimeLine</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">12.02.2023 22:24:18</td>
+			<td width="85%" class="ObjectDetailsValue">12.02.2023 21:58:26</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">3.04.2023 12:18:14</td>
+			<td class="ObjectDetailsValue">3.04.2023 12:12:14</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,18 +87,18 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{9A06EEF0-DC4F-4719-9CC7-8EE6215724AD}</td>
+			<td class="ObjectDetailsValue">{0C94EAB8-C9A8-4d8d-BFE4-C4FE63B29B91}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA963.htm">LCD CRC Error Detection FTT</a></td>
+			<td class="ObjectDetailsValue"><a href="EA964.htm">LCD CRC Error Detection FTT</a></td>
 		</tr>
 	</table>
 	
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Transitions');" id="TransitionsTitle">Transitions</li>
-			<li onClick="parent.toggleItem('MessagesFrom');" id="MessagesFromTitle">Messages From</li>
+			<li onClick="parent.toggleItem('MessagesTo');" id="MessagesToTitle">Messages To</li>
 		</ul>
 		<div class="ItemBody" id="TransitionsTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
@@ -109,51 +109,76 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">0</td>
-					<td width="20%" class="TableRow">0 </td>
+					<td width="20%" class="TableRow">IDLE</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="20%" class="TableRow">65</td>
-					<td width="20%" class="TableRow">1</td>
-					<td width="60%" class="TableRow">Event: ++lcdCRCFrameCnt</td>
+					<td width="20%" class="TableRow">10</td>
+					<td width="20%" class="TableRow">CHECK</td>
+					<td width="60%" class="TableRow">Duration Constraint: < 10 msec</td>
 				</tr>
 				<tr>
-					<td width="20%" class="TableRow">115</td>
-					<td width="20%" class="TableRow">2</td>
+					<td width="20%" class="TableRow">20</td>
+					<td width="20%" class="TableRow">IDLE</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="20%" class="TableRow">165</td>
-					<td width="20%" class="TableRow">3</td>
+					<td width="20%" class="TableRow">60</td>
+					<td width="20%" class="TableRow">CHECK</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="20%" class="TableRow">215</td>
-					<td width="20%" class="TableRow">4</td>
+					<td width="20%" class="TableRow">70</td>
+					<td width="20%" class="TableRow">IDLE</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">110</td>
+					<td width="20%" class="TableRow">CHECK</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">120</td>
+					<td width="20%" class="TableRow">IDLE</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">160</td>
+					<td width="20%" class="TableRow">CHECK</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">170</td>
+					<td width="20%" class="TableRow">IDLE</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">210</td>
+					<td width="20%" class="TableRow">CHECK</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">220</td>
-					<td width="20%" class="TableRow">1</td>
-					<td width="60%" class="TableRow">Event: lcdCRCFrameCnt >= ERROR_DET_WINDOW</td>
+					<td width="20%" class="TableRow">IDLE</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 
 			</table>
 		</div>
-		<div class="ItemBody" id="MessagesFromTable">
+		<div class="ItemBody" id="MessagesToTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="50%" class="TableHeading">Element</td>
 					<td width="50%" class="TableHeading">Message</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA969.htm">LCD_status</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA973.htm">TPG</a></td>
 					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8876" onclick="parent.toggleDiv('detailsDIVMessage8876', 'DetailsImageMessage8876')" />Details:
-							<div id="detailsDIVMessage8876" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8883" onclick="parent.toggleDiv('detailsDIVMessage8883', 'DetailsImageMessage8883')" />Details:
+							<div id="detailsDIVMessage8883" class="DetailsDiv" >
 							<strong>Type:</strong> Timing Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -161,13 +186,55 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA969.htm">LCD_status</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA972.htm">sm_LCDCRCErrorHandler::lcdCRCFrameError</a></td>
 					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8877" onclick="parent.toggleDiv('detailsDIVMessage8877', 'DetailsImageMessage8877')" />Details:
-							<div id="detailsDIVMessage8877" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8884" onclick="parent.toggleDiv('detailsDIVMessage8884', 'DetailsImageMessage8884')" />Details:
+							<div id="detailsDIVMessage8884" class="DetailsDiv" >
+							<strong>Type:</strong> Timing Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA971.htm">sm_LCDCRCErrorHandler::lcdCRCFrameCnt</a></td>
+					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8885" onclick="parent.toggleDiv('detailsDIVMessage8885', 'DetailsImageMessage8885')" />Details:
+							<div id="detailsDIVMessage8885" class="DetailsDiv" >
+							<strong>Type:</strong> Timing Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA971.htm">sm_LCDCRCErrorHandler::lcdCRCFrameCnt</a></td>
+					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8886" onclick="parent.toggleDiv('detailsDIVMessage8886', 'DetailsImageMessage8886')" />Details:
+							<div id="detailsDIVMessage8886" class="DetailsDiv" >
+							<strong>Type:</strong> Timing Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA972.htm">sm_LCDCRCErrorHandler::lcdCRCFrameError</a></td>
+					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8887" onclick="parent.toggleDiv('detailsDIVMessage8887', 'DetailsImageMessage8887')" />Details:
+							<div id="detailsDIVMessage8887" class="DetailsDiv" >
 							<strong>Type:</strong> Timing Synchronous Call<br />
 							&nbsp;
 							</div>

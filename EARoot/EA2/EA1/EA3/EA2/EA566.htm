@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>[SWREQ450] (QM)</title>
+<title>[SWREQ449] (QM)</title>
 <link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,11 +34,11 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ450] (QM)", " : "))</script> REQ11046 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ449] (QM)", " : "))</script> REQ11045 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">21.08.2023 16:57:12</td>
+			<td width="85%" class="ObjectDetailsValue">21.08.2023 16:53:41</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
@@ -87,14 +87,14 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{62380A30-4C9A-4810-B134-AD158349C3FC}</td>
+			<td class="ObjectDetailsValue">{9A2F0BD4-D2E7-468e-BC84-75E9FD624590}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
 			<td class="ObjectDetailsValue"><a href="../EA86.htm">Software Requirements Specification</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">While the operational mode is set to OPERATIONAL_MODE_FREEWAY, if the display receives the I2C gear status message &#8220;&lt;b&gt;GearStat&lt;/b&gt;&#8221; from IDCC with the payload &#8220;&lt;b&gt;PositionP&lt;/b&gt;&#8221; indicating the park position, the SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; shall transition to OPERATIONAL_MODE_PARKING. (QM)&lt;br/&gt;&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">After the following initialization sequence is complete, SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; shall transition to OPERATIONAL_MODE_FREEWAY. (AND)&lt;br/&gt;&lt;ul&gt;<br />&lt;li&gt;GPIO Initialization (&lt;i&gt;CMS_SW_FastInit::InitGPIO&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Timer Initialization (&lt;i&gt;CMS_SW_FastInit::InitTimer&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;I2C Initialization (&lt;i&gt;CMS_SW_FastInit::InitIIC_All&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Interrupt Controller Initialization (&lt;i&gt;CMS_SW_FastInit::Setup_IntrptCtrl&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Video Format Initialization (&lt;i&gt;CMS_SW_FastInit::AddUserVideoFormat&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;CST Rx Initialization (&lt;i&gt;CMS_SW_FastInit::InitCSI_Rx&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;CSC Initialization (&lt;i&gt;CMS_SW_FastInit::InitVprocSs_CSC&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Frozen Frame Detector Initialization (&lt;i&gt;CMS_SW_FastInit::InitFrozenDetector&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Delayed and Reversed Frame Detector Initialization (&lt;i&gt;CMS_SW_FastInit::Init_DelayedReverse_Frame_Detector&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Crop Initilization (&lt;i&gt;CMS_SW_FastInit::InitCrop&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Mirror Initialization (&lt;i&gt;CMS_SW_FastInit::InitMirror&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Scaler Initialization (&lt;i&gt;CMS_SW_FastInit::InitVprocSs_SCALE&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;VTC Initialization (&lt;i&gt;CMS_SW_FastInit::InitVTC&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;TPG Initialization (&lt;i&gt;CMS_SW_FastInit::InitTPG&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;SPI Initialization (&lt;i&gt;CMS_SW_FastInit::InitSPI&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Overlay Adder Initialization (&lt;i&gt;CMS_SW_FastInit::InitOverlayAdder&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Image Sensor Configuration (&lt;i&gt;CMS_SW_FastInit::is_Config_Sensor&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Camera Serializer Initialization (&lt;i&gt;CMS_SW_FastInit::ConfigSer&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Display CSI Deserializer Initialization (&lt;i&gt;CMS_SW_FastInit::ConfigCSIDES&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Reset FPGA IPs (&lt;i&gt;CMS_SW_FastInit::ResetAllFPGAIPs&lt;/i&gt;) AND&lt;ul&gt;<br />&lt;li&gt;Disable CSI IP (&lt;i&gt;CMS_SW_FastInit::DisableCSI&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Enable CSI IP (&lt;i&gt;CMS_SW_FastInit::EnableCSI&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Halt VDMA (&lt;i&gt;CMS_SW_FastInit::HaltVDMA&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Reset VDMA (&lt;i&gt;CMS_SW_FastInit::ResetVDMA&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Run VDMA (&lt;i&gt;CMS_SW_FastInit::RunVDMA&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Reset Video Output (&lt;i&gt;CMS_SW_FastInit::ResetVideoOut&lt;/i&gt;) AND&lt;/li&gt;&lt;/ul&gt;<br />&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Turn on LCD (&lt;i&gt;CMS_SW_FastInit::LCD_ON&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Inform the FUSA Core that the first stage of initialization is complete AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Go to bootloader to load the SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; (&lt;i&gt;CMS_SW_FastInit::mb_reset&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;GPIO Initialization (&lt;i&gt;CMS_SW::InitGPIO&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Card Type Initialization (&lt;i&gt;CMS_SW::Card_type_settings&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;I2C Initialization (&lt;i&gt;CMS_SW::InitIIC_All&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Interrupt Controller Initialization (&lt;i&gt;CMS_SW::Setup_IntrptCtrl&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Video Format Initialization (&lt;i&gt;CMS_SW::AddUserVideoFormat&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;CST Rx Initialization (&lt;i&gt;CMS_SW::InitCSI_Rx&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;VTC Initialization (&lt;i&gt;CMS_SW::InitVTC&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;SPI Initialization (&lt;i&gt;CMS_SW_FastInit::InitSPI&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Overlay Adder Initialization (&lt;i&gt;CMS_SW::InitOverlayAdder&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Video CRC Calculator Initialization (&lt;i&gt;CMS_SW::InitVideoCRCCalculator&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Camera Blockage Detector Initialization (&lt;i&gt;CMS_SW::InitCameraBlockDetect&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Flash Initialization (&lt;i&gt;CMS_SW::ConfigFlash&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Persistent Data Initialization (&lt;i&gt;CMS_SW::pd_Init&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Firmware Update Manager Initialization (&lt;i&gt;CMS_SW::pwum_Init&lt;/i&gt;) AND&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Device Initialization (&lt;i&gt;CMS_SW::InitDev&lt;/i&gt;) AND&lt;ul&gt;<br />&lt;li&gt;Reset Display LVDS Deserializer (&lt;i&gt;CMS_SW::Reset_LVDSDES&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Reset Camera Serializer Errors (&lt;i&gt;CMS_SW::max9295e_ResetErrors&lt;/i&gt;) AND&lt;/li&gt;&lt;li&gt;Reset Display Deserializer Errors (&lt;i&gt;CMS_SW::max9296b_ResetErrors&lt;/i&gt;) AND&lt;/li&gt;&lt;/ul&gt;<br />&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Image Sensor Initialization (&lt;i&gt;CMS_SW::is_Init&lt;/i&gt;)&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Inform the FUSA Core that the second stage of initialization is complete&lt;/li&gt;&lt;br/&gt;&lt;/ul&gt;<br />(QM)&lt;br/&gt;&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -113,8 +113,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario5328" onclick="parent.toggleDiv('detailsDIVScenario5328','DetailsImageScenario5328')" />Details:
-						<div id="detailsDIVScenario5328" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario5329" onclick="parent.toggleDiv('detailsDIVScenario5329','DetailsImageScenario5329')" />Details:
+						<div id="detailsDIVScenario5329" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Test,Analiz,Muayene,Gösterim,CoC<br /></div>
 
 						</div>
@@ -126,8 +126,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario5329" onclick="parent.toggleDiv('detailsDIVScenario5329','DetailsImageScenario5329')" />Details:
-						<div id="detailsDIVScenario5329" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario5330" onclick="parent.toggleDiv('detailsDIVScenario5330','DetailsImageScenario5330')" />Details:
+						<div id="detailsDIVScenario5330" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Default: Öneri<br /></div>
 
 						</div>
@@ -139,8 +139,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario5330" onclick="parent.toggleDiv('detailsDIVScenario5330','DetailsImageScenario5330')" />Details:
-						<div id="detailsDIVScenario5330" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario5331" onclick="parent.toggleDiv('detailsDIVScenario5331','DetailsImageScenario5331')" />Details:
+						<div id="detailsDIVScenario5331" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: 1,2,3,4,5,6,7,8,9,10<br /></div>
 
 						</div>
@@ -148,12 +148,12 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">ID</td>
-				<td width="50%" class="TableRow" valign="top">REQ11046</td>
+				<td width="50%" class="TableRow" valign="top">REQ11045</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario5331" onclick="parent.toggleDiv('detailsDIVScenario5331','DetailsImageScenario5331')" />Details:
-						<div id="detailsDIVScenario5331" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario5332" onclick="parent.toggleDiv('detailsDIVScenario5332','DetailsImageScenario5332')" />Details:
+						<div id="detailsDIVScenario5332" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
@@ -164,22 +164,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario5332" onclick="parent.toggleDiv('detailsDIVScenario5332','DetailsImageScenario5332')" />Details:
-						<div id="detailsDIVScenario5332" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Values: 1,2,3,4,5,6,7,8,9,10<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">Kategori</td>
-				<td width="50%" class="TableRow" valign="top">İşlevsel</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
 					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario5333" onclick="parent.toggleDiv('detailsDIVScenario5333','DetailsImageScenario5333')" />Details:
 						<div id="detailsDIVScenario5333" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Values: Arayüz,Çevre Koşulları,Fiziksel Kısıtlar,Gerçekleme Kısıtları,İşlevsel,Kalite,Desteklenebilirlik,Güvenlik,Güvenilirlik,Kullanılabilirlik,Kurumsal,Lojistik Destek,Performans,Proje Kabul Kriterleri,Proje Kapsamı Dışı,Standartlara Uyum,Tasarım Kısıtları,Test<br /></div>
+						<div class="ObjectDetailsNotes">Values: 1,2,3,4,5,6,7,8,9,10<br /></div>
 
 						</div>
 					</div>
@@ -198,7 +185,7 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">Orijin</td>
-				<td width="50%" class="TableRow" valign="top">cms_REQ11046</td>
+				<td width="50%" class="TableRow" valign="top">cms_REQ11045</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
