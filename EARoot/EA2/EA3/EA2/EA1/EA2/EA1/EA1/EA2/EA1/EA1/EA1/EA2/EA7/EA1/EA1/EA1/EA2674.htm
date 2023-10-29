@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>include::task::xTASK_STATUS</title>
+<title>include::FreeRTOS::xSTATIC_QUEUE</title>
 <link href="../../../../../../../../../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("xTASK_STATUS", " : "))</script>  : Public  &lt;&lt;struct&gt;&gt; Class</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("xSTATIC_QUEUE", " : "))</script>  : Public  &lt;&lt;struct&gt;&gt; Class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">1.12.2022 12:19:42</td>
+			<td width="85%" class="ObjectDetailsValue">1.12.2022 12:19:31</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">29.08.2023 12:57:48</td>
+			<td class="ObjectDetailsValue">29.08.2023 12:58:09</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,14 +87,14 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{006457A6-53ED-4f3a-9A31-2F6DE814BF3A}</td>
+			<td class="ObjectDetailsValue">{C3B42314-3586-41aa-A4A5-C75E1651C916}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA2629.htm">include</a></td>
+			<td class="ObjectDetailsValue"><a href="EA2640.htm">include</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Used with the uxTaskGetSystemState() function to return the state of each task in the system.&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">In line with software engineering best practice, especially when supplying a library that is likely to change in future versions, FreeRTOS implements a strict data hiding policy.&#160;&#160;This means the Queue structure used internally by FreeRTOS is not accessible to application code.&#160;&#160;However, if the application writer wants to statically allocate the memory required to create a queue then the size of the queue object needs to be known.&#160;&#160;The StaticQueue_t structure below is provided for this purpose.&#160;&#160;Its sizes and alignment requirements are guaranteed to match those of the genuine structure, no matter which architecture is being used, and no matter how the values in FreeRTOSConfig.h are set.&#160;&#160;Its contents are somewhat obfuscated in the hope users will recognise that it would be unwise to make direct use of the structure members.&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -110,524 +110,386 @@ function nameClassifier(name, separator)
 		</tr>
 						<tr>
 				<td width="100%" class="TableRow">
-					<i>Public <a href="EA2671.htm">TaskHandle_t</a></i><br /><strong>&nbsp;&nbsp;xHandle</strong>
+					<i>Public void*</i><br /><strong>&nbsp;&nbsp;pvDummy1</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes16020')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes16020" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes15934')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes15934" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes16020_00" style="display: none;">
+						<tr id="DetailsImageAttributes15934_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16020_01" style="display: none;">
+						<tr id="DetailsImageAttributes15934_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16020_02" style="display: none;">
+						<tr id="DetailsImageAttributes15934_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16020_03" style="display: none;">
+						<tr id="DetailsImageAttributes15934_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16020_04" style="display: none;">
+						<tr id="DetailsImageAttributes15934_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16020_05" style="display: none;">
+						<tr id="DetailsImageAttributes15934_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes16020_06" style="display: none;">
+						<tr id="DetailsImageAttributes15934_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes16020_07" style="display: none;">
+							<tr id="DetailsImageAttributes15934_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
 					</table>
 					
 					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The handle of the task to which the rest of the information in the structure relates.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
+						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public const char*</i><br /><strong>&nbsp;&nbsp;pcTaskName</strong>
+					<i>Public StaticList_t</i><br /><strong>&nbsp;&nbsp;xDummy3</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes16021')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes16021" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes15935')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes15935" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes16021_00" style="display: none;">
+						<tr id="DetailsImageAttributes15935_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16021_01" style="display: none;">
+						<tr id="DetailsImageAttributes15935_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16021_02" style="display: none;">
+						<tr id="DetailsImageAttributes15935_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16021_03" style="display: none;">
+						<tr id="DetailsImageAttributes15935_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16021_04" style="display: none;">
+						<tr id="DetailsImageAttributes15935_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16021_05" style="display: none;">
+						<tr id="DetailsImageAttributes15935_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes16021_06" style="display: none;">
+						<tr id="DetailsImageAttributes15935_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes16021_07" style="display: none;">
+							<tr id="DetailsImageAttributes15935_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
 					</table>
 					
 					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A pointer to the task&#39;s name.&#160;&#160;This value will be invalid if the task was deleted since the structure was populated!&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
+						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public <a href="../EA2/EA1/EA1/EA2702.htm">UBaseType_t</a></i><br /><strong>&nbsp;&nbsp;xTaskNumber</strong>
+					<i>Public <a href="../EA2/EA1/EA1/EA2713.htm">UBaseType_t</a></i><br /><strong>&nbsp;&nbsp;uxDummy4</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes16022')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes16022" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes15936')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes15936" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes16022_00" style="display: none;">
+						<tr id="DetailsImageAttributes15936_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16022_01" style="display: none;">
+						<tr id="DetailsImageAttributes15936_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16022_02" style="display: none;">
+						<tr id="DetailsImageAttributes15936_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16022_03" style="display: none;">
+						<tr id="DetailsImageAttributes15936_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16022_04" style="display: none;">
+						<tr id="DetailsImageAttributes15936_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16022_05" style="display: none;">
+						<tr id="DetailsImageAttributes15936_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes16022_06" style="display: none;">
+						<tr id="DetailsImageAttributes15936_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes16022_07" style="display: none;">
+							<tr id="DetailsImageAttributes15936_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
 					</table>
 					
 					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A number unique to the task.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
+						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public <a href="EA2670.htm">eTaskState</a></i><br /><strong>&nbsp;&nbsp;eCurrentState</strong>
+					<i>Public uint8_t</i><br /><strong>&nbsp;&nbsp;ucDummy5</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes16023')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes16023" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes15937')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes15937" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes16023_00" style="display: none;">
+						<tr id="DetailsImageAttributes15937_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16023_01" style="display: none;">
+						<tr id="DetailsImageAttributes15937_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16023_02" style="display: none;">
+						<tr id="DetailsImageAttributes15937_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16023_03" style="display: none;">
+						<tr id="DetailsImageAttributes15937_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16023_04" style="display: none;">
+						<tr id="DetailsImageAttributes15937_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16023_05" style="display: none;">
+						<tr id="DetailsImageAttributes15937_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes16023_06" style="display: none;">
+						<tr id="DetailsImageAttributes15937_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes16023_07" style="display: none;">
+							<tr id="DetailsImageAttributes15937_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
 					</table>
 					
 					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The state in which the task existed when the structure was populated.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
+						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public <a href="../EA2/EA1/EA1/EA2702.htm">UBaseType_t</a></i><br /><strong>&nbsp;&nbsp;uxCurrentPriority</strong>
+					<i>Public uint8_t</i><br /><strong>&nbsp;&nbsp;ucDummy6</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes16024')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes16024" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes15938')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes15938" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes16024_00" style="display: none;">
+						<tr id="DetailsImageAttributes15938_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16024_01" style="display: none;">
+						<tr id="DetailsImageAttributes15938_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16024_02" style="display: none;">
+						<tr id="DetailsImageAttributes15938_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16024_03" style="display: none;">
+						<tr id="DetailsImageAttributes15938_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16024_04" style="display: none;">
+						<tr id="DetailsImageAttributes15938_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16024_05" style="display: none;">
+						<tr id="DetailsImageAttributes15938_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes16024_06" style="display: none;">
+						<tr id="DetailsImageAttributes15938_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes16024_07" style="display: none;">
+							<tr id="DetailsImageAttributes15938_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
 					</table>
 					
 					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The priority at which the task was running (may be inherited) when the structure was populated.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
+						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public <a href="../EA2/EA1/EA1/EA2702.htm">UBaseType_t</a></i><br /><strong>&nbsp;&nbsp;uxBasePriority</strong>
+					<i>Public void*</i><br /><strong>&nbsp;&nbsp;pvDummy7</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes16025')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes16025" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes15939')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes15939" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes16025_00" style="display: none;">
+						<tr id="DetailsImageAttributes15939_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16025_01" style="display: none;">
+						<tr id="DetailsImageAttributes15939_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16025_02" style="display: none;">
+						<tr id="DetailsImageAttributes15939_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16025_03" style="display: none;">
+						<tr id="DetailsImageAttributes15939_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16025_04" style="display: none;">
+						<tr id="DetailsImageAttributes15939_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16025_05" style="display: none;">
+						<tr id="DetailsImageAttributes15939_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes16025_06" style="display: none;">
+						<tr id="DetailsImageAttributes15939_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes16025_07" style="display: none;">
+							<tr id="DetailsImageAttributes15939_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
 					</table>
 					
 					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The priority to which the task will return if the task&#39;s current priority has been inherited to avoid unbounded priority inversion when obtaining a mutex.&#160;&#160;Only valid if configUSE_MUTEXES is defined as 1 in FreeRTOSConfig.h.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
+						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public configRUN_TIME_COUNTER_TYPE</i><br /><strong>&nbsp;&nbsp;ulRunTimeCounter</strong>
+					<i>Public <a href="../EA2/EA1/EA1/EA2713.htm">UBaseType_t</a></i><br /><strong>&nbsp;&nbsp;uxDummy8</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes16026')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes16026" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes15940')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes15940" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes16026_00" style="display: none;">
+						<tr id="DetailsImageAttributes15940_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16026_01" style="display: none;">
+						<tr id="DetailsImageAttributes15940_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16026_02" style="display: none;">
+						<tr id="DetailsImageAttributes15940_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16026_03" style="display: none;">
+						<tr id="DetailsImageAttributes15940_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16026_04" style="display: none;">
+						<tr id="DetailsImageAttributes15940_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16026_05" style="display: none;">
+						<tr id="DetailsImageAttributes15940_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes16026_06" style="display: none;">
+						<tr id="DetailsImageAttributes15940_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes16026_07" style="display: none;">
+							<tr id="DetailsImageAttributes15940_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
 					</table>
 					
 					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The total run time allocated to the task so far, as defined by the run time stats clock.&#160;&#160;See https://www.FreeRTOS.org/rtos-run-time-stats.html.&#160;&#160;Only valid when configGENERATE_RUN_TIME_STATS is defined as 1 in FreeRTOSConfig.h.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
+						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="100%" class="TableRow">
-					<i>Public StackType_t*</i><br /><strong>&nbsp;&nbsp;pxStackBase</strong>
+					<i>Public uint8_t</i><br /><strong>&nbsp;&nbsp;ucDummy9</strong>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes16027')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes16027" border="0" />Details:</a>
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes15941')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes15941" border="0" />Details:</a>
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 					
-						<tr id="DetailsImageAttributes16027_00" style="display: none;">
+						<tr id="DetailsImageAttributes15941_00" style="display: none;">
 							<td width="75"><i>Alias:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16027_01" style="display: none;">
+						<tr id="DetailsImageAttributes15941_01" style="display: none;">
 							<td width="75"><i>Initial:</i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16027_02" style="display: none;">
+						<tr id="DetailsImageAttributes15941_02" style="display: none;">
 							<td width="75"><i>Stereotype: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16027_03" style="display: none;">
+						<tr id="DetailsImageAttributes15941_03" style="display: none;">
 							<td width="75"><i>Ordered: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16027_04" style="display: none;">
+						<tr id="DetailsImageAttributes15941_04" style="display: none;">
 							<td width="75"><i>Range: </i></td>
 							<td></td>
 						</tr>
-						<tr id="DetailsImageAttributes16027_05" style="display: none;">
+						<tr id="DetailsImageAttributes15941_05" style="display: none;">
 							<td width="75"><i>Transient: </i></td>
 							<td>False</td>
 						</tr>
-						<tr id="DetailsImageAttributes16027_06" style="display: none;">
+						<tr id="DetailsImageAttributes15941_06" style="display: none;">
 							<td width="75"><i>Derived: </i></td>
 							<td>False</td>
 						</tr>
-							<tr id="DetailsImageAttributes16027_07" style="display: none;">
+							<tr id="DetailsImageAttributes15941_07" style="display: none;">
 							<td width="75"><i>IsID: </i></td>
 						<td>False</td>
 						</tr>
 					</table>
 					
 					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			Points to the lowest address of the task&#39;s stack area.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="100%" class="TableRow">
-					<i>Public configSTACK_DEPTH_TYPE</i><br /><strong>&nbsp;&nbsp;usStackHighWaterMark</strong>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="1">										
-					<a href="#" onclick="parent.toggleData('DetailsImageAttributes16028')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes16028" border="0" />Details:</a>
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-					
-						<tr id="DetailsImageAttributes16028_00" style="display: none;">
-							<td width="75"><i>Alias:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes16028_01" style="display: none;">
-							<td width="75"><i>Initial:</i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes16028_02" style="display: none;">
-							<td width="75"><i>Stereotype: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes16028_03" style="display: none;">
-							<td width="75"><i>Ordered: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes16028_04" style="display: none;">
-							<td width="75"><i>Range: </i></td>
-							<td></td>
-						</tr>
-						<tr id="DetailsImageAttributes16028_05" style="display: none;">
-							<td width="75"><i>Transient: </i></td>
-							<td>False</td>
-						</tr>
-						<tr id="DetailsImageAttributes16028_06" style="display: none;">
-							<td width="75"><i>Derived: </i></td>
-							<td>False</td>
-						</tr>
-							<tr id="DetailsImageAttributes16028_07" style="display: none;">
-							<td width="75"><i>IsID: </i></td>
-						<td>False</td>
-						</tr>
-					</table>
-					
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The minimum amount of stack space that has remained for the task since the task was created.&#160;&#160;The closer this value is to zero the closer the task has come to overflowing its stack.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
+						&nbsp;
 						
 				</td>
 			</tr>
@@ -642,7 +504,7 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA1/EA1/EA2702.htm">«typedef» UBaseType_t</a><br />
+						<a href="../EA2/EA1/EA1/EA2713.htm">«typedef» UBaseType_t</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -650,14 +512,14 @@ function nameClassifier(name, separator)
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> uxBasePriority<br />
+						<strong>Name:</strong> uxDummy8<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink16029" onclick="parent.toggleDiv('detailsDIVLink16029','DetailsImageLink16029')" />Details:
-							<div id="detailsDIVLink16029" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink15942" onclick="parent.toggleDiv('detailsDIVLink15942','DetailsImageLink15942')" />Details:
+							<div id="detailsDIVLink15942" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -665,7 +527,7 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA1/EA1/EA2702.htm">«typedef» UBaseType_t</a><br />
+						<a href="../EA2/EA1/EA1/EA2713.htm">«typedef» UBaseType_t</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -673,106 +535,14 @@ function nameClassifier(name, separator)
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> xTaskNumber<br />
+						<strong>Name:</strong> uxDummy4<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink16030" onclick="parent.toggleDiv('detailsDIVLink16030','DetailsImageLink16030')" />Details:
-							<div id="detailsDIVLink16030" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA2670.htm">eTaskState</a><br />
-						Enumeration &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> eCurrentState<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink16031" onclick="parent.toggleDiv('detailsDIVLink16031','DetailsImageLink16031')" />Details:
-							<div id="detailsDIVLink16031" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA1/EA1/EA2702.htm">«typedef» UBaseType_t</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> uxCurrentPriority<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink16032" onclick="parent.toggleDiv('detailsDIVLink16032','DetailsImageLink16032')" />Details:
-							<div id="detailsDIVLink16032" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA1/EA1/EA2700.htm">«typedef» StackType_t</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> pxStackBase<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink16033" onclick="parent.toggleDiv('detailsDIVLink16033','DetailsImageLink16033')" />Details:
-							<div id="detailsDIVLink16033" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA2671.htm">«typedef» TaskHandle_t</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> xHandle<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink16034" onclick="parent.toggleDiv('detailsDIVLink16034','DetailsImageLink16034')" />Details:
-							<div id="detailsDIVLink16034" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink15943" onclick="parent.toggleDiv('detailsDIVLink15943','DetailsImageLink15943')" />Details:
+							<div id="detailsDIVLink15943" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -793,20 +563,20 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario16035" onclick="parent.toggleDiv('detailsDIVScenario16035','DetailsImageScenario16035')" />Details:
-						<div id="detailsDIVScenario16035" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario15944" onclick="parent.toggleDiv('detailsDIVScenario15944','DetailsImageScenario15944')" />Details:
+						<div id="detailsDIVScenario15944" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">typeSynonyms</td>
-				<td width="50%" class="TableRow" valign="top">TaskStatus_t</td>
+				<td width="50%" class="TableRow" valign="top">StaticQueue_t</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario16036" onclick="parent.toggleDiv('detailsDIVScenario16036','DetailsImageScenario16036')" />Details:
-						<div id="detailsDIVScenario16036" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario15945" onclick="parent.toggleDiv('detailsDIVScenario15945','DetailsImageScenario15945')" />Details:
+						<div id="detailsDIVScenario15945" class="DetailsDiv" >
 						&nbsp;
 						</div>
 					</div>

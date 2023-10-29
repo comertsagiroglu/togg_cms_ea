@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Handle Maintenance Mode Exit</title>
+<title>Handle Maintenance Mode Entry</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Handle Maintenance Mode Exit", " : "))</script> 10090 : Public   UseCase</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Handle Maintenance Mode Entry", " : "))</script> 10088 : Public   UseCase</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">26.12.2022 18:30:18</td>
+			<td width="85%" class="ObjectDetailsValue">25.12.2022 14:56:31</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">27.12.2022 09:33:15</td>
+			<td class="ObjectDetailsValue">27.12.2022 09:32:59</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,14 +87,14 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{21B81C36-6D05-486d-9F61-3FCE3BDFFBAE}</td>
+			<td class="ObjectDetailsValue">{FE2075DB-E125-4623-8513-3BB7F5AC6ECE}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA868.htm">Handle Maintenance Mode Exit</a>, <a href="EA870.htm">Use Cases</a></td>
+			<td class="ObjectDetailsValue"><a href="EA867.htm">Handle Maintenance Mode Entry</a>, <a href="EA871.htm">Use Cases</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Pre-conditions:&lt;br/&gt;- Power state = POWER_ON&lt;br/&gt;- Operational state = MAINTENANCE&lt;br/&gt;&lt;br/&gt;Scenario:&lt;br/&gt;- IDCC sends set_maintenance_mode message with Exit attribute.&lt;br/&gt;- Display maintenance mode handler enables the LCD backlight.&lt;br/&gt;- Display maintenance mode handler exits from the maintenance mode state.&lt;br/&gt;- IDCC sends the operational mode to Parking state.&lt;br/&gt;&lt;br/&gt;Post-conditions:&lt;br/&gt;Operational state = OPERATIONAL - PARKING&#160;&#160;MODE&lt;br/&gt;LCD backlight on&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Pre-conditions:&lt;br/&gt;- Power state = POWER_ON&lt;br/&gt;- Operational state = PRIMARY_OPERATION - PARKING&lt;br/&gt;&lt;br/&gt;Scenario:&lt;br/&gt;- The display must be in the parking operational state i.e. the vehicle must be stationary in order for the display to make the maintenance mode state transition.&lt;br/&gt;- IDCC sends set_maintenance_mode message with one of the mode attributes:&lt;br/&gt;&#160;&#160;&#160;&#160;Fw Update - Camera MCU FW&lt;br/&gt;&#160;&#160;&#160;&#160;Fw Update - Camera Sensor FW&lt;br/&gt;&#160;&#160;&#160;&#160;Fw Update - Display FPGA HW&lt;br/&gt;&#160;&#160;&#160;&#160;Fw Update - Display FPGA FW&lt;br/&gt;&#160;&#160;&#160;&#160;Fw Update - Camera MCU BL&lt;br/&gt;&#160;&#160;&#160;&#160;Zoom Change &lt;br/&gt;- Display maintenance mode handler disables the LCD backlight.&lt;br/&gt;- Display maintenance mode handler sets the operational state to maintenance mode.&lt;br/&gt;&lt;br/&gt;Post-conditions:&lt;br/&gt;Operational state = MAINTENANCE&lt;br/&gt;LCD backlight off&lt;br/&gt;&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -110,13 +110,13 @@ function nameClassifier(name, separator)
 					<td width="50%" class="TableHeading">Message</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA895.htm">Handle Maintenance Mode Exit</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA895.htm">Handle Maintenance Mode Entry</a></td>
 					<td width="50%" class="TableRow" valign="top">Display_State_Transition</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8837" onclick="parent.toggleDiv('detailsDIVMessage8837', 'DetailsImageMessage8837')" />Details:
-							<div id="detailsDIVMessage8837" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8843" onclick="parent.toggleDiv('detailsDIVMessage8843', 'DetailsImageMessage8843')" />Details:
+							<div id="detailsDIVMessage8843" class="DetailsDiv" >
 							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -133,13 +133,13 @@ function nameClassifier(name, separator)
 					<td width="50%" class="TableHeading">Message</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA895.htm">Handle Maintenance Mode Exit</a></td>
-					<td width="50%" class="TableRow" valign="top">Display_State_Transition</td>
+					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA898.htm">IDCC</a></td>
+					<td width="50%" class="TableRow" valign="top">set_maintenance_mode</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8838" onclick="parent.toggleDiv('detailsDIVMessage8838', 'DetailsImageMessage8838')" />Details:
-							<div id="detailsDIVMessage8838" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8844" onclick="parent.toggleDiv('detailsDIVMessage8844', 'DetailsImageMessage8844')" />Details:
+							<div id="detailsDIVMessage8844" class="DetailsDiv" >
 							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -147,13 +147,55 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA897.htm">IDCC</a></td>
-					<td width="50%" class="TableRow" valign="top">set_maintenance_mode</td>
+					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA898.htm">IDCC</a></td>
+					<td width="50%" class="TableRow" valign="top">gear_position</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8839" onclick="parent.toggleDiv('detailsDIVMessage8839', 'DetailsImageMessage8839')" />Details:
-							<div id="detailsDIVMessage8839" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8845" onclick="parent.toggleDiv('detailsDIVMessage8845', 'DetailsImageMessage8845')" />Details:
+							<div id="detailsDIVMessage8845" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA898.htm">IDCC</a></td>
+					<td width="50%" class="TableRow" valign="top">set_operational_mode</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8846" onclick="parent.toggleDiv('detailsDIVMessage8846', 'DetailsImageMessage8846')" />Details:
+							<div id="detailsDIVMessage8846" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA895.htm">Handle Maintenance Mode Entry</a></td>
+					<td width="50%" class="TableRow" valign="top">Display_State_Transition</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8847" onclick="parent.toggleDiv('detailsDIVMessage8847', 'DetailsImageMessage8847')" />Details:
+							<div id="detailsDIVMessage8847" class="DetailsDiv" >
+							<strong>Type:</strong> Sequence Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="./EA1/EA898.htm">IDCC</a></td>
+					<td width="50%" class="TableRow" valign="top">vehicle_speed</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage8848" onclick="parent.toggleDiv('detailsDIVMessage8848', 'DetailsImageMessage8848')" />Details:
+							<div id="detailsDIVMessage8848" class="DetailsDiv" >
 							<strong>Type:</strong> Sequence Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -186,14 +228,14 @@ function nameClassifier(name, separator)
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA4/EA844.htm">«Gereksinim» [YTB133] Maintenance Mode</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA4/EA845.htm">«Gereksinim» [YTB133] Maintenance Mode</a></td>
 					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
 					<td width="10%" class="TableRow" valign="top">Dependency</td>
 					<td width="10%" class="TableRow" valign="top">To</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA885.htm">Handle Maintenance Mode</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="EA886.htm">Handle Maintenance Mode</a></td>
 					<td width="10%" class="TableRow" valign="top">UseCase</td>
 					<td width="10%" class="TableRow" valign="top">Extends</td>
 					<td width="10%" class="TableRow" valign="top">To</td>

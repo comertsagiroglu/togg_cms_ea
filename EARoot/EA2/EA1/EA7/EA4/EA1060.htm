@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>sm_DelayedFrameErrorHandler::delayedFrameError</title>
+<title>sm_DelayedFrameErrorHandler::delayedFrameCnt</title>
 <link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,7 +34,7 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("sm_DelayedFrameErrorHandler::delayedFrameError", " : "))</script>  : Public   TimeLine</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("sm_DelayedFrameErrorHandler::delayedFrameCnt", " : "))</script>  : Public   TimeLine</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
@@ -42,7 +42,7 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">21.06.2023 20:18:40</td>
+			<td class="ObjectDetailsValue">6.09.2023 22:54:29</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,11 +87,11 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{86A35E71-581E-4246-B663-9B662C346DC1}</td>
+			<td class="ObjectDetailsValue">{E8546B99-4D63-485e-AB16-E2E9F15DB664}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA1054.htm">Delayed Frame Detection & Recovery FTT</a></td>
+			<td class="ObjectDetailsValue"><a href="EA1055.htm">Delayed Frame Detection & Recovery FTT</a></td>
 		</tr>
 	</table>
 	
@@ -109,48 +109,68 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">0</td>
-					<td width="20%" class="TableRow">0x00 </td>
+					<td width="20%" class="TableRow">0 </td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">130</td>
-					<td width="20%" class="TableRow">0x01</td>
-					<td width="60%" class="TableRow">Event: delayedFrameError |= 0x01 << delayedFrameCnt</td>
+					<td width="20%" class="TableRow">1</td>
+					<td width="60%" class="TableRow">Event: ++delayedFrameCnt</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">230</td>
-					<td width="20%" class="TableRow">0x03</td>
+					<td width="20%" class="TableRow">2</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">330</td>
-					<td width="20%" class="TableRow">0x07</td>
+					<td width="20%" class="TableRow">3</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">430</td>
-					<td width="20%" class="TableRow">0x0F</td>
-					<td width="60%" class="TableRow">Event: delayedFrameError > ERROR_THRESHOLD</td>
+					<td width="20%" class="TableRow">4</td>
+					<td width="60%" class="TableRow">Event: delayedFrameCnt >= ERROR_DET_WINDOW</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">440</td>
-					<td width="20%" class="TableRow">0x01</td>
+					<td width="20%" class="TableRow">1</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">530</td>
-					<td width="20%" class="TableRow">0x03</td>
+					<td width="20%" class="TableRow">2</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">630</td>
-					<td width="20%" class="TableRow">0x01</td>
-					<td width="60%" class="TableRow">Event: delayedFrameError = delayedFrameError >> 1</td>
+					<td width="20%" class="TableRow">3</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">730</td>
-					<td width="20%" class="TableRow">0x00 </td>
+					<td width="20%" class="TableRow">4</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">830</td>
+					<td width="20%" class="TableRow">3</td>
+					<td width="60%" class="TableRow">Event: --delayedFrameCnt</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">930</td>
+					<td width="20%" class="TableRow">2</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">1030</td>
+					<td width="20%" class="TableRow">1</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">1130</td>
+					<td width="20%" class="TableRow">0 </td>
+					<td width="60%" class="TableRow">Event: 0 == delayedFrameCnt</td>
 				</tr>
 
 			</table>
@@ -162,13 +182,13 @@ function nameClassifier(name, separator)
 					<td width="50%" class="TableHeading">Message</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA1057.htm">DelayedReverse_Frame_status</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1058.htm">DelayedReverse_Frame_status</a></td>
 					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9016" onclick="parent.toggleDiv('detailsDIVMessage9016', 'DetailsImageMessage9016')" />Details:
-							<div id="detailsDIVMessage9016" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9024" onclick="parent.toggleDiv('detailsDIVMessage9024', 'DetailsImageMessage9024')" />Details:
+							<div id="detailsDIVMessage9024" class="DetailsDiv" >
 							<strong>Type:</strong> Timing Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -176,13 +196,13 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA1057.htm">DelayedReverse_Frame_status</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1058.htm">DelayedReverse_Frame_status</a></td>
 					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9017" onclick="parent.toggleDiv('detailsDIVMessage9017', 'DetailsImageMessage9017')" />Details:
-							<div id="detailsDIVMessage9017" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9025" onclick="parent.toggleDiv('detailsDIVMessage9025', 'DetailsImageMessage9025')" />Details:
+							<div id="detailsDIVMessage9025" class="DetailsDiv" >
 							<strong>Type:</strong> Timing Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -190,13 +210,27 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA1057.htm">DelayedReverse_Frame_status</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1058.htm">DelayedReverse_Frame_status</a></td>
 					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9018" onclick="parent.toggleDiv('detailsDIVMessage9018', 'DetailsImageMessage9018')" />Details:
-							<div id="detailsDIVMessage9018" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9026" onclick="parent.toggleDiv('detailsDIVMessage9026', 'DetailsImageMessage9026')" />Details:
+							<div id="detailsDIVMessage9026" class="DetailsDiv" >
+							<strong>Type:</strong> Timing Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1058.htm">DelayedReverse_Frame_status</a></td>
+					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9027" onclick="parent.toggleDiv('detailsDIVMessage9027', 'DetailsImageMessage9027')" />Details:
+							<div id="detailsDIVMessage9027" class="DetailsDiv" >
 							<strong>Type:</strong> Timing Synchronous Call<br />
 							&nbsp;
 							</div>

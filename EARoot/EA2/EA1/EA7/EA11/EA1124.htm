@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>sm_FrozenFrameErrorCRCHandler::frozenFrameError</title>
+<title>sm_FrozenFrameCRCErrorHandler::frozenFrameCnt</title>
 <link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("sm_FrozenFrameErrorCRCHandler::frozenFrameError", " : "))</script>  : Public   TimeLine</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("sm_FrozenFrameCRCErrorHandler::frozenFrameCnt", " : "))</script>  : Public   TimeLine</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">12.02.2023 22:33:03</td>
+			<td width="85%" class="ObjectDetailsValue">12.02.2023 22:24:18</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">19.06.2023 21:12:11</td>
+			<td class="ObjectDetailsValue">6.09.2023 21:54:12</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,11 +87,11 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{15EC8650-7D3B-4412-A7EB-1329D0E2A7E8}</td>
+			<td class="ObjectDetailsValue">{7C48FC68-AAA7-4d5f-B6FA-DAC2C441F5EE}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA1115.htm">FUSA Frozen Frame CRC Error Detection & Recovery FTT</a></td>
+			<td class="ObjectDetailsValue"><a href="EA1116.htm">FUSA Frozen Frame CRC Error Detection & Recovery FTT</a></td>
 		</tr>
 	</table>
 	
@@ -109,48 +109,68 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">0</td>
-					<td width="20%" class="TableRow">0x00 </td>
+					<td width="20%" class="TableRow">0 </td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">65</td>
-					<td width="20%" class="TableRow">0x01</td>
-					<td width="60%" class="TableRow">Event: crcFrozenFrameError |= 0x01 << crcFrozenFrameCnt</td>
+					<td width="20%" class="TableRow">1</td>
+					<td width="60%" class="TableRow">Event: ++crcFrozenFrameCnt</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">115</td>
-					<td width="20%" class="TableRow">0x03</td>
+					<td width="20%" class="TableRow">2</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">165</td>
-					<td width="20%" class="TableRow">0x07</td>
+					<td width="20%" class="TableRow">3</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">215</td>
-					<td width="20%" class="TableRow">0x0F</td>
-					<td width="60%" class="TableRow">Event: crcFrozenFrameError > ERROR_THRESHOLD</td>
+					<td width="20%" class="TableRow">4</td>
+					<td width="60%" class="TableRow">Event: crcFrozenFrameCnt >= ERROR_DET_WINDOW</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">220</td>
-					<td width="20%" class="TableRow">0x01</td>
+					<td width="20%" class="TableRow">1</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">265</td>
-					<td width="20%" class="TableRow">0x03</td>
+					<td width="20%" class="TableRow">2</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">315</td>
-					<td width="20%" class="TableRow">0x01</td>
-					<td width="60%" class="TableRow">Event: crcFrozenFrameError = crcFrozenFrameError >> 1</td>
+					<td width="20%" class="TableRow">3</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">365</td>
-					<td width="20%" class="TableRow">0x00 </td>
+					<td width="20%" class="TableRow">4</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">415</td>
+					<td width="20%" class="TableRow">3</td>
+					<td width="60%" class="TableRow">Event: --crcFrozenFrameCnt</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">466</td>
+					<td width="20%" class="TableRow">2</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">515</td>
+					<td width="20%" class="TableRow">1</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">565</td>
+					<td width="20%" class="TableRow">0 </td>
+					<td width="60%" class="TableRow">Event: 0 == crcFrozenFrameCnt</td>
 				</tr>
 
 			</table>
@@ -162,13 +182,13 @@ function nameClassifier(name, separator)
 					<td width="50%" class="TableHeading">Message</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA1120.htm">FUSA_GPIO_status</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1121.htm">FUSA_GPIO_status</a></td>
 					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9136" onclick="parent.toggleDiv('detailsDIVMessage9136', 'DetailsImageMessage9136')" />Details:
-							<div id="detailsDIVMessage9136" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9144" onclick="parent.toggleDiv('detailsDIVMessage9144', 'DetailsImageMessage9144')" />Details:
+							<div id="detailsDIVMessage9144" class="DetailsDiv" >
 							<strong>Type:</strong> Timing Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -176,13 +196,13 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA1120.htm">FUSA_GPIO_status</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1121.htm">FUSA_GPIO_status</a></td>
 					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9137" onclick="parent.toggleDiv('detailsDIVMessage9137', 'DetailsImageMessage9137')" />Details:
-							<div id="detailsDIVMessage9137" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9145" onclick="parent.toggleDiv('detailsDIVMessage9145', 'DetailsImageMessage9145')" />Details:
+							<div id="detailsDIVMessage9145" class="DetailsDiv" >
 							<strong>Type:</strong> Timing Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -190,13 +210,27 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA1120.htm">FUSA_GPIO_status</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1121.htm">FUSA_GPIO_status</a></td>
 					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9138" onclick="parent.toggleDiv('detailsDIVMessage9138', 'DetailsImageMessage9138')" />Details:
-							<div id="detailsDIVMessage9138" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9146" onclick="parent.toggleDiv('detailsDIVMessage9146', 'DetailsImageMessage9146')" />Details:
+							<div id="detailsDIVMessage9146" class="DetailsDiv" >
+							<strong>Type:</strong> Timing Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1121.htm">FUSA_GPIO_status</a></td>
+					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9147" onclick="parent.toggleDiv('detailsDIVMessage9147', 'DetailsImageMessage9147')" />Details:
+							<div id="detailsDIVMessage9147" class="DetailsDiv" >
 							<strong>Type:</strong> Timing Synchronous Call<br />
 							&nbsp;
 							</div>

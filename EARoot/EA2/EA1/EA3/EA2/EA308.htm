@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>[SWREQ43] (QM)</title>
+<title>[SWREQ40] (QM)</title>
 <link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,11 +34,11 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ43] (QM)", " : "))</script> REQ10585 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ40] (QM)", " : "))</script> REQ10584 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">29.01.2023 20:29:54</td>
+			<td width="85%" class="ObjectDetailsValue">29.01.2023 20:28:41</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
@@ -87,19 +87,20 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{CE986859-C0EA-4495-898A-3C3C789AE2B9}</td>
+			<td class="ObjectDetailsValue">{21132E30-FD6B-4f13-AA9C-6189A58F9E1F}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../EA86.htm">Software Requirements Specification</a></td>
+			<td class="ObjectDetailsValue"><a href="../EA87.htm">Software Requirements Specification</a>, <a href="../../EA6/EA900.htm">TSR - SRS Traceability</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">SW Purpose: The purpose of SW function &#8220;&lt;b&gt;sm_LCDErrorHandler&lt;/b&gt;&#8221; of the SW module &#8220;&lt;b&gt;safety_mgr&lt;/b&gt;&#8221; of the SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; is to trigger the safety action for any of the following LCD errors (OR)&lt;br/&gt;&lt;ul&gt;<br />&lt;li&gt;No LVDS clock (LCD_ERROR_LVDS_LOCK_FAILURE) OR&lt;/li&gt;&lt;li&gt;GAS (Gate All Select) Any one of the following cases triggers the GAS function (LCD_ERROR_GAS_FUNCTION_FAILURE) (OR) OR&lt;ul&gt;<br />&lt;li&gt;VCC lower than 2.5V OR&lt;/li&gt;&lt;li&gt;VSP lower than +4V OR&lt;/li&gt;&lt;li&gt;VSN higher than -4V&lt;/li&gt;&lt;/ul&gt;<br />&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Source IC internal LD Signal fail (LCD_ERROR_INTERAL_SOURCE_CIRCUIT_FAILURE) OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;STV signal fail (LCD_ERROR_TRADITION_GATE_SIGNAL_FAILURE) OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;No video (No LVDS clock) (LCD_ERROR_SELF_PROTECTION_MODE_FAILURE) OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Unused (LCD_ERROR_EEPROM_RELOAD_FAILURE) OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Internal used for Hannstar (LCD_ERROR_OTP_TRIMMING_FAILURE) OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;VSP/VSN power fail (LCD_ERROR_PFM_ABNORMAL_FAILURE) OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;Glass crack detect function is not available (LCD_ERROR_GLASS_CRACK_FAILURE) OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;OTP reload fail. Driver IC will compare the reload value with one of the default register value. The fail flag will be high (LCD_ERROR_OTP_RELOAD_FAILURE)&lt;/li&gt;&lt;br/&gt;&lt;/ul&gt;<br />(QM)&lt;br/&gt;&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">SW: The SW function &#8220;&lt;b&gt;LCD_Status&lt;/b&gt;&#8221; of the SW module &#8220;&lt;b&gt;devices&lt;/b&gt;&#8221; of the SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; shall call the SW function &#8220;&lt;b&gt;sm_LCDErrorHandler&lt;/b&gt;&#8221; immediately when at least one of the following error flags is set: (OR)&lt;br/&gt;&lt;ul&gt;<br />&lt;li&gt;bit.0: LVDS Lock failure: No LVDS clock OR&lt;/li&gt;&lt;li&gt;bit.1: GAS function failure: GAS (Gate All Select) Any one of the following cases triggers the GAS function (OR) OR&lt;ul&gt;<br />&lt;li&gt;VCC lower than 2.5V&#160;&#160;OR&lt;/li&gt;&lt;li&gt;VSP lower than +4V OR&lt;/li&gt;&lt;li&gt;VSN higher than -4V OR&lt;/li&gt;&lt;/ul&gt;<br />&lt;/li&gt;&lt;br/&gt;&lt;li&gt;bit.2: Internal source circuit failure: Source IC internal LD Signal (Latch Data Signal fail) fail OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;bit.3: Tradition gate signal failure: STV signal fail OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;bit.4: Self-protection mode failure: No video (No LVDS clock) OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;bit.5: EEPROM reload failure: Unused OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;bit.6: OTP trimming fault: Internal used for Hannstar OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;bit.7: PFM abnormal fault: VSP/VSN power fail OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;bit.8: Glass crack fault: Glass crack detect function is not available OR&lt;/li&gt;&lt;br/&gt;&lt;li&gt;bit.9: OTP reload fault: OTP reload fail. Driver IC will compare the reload value with one of the default register value. The fail flag will be high.&lt;/li&gt;&lt;br/&gt;&lt;/ul&gt;<br />(QM)&lt;br/&gt;&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
 <div class="ItemBody" id="TaggedValTable">
 	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
@@ -113,8 +114,8 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2257" onclick="parent.toggleDiv('detailsDIVScenario2257','DetailsImageScenario2257')" />Details:
-						<div id="detailsDIVScenario2257" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2258" onclick="parent.toggleDiv('detailsDIVScenario2258','DetailsImageScenario2258')" />Details:
+						<div id="detailsDIVScenario2258" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Values: Test,Analiz,Muayene,Gösterim,CoC<br /></div>
 
 						</div>
@@ -126,29 +127,16 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2258" onclick="parent.toggleDiv('detailsDIVScenario2258','DetailsImageScenario2258')" />Details:
-						<div id="detailsDIVScenario2258" class="DetailsDiv" >
+					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2259" onclick="parent.toggleDiv('detailsDIVScenario2259','DetailsImageScenario2259')" />Details:
+						<div id="detailsDIVScenario2259" class="DetailsDiv" >
 						<div class="ObjectDetailsNotes">Default: Öneri<br /></div>
 
 						</div>
 					</div>
 				</td>
 			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">Faz</td>
-				<td width="50%" class="TableRow" valign="top">1</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario2259" onclick="parent.toggleDiv('detailsDIVScenario2259','DetailsImageScenario2259')" />Details:
-						<div id="detailsDIVScenario2259" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Values: 1,2,3,4,5,6,7,8,9,10<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">ID</td>
-				<td width="50%" class="TableRow" valign="top">REQ10585</td>
+				<td width="50%" class="TableRow" valign="top">REQ10584</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
@@ -198,7 +186,7 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">Orijin</td>
-				<td width="50%" class="TableRow" valign="top">cms_REQ10585</td>
+				<td width="50%" class="TableRow" valign="top">cms_REQ10584</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
@@ -275,7 +263,26 @@ function nameClassifier(name, separator)
 
 
 			</table>
-		</div>	</div>
+		</div>		<div class="ItemBody" id="LinksTable">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="10%" class="TableHeading">Type</td>
+					<td width="10%" class="TableHeading">Connection</td>
+					<td width="10%" class="TableHeading">Direction</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../EA1/EA47.htm">«Gereksinim» [TSR_CMS_014] Display Check (QM)</a></td>
+					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
 <div class="pageFooter"></div>
  
 </body>

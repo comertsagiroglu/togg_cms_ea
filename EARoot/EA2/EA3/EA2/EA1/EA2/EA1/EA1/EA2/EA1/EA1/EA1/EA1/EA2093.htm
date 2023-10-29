@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>include::mblaze_nt_types</title>
+<title>include::atomic</title>
 <link href="../../../../../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("mblaze_nt_types", " : "))</script>  : Public   Class</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("atomic", " : "))</script>  : Public   Class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">1.12.2022 12:16:27</td>
+			<td width="85%" class="ObjectDetailsValue">1.12.2022 12:16:17</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">29.08.2023 13:14:16</td>
+			<td class="ObjectDetailsValue">29.08.2023 13:26:24</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,19 +87,710 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{7E22EDFB-E2CD-4363-8E3A-98E2091979DE}</td>
+			<td class="ObjectDetailsValue">{7FC9410D-36DD-434a-A2AE-F60706A5A81B}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA2078.htm">include</a></td>
+			<td class="ObjectDetailsValue"><a href="EA2089.htm">include</a></td>
 		</tr>
 	</table>
-	
+	<div class="ObjectDetailsNotes">Atomic compare-and-swap &lt;br/&gt;@brief Performs an atomic compare-and-swap operation on the specified values. &lt;br/&gt;@param[in, out] pulDestination&#160;&#160;Pointer to memory location from where value is to be loaded and checked.&lt;br/&gt;@param[in] ulExchange&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;If condition meets, write this value to memory.&lt;br/&gt;@param[in] ulComparand&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Swap condition. &lt;br/&gt;@return Unsigned integer of value 1 or 0. 1 for swapped, 0 for not swapped. &lt;br/&gt;@note This function only swaps *pulDestination with ulExchange, if previous pulDestination value equals ulComparand.&lt;br/&gt;</div>
+
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 		</ul>
-		<div class="ItemBody" id="CustomPropertiesTable">
+<div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="100%" class="TableHeading">Operation</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Atomic_CompareAndSwap_u32</strong>(					<a href="#" onclick="parent.toggleData('param{553AC5CE-3B30-4500-BED8-9D2810A2A89C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{553AC5CE-3B30-4500-BED8-9D2810A2A89C}" border="0" />pulDestination: uint32_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{553AC5CE-3B30-4500-BED8-9D2810A2A89C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{553AC5CE-3B30-4500-BED8-9D2810A2A89C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{553AC5CE-3B30-4500-BED8-9D2810A2A89C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{553AC5CE-3B30-4500-BED8-9D2810A2A89C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{8D94433D-145F-45ce-8141-A2251F25333E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{8D94433D-145F-45ce-8141-A2251F25333E}" border="0" />ulExchange: uint32_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{8D94433D-145F-45ce-8141-A2251F25333E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8D94433D-145F-45ce-8141-A2251F25333E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{8D94433D-145F-45ce-8141-A2251F25333E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{8D94433D-145F-45ce-8141-A2251F25333E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{39EF3BE7-BC3F-4625-8C81-3EB5D4F35C03}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{39EF3BE7-BC3F-4625-8C81-3EB5D4F35C03}" border="0" />ulComparand: uint32_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{39EF3BE7-BC3F-4625-8C81-3EB5D4F35C03}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{39EF3BE7-BC3F-4625-8C81-3EB5D4F35C03}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{39EF3BE7-BC3F-4625-8C81-3EB5D4F35C03}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{39EF3BE7-BC3F-4625-8C81-3EB5D4F35C03}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):portFORCE_INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations9806" onclick="parent.toggleDiv('detailsDIVOperations9806','DetailsImageOperations9806')" />Details:
+						<div id="detailsDIVOperations9806" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Atomic_SwapPointers_p32</strong>(					<a href="#" onclick="parent.toggleData('param{CBB0CCBA-F640-4151-BAE9-A30047824A8E}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{CBB0CCBA-F640-4151-BAE9-A30047824A8E}" border="0" />ppvDestination: void**</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{CBB0CCBA-F640-4151-BAE9-A30047824A8E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CBB0CCBA-F640-4151-BAE9-A30047824A8E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{CBB0CCBA-F640-4151-BAE9-A30047824A8E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CBB0CCBA-F640-4151-BAE9-A30047824A8E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{F960705F-9109-4347-8A01-733571950FA1}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{F960705F-9109-4347-8A01-733571950FA1}" border="0" />pvExchange: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{F960705F-9109-4347-8A01-733571950FA1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F960705F-9109-4347-8A01-733571950FA1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{F960705F-9109-4347-8A01-733571950FA1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{F960705F-9109-4347-8A01-733571950FA1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):void *
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations9807" onclick="parent.toggleDiv('detailsDIVOperations9807','DetailsImageOperations9807')" />Details:
+						<div id="detailsDIVOperations9807" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Atomic_CompareAndSwapPointers_p32</strong>(					<a href="#" onclick="parent.toggleData('param{FC5543CA-3D37-4a1c-B8F7-1E25FD58FDF3}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{FC5543CA-3D37-4a1c-B8F7-1E25FD58FDF3}" border="0" />ppvDestination: void**</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{FC5543CA-3D37-4a1c-B8F7-1E25FD58FDF3}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FC5543CA-3D37-4a1c-B8F7-1E25FD58FDF3}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{FC5543CA-3D37-4a1c-B8F7-1E25FD58FDF3}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FC5543CA-3D37-4a1c-B8F7-1E25FD58FDF3}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{ABDEE955-5E29-4f66-881D-41024F22999A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{ABDEE955-5E29-4f66-881D-41024F22999A}" border="0" />pvExchange: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{ABDEE955-5E29-4f66-881D-41024F22999A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{ABDEE955-5E29-4f66-881D-41024F22999A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{ABDEE955-5E29-4f66-881D-41024F22999A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{ABDEE955-5E29-4f66-881D-41024F22999A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{C08F26DE-A478-4372-A8E4-AE17341F75F2}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{C08F26DE-A478-4372-A8E4-AE17341F75F2}" border="0" />pvComparand: void*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C08F26DE-A478-4372-A8E4-AE17341F75F2}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C08F26DE-A478-4372-A8E4-AE17341F75F2}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C08F26DE-A478-4372-A8E4-AE17341F75F2}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C08F26DE-A478-4372-A8E4-AE17341F75F2}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):portFORCE_INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations9808" onclick="parent.toggleDiv('detailsDIVOperations9808','DetailsImageOperations9808')" />Details:
+						<div id="detailsDIVOperations9808" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Atomic_Add_u32</strong>(					<a href="#" onclick="parent.toggleData('param{CB5CF087-BA50-4077-8310-3031B58A0028}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{CB5CF087-BA50-4077-8310-3031B58A0028}" border="0" />pulAddend: uint32_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{CB5CF087-BA50-4077-8310-3031B58A0028}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CB5CF087-BA50-4077-8310-3031B58A0028}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{CB5CF087-BA50-4077-8310-3031B58A0028}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CB5CF087-BA50-4077-8310-3031B58A0028}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{C8DA13C5-A284-4af6-BBE4-C03245AAB61C}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{C8DA13C5-A284-4af6-BBE4-C03245AAB61C}" border="0" />ulCount: uint32_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{C8DA13C5-A284-4af6-BBE4-C03245AAB61C}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C8DA13C5-A284-4af6-BBE4-C03245AAB61C}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{C8DA13C5-A284-4af6-BBE4-C03245AAB61C}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{C8DA13C5-A284-4af6-BBE4-C03245AAB61C}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):portFORCE_INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations9809" onclick="parent.toggleDiv('detailsDIVOperations9809','DetailsImageOperations9809')" />Details:
+						<div id="detailsDIVOperations9809" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Atomic_Subtract_u32</strong>(					<a href="#" onclick="parent.toggleData('param{FA89BD1A-B91A-42f2-A4DF-096F5F9C0A0D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{FA89BD1A-B91A-42f2-A4DF-096F5F9C0A0D}" border="0" />pulAddend: uint32_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{FA89BD1A-B91A-42f2-A4DF-096F5F9C0A0D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FA89BD1A-B91A-42f2-A4DF-096F5F9C0A0D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{FA89BD1A-B91A-42f2-A4DF-096F5F9C0A0D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FA89BD1A-B91A-42f2-A4DF-096F5F9C0A0D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{EE19A96A-6B4D-4b28-B117-6CA321041AD8}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{EE19A96A-6B4D-4b28-B117-6CA321041AD8}" border="0" />ulCount: uint32_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{EE19A96A-6B4D-4b28-B117-6CA321041AD8}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EE19A96A-6B4D-4b28-B117-6CA321041AD8}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{EE19A96A-6B4D-4b28-B117-6CA321041AD8}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{EE19A96A-6B4D-4b28-B117-6CA321041AD8}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):portFORCE_INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations9810" onclick="parent.toggleDiv('detailsDIVOperations9810','DetailsImageOperations9810')" />Details:
+						<div id="detailsDIVOperations9810" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Atomic_Increment_u32</strong>(					<a href="#" onclick="parent.toggleData('param{D5EE5B67-4C95-4bec-8F84-82A66855745A}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D5EE5B67-4C95-4bec-8F84-82A66855745A}" border="0" />pulAddend: uint32_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D5EE5B67-4C95-4bec-8F84-82A66855745A}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D5EE5B67-4C95-4bec-8F84-82A66855745A}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D5EE5B67-4C95-4bec-8F84-82A66855745A}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D5EE5B67-4C95-4bec-8F84-82A66855745A}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):portFORCE_INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations9811" onclick="parent.toggleDiv('detailsDIVOperations9811','DetailsImageOperations9811')" />Details:
+						<div id="detailsDIVOperations9811" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Atomic_Decrement_u32</strong>(					<a href="#" onclick="parent.toggleData('param{491A46F5-DD3A-4af4-96D0-521373E931BE}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{491A46F5-DD3A-4af4-96D0-521373E931BE}" border="0" />pulAddend: uint32_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{491A46F5-DD3A-4af4-96D0-521373E931BE}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{491A46F5-DD3A-4af4-96D0-521373E931BE}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{491A46F5-DD3A-4af4-96D0-521373E931BE}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{491A46F5-DD3A-4af4-96D0-521373E931BE}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):portFORCE_INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations9812" onclick="parent.toggleDiv('detailsDIVOperations9812','DetailsImageOperations9812')" />Details:
+						<div id="detailsDIVOperations9812" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Atomic_OR_u32</strong>(					<a href="#" onclick="parent.toggleData('param{4A53E15B-DEFA-4220-AA79-1E74ECE76B79}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{4A53E15B-DEFA-4220-AA79-1E74ECE76B79}" border="0" />pulDestination: uint32_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{4A53E15B-DEFA-4220-AA79-1E74ECE76B79}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4A53E15B-DEFA-4220-AA79-1E74ECE76B79}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{4A53E15B-DEFA-4220-AA79-1E74ECE76B79}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{4A53E15B-DEFA-4220-AA79-1E74ECE76B79}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{6EB96EAD-41A8-4d6a-A190-BD57E28F3735}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6EB96EAD-41A8-4d6a-A190-BD57E28F3735}" border="0" />ulValue: uint32_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6EB96EAD-41A8-4d6a-A190-BD57E28F3735}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6EB96EAD-41A8-4d6a-A190-BD57E28F3735}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6EB96EAD-41A8-4d6a-A190-BD57E28F3735}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6EB96EAD-41A8-4d6a-A190-BD57E28F3735}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):portFORCE_INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations9813" onclick="parent.toggleDiv('detailsDIVOperations9813','DetailsImageOperations9813')" />Details:
+						<div id="detailsDIVOperations9813" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Atomic_AND_u32</strong>(					<a href="#" onclick="parent.toggleData('param{6530D181-F72F-4758-8509-0B2BBBBB207D}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{6530D181-F72F-4758-8509-0B2BBBBB207D}" border="0" />pulDestination: uint32_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6530D181-F72F-4758-8509-0B2BBBBB207D}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6530D181-F72F-4758-8509-0B2BBBBB207D}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6530D181-F72F-4758-8509-0B2BBBBB207D}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6530D181-F72F-4758-8509-0B2BBBBB207D}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{CBAD862F-F65F-4f96-B124-91263DBE2D4F}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{CBAD862F-F65F-4f96-B124-91263DBE2D4F}" border="0" />ulValue: uint32_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{CBAD862F-F65F-4f96-B124-91263DBE2D4F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CBAD862F-F65F-4f96-B124-91263DBE2D4F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{CBAD862F-F65F-4f96-B124-91263DBE2D4F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{CBAD862F-F65F-4f96-B124-91263DBE2D4F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):portFORCE_INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations9814" onclick="parent.toggleDiv('detailsDIVOperations9814','DetailsImageOperations9814')" />Details:
+						<div id="detailsDIVOperations9814" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Atomic_NAND_u32</strong>(					<a href="#" onclick="parent.toggleData('param{D663C158-7885-4457-B193-488FCC794E95}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{D663C158-7885-4457-B193-488FCC794E95}" border="0" />pulDestination: uint32_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D663C158-7885-4457-B193-488FCC794E95}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D663C158-7885-4457-B193-488FCC794E95}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D663C158-7885-4457-B193-488FCC794E95}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D663C158-7885-4457-B193-488FCC794E95}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{FB0D2BA1-9644-4a77-981D-18301D95EF97}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{FB0D2BA1-9644-4a77-981D-18301D95EF97}" border="0" />ulValue: uint32_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{FB0D2BA1-9644-4a77-981D-18301D95EF97}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FB0D2BA1-9644-4a77-981D-18301D95EF97}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{FB0D2BA1-9644-4a77-981D-18301D95EF97}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{FB0D2BA1-9644-4a77-981D-18301D95EF97}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):portFORCE_INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations9815" onclick="parent.toggleDiv('detailsDIVOperations9815','DetailsImageOperations9815')" />Details:
+						<div id="detailsDIVOperations9815" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
+					<i>Public static</i><br />
+					<strong>Atomic_XOR_u32</strong>(					<a href="#" onclick="parent.toggleData('param{419CA372-8B02-4ea7-B4AF-1CFAB4C410A9}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{419CA372-8B02-4ea7-B4AF-1CFAB4C410A9}" border="0" />pulDestination: uint32_t*</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{419CA372-8B02-4ea7-B4AF-1CFAB4C410A9}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{419CA372-8B02-4ea7-B4AF-1CFAB4C410A9}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{419CA372-8B02-4ea7-B4AF-1CFAB4C410A9}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{419CA372-8B02-4ea7-B4AF-1CFAB4C410A9}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+					<a href="#" onclick="parent.toggleData('param{BF3050D9-A14C-415d-BDAA-A3F2CA7DADD6}')" style="text-decoration: none; color: #000000;"><img src="../../../../../../../../../../../../../images/plus03.gif" align="absmiddle" id="param{BF3050D9-A14C-415d-BDAA-A3F2CA7DADD6}" border="0" />ulValue: uint32_t</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{BF3050D9-A14C-415d-BDAA-A3F2CA7DADD6}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BF3050D9-A14C-415d-BDAA-A3F2CA7DADD6}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{BF3050D9-A14C-415d-BDAA-A3F2CA7DADD6}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{BF3050D9-A14C-415d-BDAA-A3F2CA7DADD6}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):portFORCE_INLINE
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations9816" onclick="parent.toggleDiv('detailsDIVOperations9816','DetailsImageOperations9816')" />Details:
+						<div id="detailsDIVOperations9816" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+</div>		<div class="ItemBody" id="CustomPropertiesTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="30%" class="TableHeading">Property</td>

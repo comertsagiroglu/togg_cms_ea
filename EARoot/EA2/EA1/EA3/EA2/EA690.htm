@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>[SWREQ582] (QM)</title>
+<title>[SWREQ581] (QM)</title>
 <link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,11 +34,11 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ582] (QM)", " : "))</script> REQ11179 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ581] (QM)", " : "))</script> REQ11178 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">12.10.2023 12:48:26</td>
+			<td width="85%" class="ObjectDetailsValue">12.10.2023 12:42:42</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
@@ -87,14 +87,14 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{11CCFF3D-A7FC-496b-86D3-94D0A3E4308E}</td>
+			<td class="ObjectDetailsValue">{05836DB3-8B65-40ba-923F-26A40A940B0B}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../EA86.htm">Software Requirements Specification</a></td>
+			<td class="ObjectDetailsValue"><a href="../EA87.htm">Software Requirements Specification</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">SW Purpose: The purpose of SW function &#8220;&lt;b&gt;CSIDes_status&lt;/b&gt;&#8221; of the SW module &#8220;&lt;b&gt;devices&lt;/b&gt;&#8221; of the SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; is to do the following checks periodically for the display CSI Deserializer: (AND)&lt;br/&gt;&#8226;	Check deserializer I2C connection -#gt; Read device I2C address (&lt;b&gt;0x94&lt;/b&gt;) from &lt;b&gt;REG0 (0x00) register&lt;/b&gt; AND&lt;br/&gt;&#8226;	Check LOCK signal -#gt; Read &lt;b&gt;bit.2&lt;/b&gt; of &lt;b&gt;GPI_0 channel GPIO_CHAN_1&lt;/b&gt; AND&lt;br/&gt;&#8226;	Check ERRB signal -#gt; Read &lt;b&gt;bit.2&lt;/b&gt; of &lt;b&gt;GPI_0 channel GPIO_CHAN_1&lt;/b&gt;&lt;br/&gt;(QM)&lt;br/&gt;&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">SW Purpose: The purpose of the SW function &#8220;&lt;b&gt;ConfigCSIDES&lt;/b&gt;&#8221; of the SW module &#8220;&lt;b&gt;devices&lt;/b&gt;&#8221; of the SW component &#8220;&lt;b&gt;CMS_SW_FastInit&lt;/b&gt;&#8221; is to initialize the following registers of the display deserializer (MAX9296B) with the following values: (AND)&lt;br/&gt;&#8226;	Set mapping enable low byte: Enable: MAP_SRC_0, MASP_DST_0; MAP_SRC_1, MASP_DST_1; MAP_SRC_2, MASP_DST_2 -#gt; Write &lt;b&gt;0x07&lt;/b&gt; to &lt;b&gt;MIPI_0_TX11 register (0x40B)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Set CSI2 controller destination for MAP_SRC_2 and MAP_DST_0 to DPHY1, MAP_SRC_1 and MAP_DST_0 to DPHY1, MAP_SRC_0 and MAP_DST_0 to DPHY1 -#gt; Write &lt;b&gt;0x15&lt;/b&gt; to &lt;b&gt;MIPI_0_TX45 register (0x42D)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Set VC and DT for source mapping 0: Virtual channel 0, Data type YUV422 -#gt; Write &lt;b&gt;0x1E&lt;/b&gt; to &lt;b&gt;MIPI_0_TX13 register (0x40D)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Set VC and DT for destination mapping 0: Virtual channel 0, Data type YUV422 -#gt; Write &lt;b&gt;0x1E&lt;/b&gt; to &lt;b&gt;MIPI_0_TX14 register (0x40E)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Select 2 data lanes -#gt; Write &lt;b&gt;0x40&lt;/b&gt; to &lt;b&gt;MIPI_1_TX14 register (0x44A)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Set MIPI PHY Port A Lane Mapping: Map PHY1 D0 to D0, PHY1 D1 to D1, PHY0 D0 to D2, PHY0 D1 to D3 (default) -#gt; Write &lt;b&gt;0x4E&lt;/b&gt; to &lt;b&gt;MIPI_PHY3 register (0x333)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Set MIPI PHY Port B Lane Mapping: Map PHY3 D0 to D2, PHY3 D1 to D3, PHY2 D0 to D0, PHY2 D1 to D1 (default) -#gt; Write &lt;b&gt;0x4E&lt;/b&gt; to &lt;b&gt;MIPI_PHY4 register (0x334)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Set CSI PHY1 output frequency to 5 x 100MHz = 500MHz, Software override for frequency fine tuning disabled -#gt; Write &lt;b&gt;0x25&lt;/b&gt; to &lt;b&gt;BACKTOP_25 register (0x320)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Set stream id for receiving to 2, No CRC on receive packets -#gt; Write &lt;b&gt;0x02&lt;/b&gt; to &lt;b&gt;RX0 register (0x50)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Enable: LOCK output, ERRB output, Power-up line fault monitor 3, Power-up line fault monitor 2, Power-up line fault monitor 1, Power-up line fault monitor 0 -#gt; Write &lt;b&gt;0xFF&lt;/b&gt; to &lt;b&gt;REG5 register (0x5)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Enable reporting of; PHY B interrupt, PHY A interrupt, remote error status, memory error status, idle word errors, decoding errors at ERRB pin -#gt; Write &lt;b&gt;0xF7&lt;/b&gt; to &lt;b&gt;INTR2 register (0x1A)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Enable reporting of; eye-opening minitor error, combined ARQ maximum retransmission limit error, combined ARQ retransmission event, packet count, watermark errors at ERRB pin -#gt; Write &lt;b&gt;0xCF&lt;/b&gt; to &lt;b&gt;INTR4 register (0x1C)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Enable reporting of; VDDCMP interrupt, PORTZ interrupt, VDDBAD interrupt, frame synch errors, video line CRC errors, PRBS errors, Video pixel CRC error counter interrupt at ERRB pin -#gt; Write &lt;b&gt;0xFD&lt;/b&gt; to &lt;b&gt;INTR6 register (0x1E)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Enable reporting of GMSL1 Link A and Link B errors at ERRB pin -#gt; Write &lt;b&gt;0xFF&lt;/b&gt; to &lt;b&gt;GMSL1_ERR_OEN register (0xF03)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Enable video line CRC -#gt; Write 0X02 to RX0 register (0x100) AND&lt;br/&gt;&#8226;	Set automatically reset DEC_ERR_A, DEC_ERR_B and IDLE_ERR registers after ERRB pin is asserted for 1us -#gt; Set &lt;b&gt;bit.3&lt;/b&gt; of &lt;b&gt;INTR0 register (0x18)&lt;/b&gt; AND&lt;br/&gt;&#8226;	Enable automatic link configuration -#gt; Set &lt;b&gt;bit.4&lt;/b&gt; of &lt;b&gt;CTRL0 register (0x10)&lt;/b&gt; AND&lt;br/&gt;&#8226;	One-shot reset -#gt; Set &lt;b&gt;bit.5&lt;/b&gt; of &lt;b&gt;CTRL0 register (0x10&lt;/b&gt;)&lt;br/&gt;(QM)&lt;br/&gt;&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -148,7 +148,7 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">ID</td>
-				<td width="50%" class="TableRow" valign="top">REQ11179</td>
+				<td width="50%" class="TableRow" valign="top">REQ11178</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
@@ -198,7 +198,7 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">Orijin</td>
-				<td width="50%" class="TableRow" valign="top">cms_REQ11179</td>
+				<td width="50%" class="TableRow" valign="top">cms_REQ11178</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">

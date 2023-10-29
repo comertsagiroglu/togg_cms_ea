@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>[SWREQ13] (QM)</title>
+<title>[SWREQ11] (QM)</title>
 <link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,15 +34,15 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ13] (QM)", " : "))</script> REQ10559 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("[SWREQ11] (QM)", " : "))</script> REQ10557 : Public  &lt;&lt;Gereksinim&gt;&gt; Gereksinim</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">29.01.2023 17:33:49</td>
+			<td width="85%" class="ObjectDetailsValue">29.01.2023 17:30:45</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">9.10.2023 20:02:07</td>
+			<td class="ObjectDetailsValue">9.10.2023 20:00:30</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,20 +87,19 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{0A5AE722-22E7-49e1-A6EA-FA5F25050690}</td>
+			<td class="ObjectDetailsValue">{D2A1A580-FCAC-4a9b-9DBE-23302EB945F6}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../EA86.htm">Software Requirements Specification</a>, <a href="../../EA6/EA899.htm">TSR - SRS Traceability</a></td>
+			<td class="ObjectDetailsValue"><a href="../EA87.htm">Software Requirements Specification</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">SW Purpose: The purpose of SW function &#8220;&lt;b&gt;Backlight_status&lt;/b&gt;&#8221; of the SW module &#8220;&lt;b&gt;devices&lt;/b&gt;&#8221; of the SW component &#8220;&lt;b&gt;CMS_SW&lt;/b&gt;&#8221; is to check the following registers of backlight controller: (AND)&lt;br/&gt;&lt;ul&gt;<br />&lt;li&gt;Check backlight I2C connection -#gt; Read device id (&lt;b&gt;0x24&lt;/b&gt;) from &lt;b&gt;Dev_ID (0x00) register&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Check LCD LED output enable status. Error if not enabled -#gt; &lt;b&gt;ISET (0x02) register ENA bit.5&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Check if LCD is connected -#gt; &lt;b&gt;OPEN (0x1B) register bit.1-0&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Check short to ground error -#gt; &lt;b&gt;SHORTGND register (0x1C) bit.1-0&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Check short between LED outputs -#gt; &lt;b&gt;SHORTED_LED register (0x1D) bit.1-0&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Check backlight driver external pin -#gt; &lt;b&gt;GPIO_0::GPIO_CHAN_1&lt;/b&gt; clear&lt;/li&gt;&lt;/ul&gt;<br />(QM)&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">SW Purpose: The purpose of the SW function &#8220;&lt;b&gt;ConfigDisplayBacklight&#8221;&lt;/b&gt; of the SW module &#8220;&lt;b&gt;devices&lt;/b&gt;&#8221; of the SW component &#8220;&lt;b&gt;CMS_SW_FastInit&lt;/b&gt;&#8221; is to initialize the following registers of the backlight controller (MAX25024) with the following values, when the SYSTEM_STATES is equal to INIT_STATE. (AND)&lt;br/&gt;&lt;ul&gt;<br />&lt;li&gt;Enable -#gt; Set bit.5 of &lt;b&gt;ISET register (0x02)&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Disable DIM pin -#gt; Clear &lt;b&gt;bit.3&lt;/b&gt; of &lt;b&gt;IMODE register (0x03)&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Disable hybrid dimming -#gt; Clear &lt;b&gt;bit.2&lt;/b&gt; of &lt;b&gt;IMODE register (0x03)&lt;/b&gt; AND&lt;/li&gt;&lt;li&gt;Set channel 1 on time to 32.768 msec -#gt; Write 0&lt;b&gt;xFFFF&lt;/b&gt; to &lt;b&gt;TON1H (0x04)&lt;/b&gt; + &lt;b&gt;TON1L (0x05)&lt;/b&gt; + &lt;b&gt;TON1LSB (0x0C bit.1-0)&lt;/b&gt; registers AND&lt;/li&gt;&lt;li&gt;Set channel 2 on time to 32.768 msec -#gt; Write 0&lt;b&gt;xFFFF&lt;/b&gt; to &lt;b&gt;TON2H (0x06)&lt;/b&gt; + &lt;b&gt;TON2L (0x07)&lt;/b&gt; + &lt;b&gt;TON2LSB (0x0C bit.3-2)&lt;/b&gt; registers&lt;/li&gt;&lt;/ul&gt;<br />(QM)&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
-			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
 <div class="ItemBody" id="TaggedValTable">
 	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
@@ -149,7 +148,7 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">ID</td>
-				<td width="50%" class="TableRow" valign="top">REQ10559</td>
+				<td width="50%" class="TableRow" valign="top">REQ10557</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
@@ -174,7 +173,7 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">Kategori</td>
-				<td width="50%" class="TableRow" valign="top">Güvenilirlik</td>
+				<td width="50%" class="TableRow" valign="top">İşlevsel</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
@@ -199,7 +198,7 @@ function nameClassifier(name, separator)
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">Orijin</td>
-				<td width="50%" class="TableRow" valign="top">cms_REQ10559</td>
+				<td width="50%" class="TableRow" valign="top">cms_REQ10557</td>
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
@@ -276,26 +275,7 @@ function nameClassifier(name, separator)
 
 
 			</table>
-		</div>		<div class="ItemBody" id="LinksTable">
-			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="30%" class="TableHeading">Object</td>
-					<td width="10%" class="TableHeading">Type</td>
-					<td width="10%" class="TableHeading">Connection</td>
-					<td width="10%" class="TableHeading">Direction</td>
-					<td width="40%" class="TableHeading">Notes</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../EA1/EA47.htm">«Gereksinim» [TSR_CMS_014] Display Check (QM)</a></td>
-					<td width="10%" class="TableRow" valign="top">Gereksinim</td>
-					<td width="10%" class="TableRow" valign="top">Dependency</td>
-					<td width="10%" class="TableRow" valign="top">To</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-
-			</table>
-		</div>
-	</div>
+		</div>	</div>
 <div class="pageFooter"></div>
  
 </body>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>sm_LCDErrorHandler::lcdFrameError</title>
+<title>sm_LCDErrorHandler::lcdFrameCnt</title>
 <link href="../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {	
@@ -34,7 +34,7 @@ function nameClassifier(name, separator)
 <div class="pageHeader"></div>
 <div class="PageBody">
 	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("sm_LCDErrorHandler::lcdFrameError", " : "))</script>  : Public   TimeLine</span>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("sm_LCDErrorHandler::lcdFrameCnt", " : "))</script>  : Public   TimeLine</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
@@ -42,7 +42,7 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">21.06.2023 18:23:57</td>
+			<td class="ObjectDetailsValue">6.09.2023 23:11:48</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -87,11 +87,11 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{BC646906-7601-44b7-BC0D-56DF3EA0D222}</td>
+			<td class="ObjectDetailsValue">{6142920C-E20F-432c-AC5D-76F3E41E84D0}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA1089.htm">LCD Error Detection & Recovery FTT</a></td>
+			<td class="ObjectDetailsValue"><a href="EA1090.htm">LCD Error Detection & Recovery FTT</a></td>
 		</tr>
 	</table>
 	
@@ -109,48 +109,68 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">0</td>
-					<td width="20%" class="TableRow">0x00 </td>
+					<td width="20%" class="TableRow">0 </td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">130</td>
-					<td width="20%" class="TableRow">0x01</td>
-					<td width="60%" class="TableRow">Event: lcdFrameError |= 0x01 << lcdFrameCnt</td>
+					<td width="20%" class="TableRow">1</td>
+					<td width="60%" class="TableRow">Event: ++lcdFrameCnt</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">230</td>
-					<td width="20%" class="TableRow">0x03</td>
+					<td width="20%" class="TableRow">2</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">330</td>
-					<td width="20%" class="TableRow">0x07</td>
+					<td width="20%" class="TableRow">3</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">430</td>
-					<td width="20%" class="TableRow">0x0F</td>
-					<td width="60%" class="TableRow">Event: lcdFrameError > ERROR_THRESHOLD</td>
+					<td width="20%" class="TableRow">4</td>
+					<td width="60%" class="TableRow">Event: lcdFrameCnt >= ERROR_DET_WINDOW</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">440</td>
-					<td width="20%" class="TableRow">0x01</td>
+					<td width="20%" class="TableRow">1</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">530</td>
-					<td width="20%" class="TableRow">0x03</td>
+					<td width="20%" class="TableRow">2</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">630</td>
-					<td width="20%" class="TableRow">0x01</td>
-					<td width="60%" class="TableRow">Event: lcdFrameError = lcdFrameError >> 1</td>
+					<td width="20%" class="TableRow">3</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow">730</td>
-					<td width="20%" class="TableRow">0x00 </td>
+					<td width="20%" class="TableRow">4</td>
 					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">830</td>
+					<td width="20%" class="TableRow">3</td>
+					<td width="60%" class="TableRow">Event: --lcdFrameCnt</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">930</td>
+					<td width="20%" class="TableRow">2</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">1030</td>
+					<td width="20%" class="TableRow">1</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow">1130</td>
+					<td width="20%" class="TableRow">0 </td>
+					<td width="60%" class="TableRow">Event: 0 == lcdFrameCnt</td>
 				</tr>
 
 			</table>
@@ -162,13 +182,13 @@ function nameClassifier(name, separator)
 					<td width="50%" class="TableHeading">Message</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA1094.htm">LCD_status</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1095.htm">LCD_status</a></td>
 					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9082" onclick="parent.toggleDiv('detailsDIVMessage9082', 'DetailsImageMessage9082')" />Details:
-							<div id="detailsDIVMessage9082" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9090" onclick="parent.toggleDiv('detailsDIVMessage9090', 'DetailsImageMessage9090')" />Details:
+							<div id="detailsDIVMessage9090" class="DetailsDiv" >
 							<strong>Type:</strong> Timing Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -176,13 +196,13 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA1094.htm">LCD_status</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1095.htm">LCD_status</a></td>
 					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9083" onclick="parent.toggleDiv('detailsDIVMessage9083', 'DetailsImageMessage9083')" />Details:
-							<div id="detailsDIVMessage9083" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9091" onclick="parent.toggleDiv('detailsDIVMessage9091', 'DetailsImageMessage9091')" />Details:
+							<div id="detailsDIVMessage9091" class="DetailsDiv" >
 							<strong>Type:</strong> Timing Synchronous Call<br />
 							&nbsp;
 							</div>
@@ -190,13 +210,27 @@ function nameClassifier(name, separator)
 					</td>
 				</tr>
 				<tr>
-					<td width="50%" class="TableRow" valign="top"><a href="EA1094.htm">LCD_status</a></td>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1095.htm">LCD_status</a></td>
 					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 		   		<tr>
 					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9084" onclick="parent.toggleDiv('detailsDIVMessage9084', 'DetailsImageMessage9084')" />Details:
-							<div id="detailsDIVMessage9084" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9092" onclick="parent.toggleDiv('detailsDIVMessage9092', 'DetailsImageMessage9092')" />Details:
+							<div id="detailsDIVMessage9092" class="DetailsDiv" >
+							<strong>Type:</strong> Timing Synchronous Call<br />
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="50%" class="TableRow" valign="top"><a href="EA1095.htm">LCD_status</a></td>
+					<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+		   		<tr>
+					<td class="TableRowBottomDashed"  colspan="2">
+						<div class="DetailsDivParent"><img src="../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageMessage9093" onclick="parent.toggleDiv('detailsDIVMessage9093', 'DetailsImageMessage9093')" />Details:
+							<div id="detailsDIVMessage9093" class="DetailsDiv" >
 							<strong>Type:</strong> Timing Synchronous Call<br />
 							&nbsp;
 							</div>
